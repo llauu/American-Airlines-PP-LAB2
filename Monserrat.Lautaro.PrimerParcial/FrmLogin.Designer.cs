@@ -23,42 +23,41 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            lblUsuario = new Label();
+            lblCorreo = new Label();
             lblPass = new Label();
-            txtUsuario = new TextBox();
+            txtCorreo = new TextBox();
             btnLogin = new Button();
             btnCancelar = new Button();
             lblAlerta = new Label();
             imgAlerta = new PictureBox();
             panel1 = new Panel();
+            btnMostrarClave = new PictureBox();
             lblAlertaError = new Label();
             panel3 = new Panel();
-            txtPass = new TextBox();
+            txtClave = new TextBox();
             panel2 = new Panel();
             txtInicioSesion = new Label();
             imgPrincipal = new PictureBox();
-            btnCerrar = new PictureBox();
-            btnMinimizar = new Panel();
-            btnMinimizar2 = new Panel();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)imgAlerta).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMostrarClave).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgPrincipal).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
-            btnMinimizar.SuspendLayout();
             SuspendLayout();
             // 
-            // lblUsuario
+            // lblCorreo
             // 
-            lblUsuario.AutoSize = true;
-            lblUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsuario.Location = new Point(46, 72);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(64, 21);
-            lblUsuario.TabIndex = 9;
-            lblUsuario.Text = "Usuario";
+            lblCorreo.AutoSize = true;
+            lblCorreo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCorreo.Location = new Point(46, 72);
+            lblCorreo.Name = "lblCorreo";
+            lblCorreo.Size = new Size(138, 21);
+            lblCorreo.TabIndex = 9;
+            lblCorreo.Text = "Correo electronico";
             // 
             // lblPass
             // 
@@ -70,14 +69,14 @@
             lblPass.TabIndex = 8;
             lblPass.Text = "Contraseña";
             // 
-            // txtUsuario
+            // txtCorreo
             // 
-            txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsuario.Location = new Point(3, 3);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(231, 18);
-            txtUsuario.TabIndex = 0;
+            txtCorreo.BorderStyle = BorderStyle.None;
+            txtCorreo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCorreo.Location = new Point(3, 3);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(231, 18);
+            txtCorreo.TabIndex = 0;
             // 
             // btnLogin
             // 
@@ -98,6 +97,7 @@
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.Silver;
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -117,9 +117,9 @@
             lblAlerta.ForeColor = Color.IndianRed;
             lblAlerta.Location = new Point(46, 265);
             lblAlerta.Name = "lblAlerta";
-            lblAlerta.Size = new Size(277, 20);
+            lblAlerta.Size = new Size(285, 20);
             lblAlerta.TabIndex = 5;
-            lblAlerta.Text = "Debes ingresa un usuario y/o contraseña";
+            lblAlerta.Text = "Debes ingresar un usuario y/o contraseña.";
             lblAlerta.Visible = false;
             // 
             // imgAlerta
@@ -134,7 +134,9 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(btnMostrarClave);
             panel1.Controls.Add(lblAlertaError);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
@@ -142,13 +144,24 @@
             panel1.Controls.Add(lblPass);
             panel1.Controls.Add(lblAlerta);
             panel1.Controls.Add(imgAlerta);
-            panel1.Controls.Add(lblUsuario);
+            panel1.Controls.Add(lblCorreo);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnLogin);
-            panel1.Location = new Point(45, 204);
+            panel1.Location = new Point(47, 190);
             panel1.Name = "panel1";
             panel1.Size = new Size(340, 308);
             panel1.TabIndex = 9;
+            // 
+            // btnMostrarClave
+            // 
+            btnMostrarClave.Cursor = Cursors.Hand;
+            btnMostrarClave.Image = (Image)resources.GetObject("btnMostrarClave.Image");
+            btnMostrarClave.Location = new Point(292, 161);
+            btnMostrarClave.Name = "btnMostrarClave";
+            btnMostrarClave.Size = new Size(26, 20);
+            btnMostrarClave.TabIndex = 17;
+            btnMostrarClave.TabStop = false;
+            btnMostrarClave.Click += btnMostrarClave_Click;
             // 
             // lblAlertaError
             // 
@@ -166,26 +179,26 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(txtPass);
+            panel3.Controls.Add(txtClave);
             panel3.Location = new Point(52, 161);
             panel3.Name = "panel3";
             panel3.Size = new Size(237, 23);
             panel3.TabIndex = 15;
             // 
-            // txtPass
+            // txtClave
             // 
-            txtPass.BorderStyle = BorderStyle.None;
-            txtPass.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPass.Location = new Point(3, 3);
-            txtPass.Name = "txtPass";
-            txtPass.PasswordChar = '●';
-            txtPass.Size = new Size(231, 18);
-            txtPass.TabIndex = 1;
+            txtClave.BorderStyle = BorderStyle.None;
+            txtClave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtClave.Location = new Point(3, 3);
+            txtClave.Name = "txtClave";
+            txtClave.PasswordChar = '●';
+            txtClave.Size = new Size(231, 18);
+            txtClave.TabIndex = 1;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(txtUsuario);
+            panel2.Controls.Add(txtCorreo);
             panel2.Location = new Point(52, 96);
             panel2.Name = "panel2";
             panel2.Size = new Size(237, 23);
@@ -203,76 +216,43 @@
             // 
             // imgPrincipal
             // 
+            imgPrincipal.Anchor = AnchorStyles.None;
             imgPrincipal.Image = (Image)resources.GetObject("imgPrincipal.Image");
-            imgPrincipal.Location = new Point(66, 47);
+            imgPrincipal.Location = new Point(68, 33);
             imgPrincipal.Name = "imgPrincipal";
             imgPrincipal.Size = new Size(297, 113);
             imgPrincipal.TabIndex = 11;
             imgPrincipal.TabStop = false;
             // 
-            // btnCerrar
-            // 
-            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(402, 2);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(28, 27);
-            btnCerrar.TabIndex = 12;
-            btnCerrar.TabStop = false;
-            btnCerrar.Click += btnCerrar_Click;
-            // 
-            // btnMinimizar
-            // 
-            btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimizar.Controls.Add(btnMinimizar2);
-            btnMinimizar.Location = new Point(367, 2);
-            btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(29, 29);
-            btnMinimizar.TabIndex = 13;
-            btnMinimizar.Click += btnMinimizar_Click;
-            // 
-            // btnMinimizar2
-            // 
-            btnMinimizar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimizar2.BackColor = SystemColors.WindowFrame;
-            btnMinimizar2.Location = new Point(3, 10);
-            btnMinimizar2.Name = "btnMinimizar2";
-            btnMinimizar2.Size = new Size(20, 5);
-            btnMinimizar2.TabIndex = 14;
-            btnMinimizar2.Click += btnMinimizar2_Click;
-            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.AliceBlue;
-            ClientSize = new Size(432, 555);
-            Controls.Add(btnMinimizar);
-            Controls.Add(btnCerrar);
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(436, 543);
             Controls.Add(imgPrincipal);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
-            ShowIcon = false;
             Text = "American Airlines";
+            FormClosing += FrmLogin_FormClosing;
             ((System.ComponentModel.ISupportInitialize)imgAlerta).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMostrarClave).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgPrincipal).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
-            btnMinimizar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private Label lblUsuario;
+        private Label lblCorreo;
         private Label lblPass;
-        private TextBox txtUsuario;
+        private TextBox txtCorreo;
         private Button btnLogin;
         private Button btnCancelar;
         private Label lblAlerta;
@@ -281,11 +261,10 @@
         private Label txtInicioSesion;
         private PictureBox imgPrincipal;
         private Panel panel2;
-        private TextBox txtPass;
+        private TextBox txtClave;
         private Panel panel3;
-        private PictureBox btnCerrar;
-        private Panel btnMinimizar;
-        private Panel btnMinimizar2;
         private Label lblAlertaError;
+        private PictureBox btnMostrarClave;
+        private ToolTip toolTip1;
     }
 }

@@ -16,3 +16,6 @@ C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.Pr
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.PrimerParcial\obj\Debug\net6.0-windows\Monserrat.Lautaro.PrimerParcial.genruntimeconfig.cache
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.PrimerParcial\obj\Debug\net6.0-windows\ref\Monserrat.Lautaro.PrimerParcial.dll
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.PrimerParcial\obj\Debug\net6.0-windows\Monserrat.Lautaro.PrimerParcial.Properties.Resources.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.PrimerParcial\bin\Debug\net6.0-windows\Entidades.dll
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.PrimerParcial\bin\Debug\net6.0-windows\Entidades.pdb
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Monserrat.Lautaro.PrimerParcial\obj\Debug\net6.0-windows\Monserrat.Lautaro.PrimerParcial.csproj.CopyComplete

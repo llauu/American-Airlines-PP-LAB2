@@ -1,23 +1,39 @@
+using System.IO;
+using System.Text.Json;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Monserrat.Lautaro.PrimerParcial {
     public partial class FrmLogin : Form {
+        string rutaUsuariosJson;
+        List<Usuario> listaUsuarios;
+
         public FrmLogin() {
             InitializeComponent();
-
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            toolTip1.SetToolTip(btnMostrarClave, "Mostrar contraseña");
+
+            listaUsuarios = new List<Usuario>();
+
+            rutaUsuariosJson = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            rutaUsuariosJson = Path.Combine(rutaUsuariosJson, "MOCK_DATA.json");
+
+            CargarUsuariosJson();
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
-            if (ValidarUsuarioIngresado(String.Empty) || ValidarPassIngresada(String.Empty)) {
+            if (ValidarCorreoIngresado(String.Empty) || ValidarPassIngresada(String.Empty)) {
+                this.lblAlertaError.Visible = false;
                 this.imgAlerta.Visible = true;
                 this.lblAlerta.Visible = true;
             }
             else {
-                if (ValidarUsuarioIngresado("admin") && ValidarPassIngresada("admin")) {
-
+                if (ValidacionInicioDeSesion(listaUsuarios)) {
+                    MessageBox.Show("Sesion iniciada");
                 }
                 else {
+                    this.lblAlerta.Visible = false;
                     this.imgAlerta.Visible = true;
                     this.lblAlertaError.Visible = true;
                 }
@@ -25,26 +41,28 @@ namespace Monserrat.Lautaro.PrimerParcial {
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {
-            ConfirmarSalida();
+            this.Close();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e) {
-            ConfirmarSalida();
+        private DialogResult ConfirmarSalida() {
+            DialogResult rta = MessageBox.Show("Estas seguro que deseas salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            return rta;
         }
 
-
-        private void btnMinimizar_Click(object sender, EventArgs e) {
-            this.WindowState = FormWindowState.Minimized;
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e) {
+            if (ConfirmarSalida() == DialogResult.Yes) {
+                e.Cancel = false;
+            }
+            else {
+                e.Cancel = true;
+            }
         }
 
-        private void btnMinimizar2_Click(object sender, EventArgs e) {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private bool ValidarUsuarioIngresado(string usuario) {
+        private bool ValidarCorreoIngresado(string correo) {
             bool rtn = false;
 
-            if (this.txtUsuario.Text == usuario) {
+            if (this.txtCorreo.Text == correo) {
                 rtn = true;
             }
 
@@ -54,18 +72,45 @@ namespace Monserrat.Lautaro.PrimerParcial {
         private bool ValidarPassIngresada(string pass) {
             bool rtn = false;
 
-            if (this.txtPass.Text == pass) {
+            if (this.txtClave.Text == pass) {
                 rtn = true;
             }
 
             return rtn;
         }
 
-        private void ConfirmarSalida() {
-            DialogResult rta = MessageBox.Show("Estas seguro que deseas salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+        private void CargarUsuariosJson() {
+            try {
+                using (System.IO.StreamReader sr = new System.IO.StreamReader(rutaUsuariosJson)) {
+                    string json_str = sr.ReadToEnd();
 
-            if (rta == DialogResult.Yes) {
-                this.Close();
+                    listaUsuarios = JsonSerializer.Deserialize<List<Usuario>>(json_str);
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private bool ValidacionInicioDeSesion(List<Usuario> listaUsuarios) {
+            bool datosCorrectos = false;
+
+            foreach (Usuario usuario in listaUsuarios) {
+                if (ValidarCorreoIngresado(usuario.correo) && ValidarPassIngresada(usuario.clave)) {
+                    datosCorrectos = true;
+                    break;
+                }
+            }
+
+            return datosCorrectos;
+        }
+
+        private void btnMostrarClave_Click(object sender, EventArgs e) {
+            if (this.txtClave.PasswordChar == '\u25CF') {
+                this.txtClave.PasswordChar = '\0';
+            }
+            else {
+                this.txtClave.PasswordChar = '\u25CF';
             }
         }
     }
