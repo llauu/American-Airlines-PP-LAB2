@@ -74,9 +74,11 @@
             txtCorreo.BorderStyle = BorderStyle.None;
             txtCorreo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCorreo.Location = new Point(3, 3);
+            txtCorreo.MaxLength = 50;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(231, 18);
-            txtCorreo.TabIndex = 0;
+            txtCorreo.TabIndex = 1;
+            txtCorreo.KeyPress += txtCorreo_KeyPress;
             // 
             // btnLogin
             // 
@@ -89,7 +91,7 @@
             btnLogin.Location = new Point(189, 208);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(100, 31);
-            btnLogin.TabIndex = 3;
+            btnLogin.TabIndex = 5;
             btnLogin.Text = "Iniciar sesion";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
@@ -104,7 +106,7 @@
             btnCancelar.Location = new Point(52, 208);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(100, 31);
-            btnCancelar.TabIndex = 2;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
@@ -183,17 +185,19 @@
             panel3.Location = new Point(52, 161);
             panel3.Name = "panel3";
             panel3.Size = new Size(237, 23);
-            panel3.TabIndex = 15;
+            panel3.TabIndex = 2;
             // 
             // txtClave
             // 
             txtClave.BorderStyle = BorderStyle.None;
             txtClave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtClave.Location = new Point(3, 3);
+            txtClave.MaxLength = 50;
             txtClave.Name = "txtClave";
-            txtClave.PasswordChar = '●';
             txtClave.Size = new Size(231, 18);
-            txtClave.TabIndex = 1;
+            txtClave.TabIndex = 3;
+            txtClave.UseSystemPasswordChar = true;
+            txtClave.KeyPress += txtClave_KeyPress;
             // 
             // panel2
             // 
@@ -202,7 +206,7 @@
             panel2.Location = new Point(52, 96);
             panel2.Name = "panel2";
             panel2.Size = new Size(237, 23);
-            panel2.TabIndex = 12;
+            panel2.TabIndex = 0;
             // 
             // txtInicioSesion
             // 

@@ -7,6 +7,7 @@
         private string Clave;
         private string Perfil;
 
+
         public Usuario (string apellido, string nombre, int legajo, string correo, string clave, string perfil) {
             this.Apellido = apellido;
             this.Nombre = nombre;
@@ -23,6 +24,13 @@
         public string clave { get { return this.Clave; } set { this.Clave = value; } }
         public string perfil { get { return this.Perfil; } set { this.Perfil = value; } }
 
+        public bool ChequearCorreo(string correo) {
+            return correo == this.Correo;
+        }
+
+        public bool ChequearClave(string clave) {
+            return clave == this.Clave;
+        }
 
         public string Mostrar() {
             return $"{nombre} {apellido} {legajo} {correo} {clave} {perfil}";
