@@ -12,28 +12,34 @@ using System.Windows.Forms;
 namespace Monserrat.Lautaro.PrimerParcial {
     public partial class FrmMenuPrincipal : Form {
         FrmLogin formLogin;
-
+        bool cerrandoSesion;
 
         public FrmMenuPrincipal(Usuario usuarioActivo, FrmLogin formLogin) {
-            Size size = new Size(894, 565);
-            string fecha = DateTime.UtcNow.ToString("d");
-
             InitializeComponent();
+
+            cerrandoSesion = false;
+            string fechaHoy = DateTime.UtcNow.ToString("d");
+
             this.StartPosition = FormStartPosition.CenterScreen;
             this.toolTip1.SetToolTip(btnCerrarSesion, "Cerrar sesion");
             this.toolTip1.SetToolTip(imgLogo, "Inicio");
 
-            this.lblFecha.Text = fecha;
+            this.lblFecha.Text = fechaHoy;
 
-            this.MinimumSize = size;
+            this.MinimumSize = new Size(894, 565);
 
             lblPerfil.Text = $"{usuarioActivo.nombre} {usuarioActivo.apellido}";
             this.formLogin = formLogin;
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e) {
-            this.Close();
-            formLogin.Show();
+            DialogResult rta = MessageBox.Show("Estas seguro que deseas cerrar sesion?", "Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            
+            if (rta == DialogResult.Yes) {
+                cerrandoSesion = true;
+                formLogin.Show();
+                this.Close();
+            }
         }
 
         private void ActualizarTitulo(string tituloNuevo) {
@@ -89,11 +95,27 @@ namespace Monserrat.Lautaro.PrimerParcial {
             if (this.Size.Width > 1000 && this.Size.Height > 800) {
                 this.panelMenuArriba.Height = 55;
                 this.panelMenuNav.Width = 210;
+                this.lblOpcionActiva.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+                this.btnAeronaves.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.btnEstadisticas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.btnPasajeros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.btnVenderViaje.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.btnViajes.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.btnViajesDisponibles.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.btnVenderViaje.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             }
             else {
                 if (this.Size.Width < 1000 && this.Size.Height < 800) {
                     this.panelMenuArriba.Height = 45;
                     this.panelMenuNav.Width = 176;
+                    this.lblOpcionActiva.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+                    this.btnAeronaves.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    this.btnEstadisticas.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    this.btnPasajeros.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    this.btnVenderViaje.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    this.btnViajes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    this.btnViajesDisponibles.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+                    this.btnVenderViaje.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
                 }
             }
         }
@@ -101,6 +123,12 @@ namespace Monserrat.Lautaro.PrimerParcial {
         private void imgLogo_Click(object sender, EventArgs e) {
             ActualizarTitulo("Inicio");
             ReiniciarFondoOpciones();
+        }
+
+        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e) {
+            if(!cerrandoSesion) {
+                formLogin.Close();
+            }
         }
     }
 }

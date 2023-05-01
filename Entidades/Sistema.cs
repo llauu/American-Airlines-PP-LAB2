@@ -23,7 +23,7 @@ namespace Entidades {
         public static bool CargarUsuariosJson() {
             bool exito = false;
 
-            using (System.IO.StreamReader sr = new System.IO.StreamReader(rutaUsuariosJson)) {
+            using (StreamReader sr = new StreamReader(rutaUsuariosJson)) {
                 string json_str = sr.ReadToEnd();
 
                 listaUsuarios = JsonSerializer.Deserialize<List<Usuario>>(json_str);
@@ -47,5 +47,7 @@ namespace Entidades {
             
             return indice;
         }
+
+
     }
 }

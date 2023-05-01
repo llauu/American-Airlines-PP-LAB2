@@ -34,7 +34,6 @@
             imgAlerta = new PictureBox();
             panel1 = new Panel();
             btnMostrarClave = new PictureBox();
-            lblAlertaError = new Label();
             panel3 = new Panel();
             txtClave = new TextBox();
             panel2 = new Panel();
@@ -119,9 +118,9 @@
             lblAlerta.ForeColor = Color.IndianRed;
             lblAlerta.Location = new Point(46, 265);
             lblAlerta.Name = "lblAlerta";
-            lblAlerta.Size = new Size(285, 20);
+            lblAlerta.Size = new Size(51, 20);
             lblAlerta.TabIndex = 5;
-            lblAlerta.Text = "Debes ingresar un usuario y/o contraseña.";
+            lblAlerta.Text = "(error)";
             lblAlerta.Visible = false;
             // 
             // imgAlerta
@@ -139,7 +138,6 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.Gainsboro;
             panel1.Controls.Add(btnMostrarClave);
-            panel1.Controls.Add(lblAlertaError);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(txtInicioSesion);
@@ -164,19 +162,6 @@
             btnMostrarClave.TabIndex = 17;
             btnMostrarClave.TabStop = false;
             btnMostrarClave.Click += btnMostrarClave_Click;
-            // 
-            // lblAlertaError
-            // 
-            lblAlertaError.AutoSize = true;
-            lblAlertaError.BackColor = Color.Gainsboro;
-            lblAlertaError.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAlertaError.ForeColor = Color.IndianRed;
-            lblAlertaError.Location = new Point(46, 265);
-            lblAlertaError.Name = "lblAlertaError";
-            lblAlertaError.Size = new Size(292, 20);
-            lblAlertaError.TabIndex = 16;
-            lblAlertaError.Text = "La contraseña o el usuario son incorrectos. ";
-            lblAlertaError.Visible = false;
             // 
             // panel3
             // 
@@ -240,7 +225,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             Text = "American Airlines";
-            FormClosing += FrmLogin_FormClosing;
             ((System.ComponentModel.ISupportInitialize)imgAlerta).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -267,7 +251,6 @@
         private Panel panel2;
         private TextBox txtClave;
         private Panel panel3;
-        private Label lblAlertaError;
         private PictureBox btnMostrarClave;
         private ToolTip toolTip1;
     }

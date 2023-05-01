@@ -26,21 +26,6 @@ namespace Monserrat.Lautaro.PrimerParcial {
             this.Close();
         }
 
-        private static DialogResult ConfirmarSalida() {
-            DialogResult rta = MessageBox.Show("Estas seguro que deseas salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            return rta;
-        }
-
-        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e) {
-            if (ConfirmarSalida() == DialogResult.Yes) {
-                e.Cancel = false;
-            }
-            else {
-                e.Cancel = true;
-            }
-        }
-
         private void btnMostrarClave_Click(object sender, EventArgs e) {
             if (this.txtClave.UseSystemPasswordChar == true) {
                 this.txtClave.UseSystemPasswordChar = false;
@@ -61,37 +46,41 @@ namespace Monserrat.Lautaro.PrimerParcial {
                 IntentarInicioSesion();
             }
         }
+        
+        private void MostrarMensajeError(string mensaje) {
+            this.lblAlerta.Text = mensaje;
+            this.imgAlerta.Visible = true;
+            this.lblAlerta.Visible = true;
+        }
 
-        private bool IntentarInicioSesion() {
-            bool sesionIniciada = false;
+        private void IntentarInicioSesion() {
             string correoIngresado = this.txtCorreo.Text;
             string claveIngresada = this.txtClave.Text;
             int indiceUsuarioIngresado;
 
             if (correoIngresado == String.Empty || claveIngresada == String.Empty) {
-                this.lblAlertaError.Visible = false;
-                this.imgAlerta.Visible = true;
-                this.lblAlerta.Visible = true;
+                MostrarMensajeError("Debes ingresar un usuario y/o contraseña.");
             }
             else {
                 indiceUsuarioIngresado = Sistema.IniciarSesion(correoIngresado, claveIngresada);
 
-                if (indiceUsuarioIngresado >= 0 && Sistema.ListaUsuarios != null) {
-                    Usuario usuarioIniciado = Sistema.ListaUsuarios[indiceUsuarioIngresado];
-                    FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(usuarioIniciado, this);
-                    sesionIniciada = true;
-
-                    this.Hide();
-                    menuPrincipal.Show();
+                if (indiceUsuarioIngresado >= 0) {
+                    AccederMenuPrincipal(indiceUsuarioIngresado);
                 }
                 else {
-                    this.lblAlerta.Visible = false;
-                    this.imgAlerta.Visible = true;
-                    this.lblAlertaError.Visible = true;
+                    MostrarMensajeError("La contraseña o el usuario son incorrectos.");
                 }
             }
+        }
 
-            return sesionIniciada;
+        private void AccederMenuPrincipal(int indiceUsuario) {
+            if(Sistema.ListaUsuarios != null) {
+                Usuario usuarioIniciado = Sistema.ListaUsuarios[indiceUsuario];
+                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(usuarioIniciado, this);
+
+                this.Hide();
+                menuPrincipal.Show();
+            }
         }
     }
 }

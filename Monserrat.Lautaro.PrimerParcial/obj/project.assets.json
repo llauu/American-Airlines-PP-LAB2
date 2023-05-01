@@ -32,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\monse\\source\\repos\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial.csproj",
-      "projectName": "Monserrat.Lautaro.PrimerParcial",
-      "projectPath": "C:\\Users\\monse\\source\\repos\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial.csproj",
+      "projectUniqueName": "C:\\Users\\monse\\source\\repos\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial\\Interfaz.csproj",
+      "projectName": "Interfaz",
+      "projectPath": "C:\\Users\\monse\\source\\repos\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial\\Interfaz.csproj",
       "packagesPath": "C:\\Users\\monse\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\monse\\source\\repos\\Monserrat.Lautaro.PrimerParcial\\Monserrat.Lautaro.PrimerParcial\\obj\\",
       "projectStyle": "PackageReference",

@@ -42,7 +42,7 @@
             lblOpcionActiva = new Label();
             btnCerrarSesion = new PictureBox();
             toolTip1 = new ToolTip(components);
-            panel1 = new Panel();
+            panelPantalla = new Panel();
             panelMenuNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgLogo).BeginInit();
             panelMenuArriba.SuspendLayout();
@@ -213,7 +213,7 @@
             lblPerfil.Name = "lblPerfil";
             lblPerfil.Size = new Size(154, 45);
             lblPerfil.TabIndex = 21;
-            lblPerfil.Text = "Nombre";
+            lblPerfil.Text = "Nombre Apellido";
             lblPerfil.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panelMenuArriba
@@ -257,7 +257,7 @@
             // lblOpcionActiva
             // 
             lblOpcionActiva.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            lblOpcionActiva.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOpcionActiva.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             lblOpcionActiva.ForeColor = Color.White;
             lblOpcionActiva.Location = new Point(15, 0);
             lblOpcionActiva.Name = "lblOpcionActiva";
@@ -279,14 +279,14 @@
             btnCerrarSesion.TabStop = false;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
-            // panel1
+            // panelPantalla
             // 
-            panel1.BackColor = Color.Brown;
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(176, 45);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(702, 481);
-            panel1.TabIndex = 3;
+            panelPantalla.BackColor = Color.RosyBrown;
+            panelPantalla.Dock = DockStyle.Fill;
+            panelPantalla.Location = new Point(176, 45);
+            panelPantalla.Name = "panelPantalla";
+            panelPantalla.Size = new Size(702, 481);
+            panelPantalla.TabIndex = 3;
             // 
             // FrmMenuPrincipal
             // 
@@ -294,12 +294,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(878, 526);
-            Controls.Add(panel1);
+            Controls.Add(panelPantalla);
             Controls.Add(panelMenuArriba);
             Controls.Add(panelMenuNav);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMenuPrincipal";
             Text = "American Airlines";
+            FormClosed += FrmMenuPrincipal_FormClosed;
             Resize += FrmMenuPrincipal_Resize;
             panelMenuNav.ResumeLayout(false);
             panelMenuNav.PerformLayout();
@@ -329,6 +330,6 @@
         private Panel barraSeparadora1;
         private Panel barraSeparadora5;
         private Label lblFecha;
-        private Panel panel1;
+        private Panel panelPantalla;
     }
 }
