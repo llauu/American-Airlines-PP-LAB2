@@ -23,4 +23,7 @@ public enum EDestinosInternacionales {
     Miami
 }
 
-
+public enum ETipoClase {
+    Turista,
+    Premium
+}

@@ -15,9 +15,7 @@ namespace Entidades {
         static Sistema() {
             listaUsuarios = new List<Usuario>();
 
-            rutaUsuariosJson = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            rutaUsuariosJson = Path.Combine(rutaUsuariosJson, @"source\repos\Monserrat.Lautaro.PrimerParcial\db\MOCK_DATA.json");
-
+            rutaUsuariosJson = @"..\..\..\..\db\MOCK_DATA.json";
         }
 
         public static bool CargarUsuariosJson() {

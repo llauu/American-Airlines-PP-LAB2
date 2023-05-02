@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaz", "Monserrat.Lautaro.PrimerParcial\Interfaz.csproj", "{0CA8D2F4-D6D3-4F08-8325-6D555DB8CCE0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{D21E6847-361A-43A7-8347-92B4F431A194}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaz", "Interfaz\Interfaz.csproj", "{2CE7E82D-C13B-44BE-A2DF-C8121283D2A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0CA8D2F4-D6D3-4F08-8325-6D555DB8CCE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CA8D2F4-D6D3-4F08-8325-6D555DB8CCE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CA8D2F4-D6D3-4F08-8325-6D555DB8CCE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CA8D2F4-D6D3-4F08-8325-6D555DB8CCE0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D21E6847-361A-43A7-8347-92B4F431A194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D21E6847-361A-43A7-8347-92B4F431A194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D21E6847-361A-43A7-8347-92B4F431A194}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D21E6847-361A-43A7-8347-92B4F431A194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE7E82D-C13B-44BE-A2DF-C8121283D2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE7E82D-C13B-44BE-A2DF-C8121283D2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE7E82D-C13B-44BE-A2DF-C8121283D2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE7E82D-C13B-44BE-A2DF-C8121283D2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
