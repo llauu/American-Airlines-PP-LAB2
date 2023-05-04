@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace Entidades {
     public class Pasajero : Persona {
-        int dni;
-        int edad;
+        private int dni;
+        private int edad;
+        private DateTime fechaDeNacimiento;
 
-        public Pasajero (string apellido, string nombre, int dni, int edad) :base(apellido, nombre) {
-            this.dni = dni;
-            this.edad = edad;
+        public Pasajero(string apellido, string nombre, int dni, DateTime fechaDeNacimiento) : base(apellido, nombre) {
+            this.dni = Validador.ValidarDni(dni);
+            this.fechaDeNacimiento = Validador.ValidarFechaDeNacimiento(fechaDeNacimiento);
+            this.edad = Validador.CalcularEdad(fechaDeNacimiento);
         }
 
+        public int Dni { get { return this.dni; } set { this.dni = value; } }
+        public int Edad { get { return this.edad; } set { this.edad = value; } }
+        public DateTime FechaDeNacimiento { get { return this.fechaDeNacimiento; } set { this.fechaDeNacimiento = value; } }
+
+        public override string ToString() {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Nombre: {this.nombre}");
+            sb.AppendLine($"Apellido: {this.apellido}");
+            sb.AppendLine($"DNI: {this.dni}");
+            sb.AppendLine($"Edad: {this.edad}");
+
+            return sb.ToString();
+        }
     }
 }

@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades {
-    public class Persona {
-        protected string Apellido;
-        protected string Nombre;
+    public abstract class Persona {
+        protected string apellido;
+        protected string nombre;
 
-        public Persona (string apellido, string nombre) {
-            this.Apellido = apellido;
-            this.Nombre = nombre;
+        protected Persona(string apellido, string nombre) {
+            this.apellido = Validador.ValidarCadena(apellido);
+            this.nombre = Validador.ValidarCadena(nombre);
         }
 
-        public string apellido { get { return this.Apellido; } set { this.Apellido = value; } }
-        public string nombre { get { return this.Nombre; } set { this.Nombre = value; } }
+        public string Apellido { get { return this.apellido; } set { this.apellido = value; } }
+        public string Nombre { get { return this.nombre; } set { this.nombre = value; } }
     }
 }

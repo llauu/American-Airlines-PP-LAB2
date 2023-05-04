@@ -26,3 +26,8 @@ C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\n
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmVenderViaje.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmViajes.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmInicio.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.Properties.Resources.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazPasajeros.FrmAltaPasajero.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazPasajeros.FrmEditarPasajero.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazAeronaves.FrmAltaAeronave.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazAeronaves.FrmEditarAeronave.resources

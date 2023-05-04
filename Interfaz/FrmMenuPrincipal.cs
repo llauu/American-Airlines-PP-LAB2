@@ -28,13 +28,44 @@ namespace Interfaz {
 
             this.MinimumSize = new Size(894, 565);
 
-            this.lblPerfil.Text = $"{usuarioActivo.nombre} {usuarioActivo.apellido}";
+            CargarPerfilUsuario(usuarioActivo);
+
+            this.lblPerfil.Text = $"{usuarioActivo.Nombre} {usuarioActivo.Apellido}";
             this.cerrandoSesion = false;
             this.formLogin = formLogin;
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e) {
             AbrirFormOpcionElegida(new FrmInicio());
+        }
+
+        private void CargarPerfilUsuario(Usuario usuario) {
+            switch (usuario.Perfil) {
+                case "vendedor":
+                    this.btnViajes.Enabled = false;
+                    this.btnAeronaves.Enabled = false;
+                    break;
+
+                case "supervisor":
+                    this.btnViajesDisponibles.Enabled = false;
+                    this.btnVenderViaje.Enabled = false;
+                    this.btnViajes.Enabled = false;
+                    this.btnAeronaves.Enabled = false;
+                    break;
+
+                case "administrador":
+                    //this.btnEstadisticas.Enabled = false;
+                    //this.btnViajesDisponibles.Enabled = false;
+                    //this.btnVenderViaje.Enabled = false;
+                    //this.btnPasajeros.Enabled = false;
+                    break;
+
+                default:
+                    foreach(Control item in panelMenuNav.Controls) {
+                        item.Enabled = false;
+                    }
+                    break;
+            }
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e) {

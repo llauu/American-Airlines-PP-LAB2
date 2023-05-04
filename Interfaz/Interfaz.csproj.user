@@ -4,10 +4,22 @@
     <Compile Update="InterfazAeronaves\FrmAeronaves.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="InterfazAeronaves\FrmAltaAeronave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InterfazAeronaves\FrmEditarAeronave.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="InterfazEstadisticas\FrmEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="InterfazInicio\FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InterfazPasajeros\FrmAltaPasajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InterfazPasajeros\FrmEditarPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="InterfazPasajeros\FrmPasajeros.cs">
