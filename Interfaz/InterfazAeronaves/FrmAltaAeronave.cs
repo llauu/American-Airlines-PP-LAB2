@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Interfaz.InterfazAeronaves {
-    public partial class FrmAltaAeronave : Form {
+    public partial class FrmAltaAeronave : FrmBotonCancelar {
         Aeronave? aeronaveAgregada;
 
         public Aeronave AeronaveAgregada {
@@ -20,10 +20,6 @@ namespace Interfaz.InterfazAeronaves {
 
         public FrmAltaAeronave() {
             InitializeComponent();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            this.Close();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e) {
@@ -37,15 +33,17 @@ namespace Interfaz.InterfazAeronaves {
             int.TryParse(this.txtCantBanios.Text, out cantBanios);
             int.TryParse(this.txtCantBodega.Text, out capacidadBodega);
 
-            lblError.Visible = false;
+            this.imgError.Visible = false;
+            this.lblError.Visible = false;
 
             try {
                 this.aeronaveAgregada = new Aeronave(cantAsientos, cantBanios, ofreceInternet, ofreceComida, capacidadBodega);
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) {
-                lblError.Visible = true;
-                lblError.Text = ex.Message;
+                this.imgError.Visible = true;
+                this.lblError.Visible = true;
+                this.lblError.Text = ex.Message;
             }
         }
     }

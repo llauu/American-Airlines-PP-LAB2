@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Interfaz.InterfazPasajeros {
-    public partial class FrmEditarPasajero : Form {
+    public partial class FrmEditarPasajero : FrmBotonCancelar {
         Pasajero pasajeroAEditar;
 
         public FrmEditarPasajero(Pasajero pasajeroAEditar) {
@@ -21,7 +21,6 @@ namespace Interfaz.InterfazPasajeros {
 
         private void FrmEditarPasajero_Load(object sender, EventArgs e) {
             this.dateFechaNacimiento.MaxDate = DateTime.Now;
-
 
             this.txtApellido.Text = pasajeroAEditar.Apellido;
             this.txtNombre.Text = pasajeroAEditar.Nombre;
@@ -47,10 +46,5 @@ namespace Interfaz.InterfazPasajeros {
                 lblError.Text = ex.Message;
             }
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            this.Close();
-        }
-
     }
 }

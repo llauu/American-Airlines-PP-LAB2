@@ -23,169 +23,304 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarPasajero));
+            panel1 = new Panel();
+            imgError = new PictureBox();
+            panel4 = new Panel();
             txtDni = new TextBox();
-            lblError = new Label();
-            btnCancelar = new Button();
-            btnAceptar = new Button();
-            label5 = new Label();
-            label3 = new Label();
-            txtNombre = new TextBox();
-            label2 = new Label();
-            txtApellido = new TextBox();
-            label1 = new Label();
-            dateFechaNacimiento = new DateTimePicker();
             lblFechaNacimiento = new Label();
+            lblError = new Label();
+            panel3 = new Panel();
+            txtNombre = new TextBox();
+            panel2 = new Panel();
+            txtApellido = new TextBox();
+            label5 = new Label();
+            dateFechaNacimiento = new DateTimePicker();
+            label3 = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            btnAceptar = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgError).BeginInit();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.Location = new Point(66, 446);
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(imgError);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(lblFechaNacimiento);
+            panel1.Controls.Add(lblError);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(dateFechaNacimiento);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(66, 92);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(279, 326);
+            panel1.TabIndex = 52;
+            // 
+            // imgError
+            // 
+            imgError.Image = (Image)resources.GetObject("imgError.Image");
+            imgError.Location = new Point(21, 285);
+            imgError.Name = "imgError";
+            imgError.Size = new Size(18, 20);
+            imgError.SizeMode = PictureBoxSizeMode.Zoom;
+            imgError.TabIndex = 56;
+            imgError.TabStop = false;
+            imgError.Visible = false;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(txtDni);
+            panel4.Location = new Point(23, 172);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(231, 23);
+            panel4.TabIndex = 2;
             // 
             // txtDni
             // 
             txtDni.BorderStyle = BorderStyle.None;
-            txtDni.Location = new Point(42, 230);
+            txtDni.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDni.Location = new Point(3, 2);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(195, 16);
-            txtDni.TabIndex = 33;
-            // 
-            // lblError
-            // 
-            lblError.AutoSize = true;
-            lblError.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblError.ForeColor = Color.IndianRed;
-            lblError.Location = new Point(42, 439);
-            lblError.Name = "lblError";
-            lblError.Size = new Size(55, 21);
-            lblError.TabIndex = 32;
-            lblError.Text = "(error)";
-            lblError.Visible = false;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(70, 485);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 31;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
-            // btnAceptar
-            // 
-            btnAceptar.Location = new Point(260, 485);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(75, 23);
-            btnAceptar.TabIndex = 30;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
-            btnAceptar.Click += btnAceptar_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(42, 212);
-            label5.Name = "label5";
-            label5.Size = new Size(27, 15);
-            label5.TabIndex = 28;
-            label5.Text = "DNI";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(42, 150);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 26;
-            label3.Text = "Nombre";
-            // 
-            // txtNombre
-            // 
-            txtNombre.BorderStyle = BorderStyle.None;
-            txtNombre.Location = new Point(42, 168);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(195, 16);
-            txtNombre.TabIndex = 25;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(42, 88);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 15);
-            label2.TabIndex = 24;
-            label2.Text = "Apellido";
-            // 
-            // txtApellido
-            // 
-            txtApellido.BorderStyle = BorderStyle.None;
-            txtApellido.Location = new Point(42, 106);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(195, 16);
-            txtApellido.TabIndex = 22;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(110, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(170, 32);
-            label1.TabIndex = 21;
-            label1.Text = "Editar pasajero";
-            // 
-            // dateFechaNacimiento
-            // 
-            dateFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dateFechaNacimiento.Location = new Point(42, 297);
-            dateFechaNacimiento.Name = "dateFechaNacimiento";
-            dateFechaNacimiento.Size = new Size(200, 23);
-            dateFechaNacimiento.TabIndex = 51;
+            txtDni.Size = new Size(195, 18);
+            txtDni.TabIndex = 48;
             // 
             // lblFechaNacimiento
             // 
             lblFechaNacimiento.AutoSize = true;
-            lblFechaNacimiento.Location = new Point(42, 269);
+            lblFechaNacimiento.BackColor = Color.Silver;
+            lblFechaNacimiento.Location = new Point(23, 222);
             lblFechaNacimiento.Name = "lblFechaNacimiento";
             lblFechaNacimiento.Size = new Size(117, 15);
-            lblFechaNacimiento.TabIndex = 50;
+            lblFechaNacimiento.TabIndex = 42;
             lblFechaNacimiento.Text = "Fecha de nacimiento";
+            // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblError.ForeColor = Color.IndianRed;
+            lblError.Location = new Point(45, 285);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(47, 19);
+            lblError.TabIndex = 47;
+            lblError.Text = "(error)";
+            lblError.Visible = false;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(txtNombre);
+            panel3.Location = new Point(23, 105);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(231, 23);
+            panel3.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            txtNombre.BorderStyle = BorderStyle.None;
+            txtNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(3, 3);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(195, 18);
+            txtNombre.TabIndex = 40;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(txtApellido);
+            panel2.Location = new Point(23, 43);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(231, 23);
+            panel2.TabIndex = 1;
+            // 
+            // txtApellido
+            // 
+            txtApellido.BorderStyle = BorderStyle.None;
+            txtApellido.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.Location = new Point(3, 3);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(192, 18);
+            txtApellido.TabIndex = 37;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Silver;
+            label5.Location = new Point(23, 154);
+            label5.Name = "label5";
+            label5.Size = new Size(27, 15);
+            label5.TabIndex = 43;
+            label5.Text = "DNI";
+            // 
+            // dateFechaNacimiento
+            // 
+            dateFechaNacimiento.Format = DateTimePickerFormat.Short;
+            dateFechaNacimiento.Location = new Point(23, 240);
+            dateFechaNacimiento.Name = "dateFechaNacimiento";
+            dateFechaNacimiento.Size = new Size(231, 23);
+            dateFechaNacimiento.TabIndex = 49;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Silver;
+            label3.Location = new Point(23, 87);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 15);
+            label3.TabIndex = 41;
+            label3.Text = "Nombre";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Silver;
+            label4.Location = new Point(23, 25);
+            label4.Name = "label4";
+            label4.Size = new Size(51, 15);
+            label4.TabIndex = 39;
+            label4.Text = "Apellido";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(89, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(225, 32);
+            label1.TabIndex = 57;
+            label1.Text = "EDITAR PASAJERO";
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.BackColor = Color.FromArgb(57, 57, 57);
+            flowLayoutPanel4.Dock = DockStyle.Bottom;
+            flowLayoutPanel4.Location = new Point(12, 501);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(389, 12);
+            flowLayoutPanel4.TabIndex = 61;
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.BackColor = Color.FromArgb(57, 57, 57);
+            flowLayoutPanel3.Dock = DockStyle.Left;
+            flowLayoutPanel3.Location = new Point(0, 12);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(12, 501);
+            flowLayoutPanel3.TabIndex = 60;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.BackColor = Color.FromArgb(57, 57, 57);
+            flowLayoutPanel2.Dock = DockStyle.Right;
+            flowLayoutPanel2.Location = new Point(401, 12);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(12, 501);
+            flowLayoutPanel2.TabIndex = 59;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(57, 57, 57);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(413, 12);
+            flowLayoutPanel1.TabIndex = 58;
+            // 
+            // btnAceptar
+            // 
+            btnAceptar.BackColor = Color.CornflowerBlue;
+            btnAceptar.Cursor = Cursors.Hand;
+            btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAceptar.ForeColor = SystemColors.ControlText;
+            btnAceptar.Location = new Point(245, 446);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(100, 31);
+            btnAceptar.TabIndex = 62;
+            btnAceptar.Text = "Agregar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // FrmEditarPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
-            ClientSize = new Size(408, 530);
-            Controls.Add(dateFechaNacimiento);
-            Controls.Add(lblFechaNacimiento);
-            Controls.Add(txtDni);
-            Controls.Add(lblError);
-            Controls.Add(btnCancelar);
+            ClientSize = new Size(413, 513);
             Controls.Add(btnAceptar);
-            Controls.Add(label5);
-            Controls.Add(label3);
-            Controls.Add(txtNombre);
-            Controls.Add(label2);
-            Controls.Add(txtApellido);
+            Controls.Add(flowLayoutPanel4);
+            Controls.Add(flowLayoutPanel3);
+            Controls.Add(flowLayoutPanel2);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
+            Controls.Add(panel1);
             Name = "FrmEditarPasajero";
             StartPosition = FormStartPosition.CenterParent;
             Text = "FrmEditarPasajero";
             Load += FrmEditarPasajero_Load;
+            Controls.SetChildIndex(btnCancelar, 0);
+            Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(label1, 0);
+            Controls.SetChildIndex(flowLayoutPanel1, 0);
+            Controls.SetChildIndex(flowLayoutPanel2, 0);
+            Controls.SetChildIndex(flowLayoutPanel3, 0);
+            Controls.SetChildIndex(flowLayoutPanel4, 0);
+            Controls.SetChildIndex(btnAceptar, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+        private Panel panel1;
+        private PictureBox imgError;
+        private Panel panel4;
         private TextBox txtDni;
-        private Label lblError;
-        private Button btnCancelar;
-        private Button btnAceptar;
-        private Label label5;
-        private Label label3;
-        private TextBox txtNombre;
-        private Label label2;
-        private TextBox txtApellido;
-        private Label label1;
-        private DateTimePicker dateFechaNacimiento;
         private Label lblFechaNacimiento;
+        private Label lblError;
+        private Panel panel3;
+        private TextBox txtNombre;
+        private Panel panel2;
+        private TextBox txtApellido;
+        private Label label5;
+        private DateTimePicker dateFechaNacimiento;
+        private Label label3;
+        private Label label4;
+        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button btnAceptar;
     }
 }

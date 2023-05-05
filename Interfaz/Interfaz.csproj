@@ -21,9 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="FrmLogin.cs" />
     <Compile Update="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

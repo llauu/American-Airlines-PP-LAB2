@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPasajeros));
             dataGridPasajeros = new DataGridView();
             btnAgregar = new PictureBox();
@@ -35,12 +35,14 @@
             panel1 = new Panel();
             toolTip1 = new ToolTip(components);
             lblError = new Label();
+            imgError = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajeros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEditar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgBuscar).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgError).BeginInit();
             SuspendLayout();
             // 
             // dataGridPasajeros
@@ -53,24 +55,24 @@
             dataGridPasajeros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridPasajeros.BackgroundColor = SystemColors.Menu;
             dataGridPasajeros.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridPasajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridPasajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridPasajeros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridPasajeros.EnableHeadersVisualStyles = false;
-            dataGridPasajeros.Location = new Point(12, 79);
+            dataGridPasajeros.Location = new Point(44, 79);
             dataGridPasajeros.MultiSelect = false;
             dataGridPasajeros.Name = "dataGridPasajeros";
             dataGridPasajeros.ReadOnly = true;
             dataGridPasajeros.RowHeadersVisible = false;
             dataGridPasajeros.RowTemplate.Height = 25;
             dataGridPasajeros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridPasajeros.Size = new Size(622, 390);
+            dataGridPasajeros.Size = new Size(590, 378);
             dataGridPasajeros.TabIndex = 0;
             dataGridPasajeros.TabStop = false;
             dataGridPasajeros.VirtualMode = true;
@@ -129,7 +131,7 @@
             // imgBuscar
             // 
             imgBuscar.Image = (Image)resources.GetObject("imgBuscar.Image");
-            imgBuscar.Location = new Point(12, 30);
+            imgBuscar.Location = new Point(44, 30);
             imgBuscar.Name = "imgBuscar";
             imgBuscar.Size = new Size(26, 25);
             imgBuscar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -140,7 +142,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(txtBuscar);
-            panel1.Location = new Point(44, 30);
+            panel1.Location = new Point(75, 30);
             panel1.Name = "panel1";
             panel1.Size = new Size(334, 25);
             panel1.TabIndex = 6;
@@ -148,13 +150,25 @@
             // lblError
             // 
             lblError.AutoSize = true;
+            lblError.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblError.ForeColor = Color.IndianRed;
-            lblError.Location = new Point(393, 36);
+            lblError.Location = new Point(439, 37);
             lblError.Name = "lblError";
             lblError.Size = new Size(40, 15);
             lblError.TabIndex = 7;
             lblError.Text = "(error)";
             lblError.Visible = false;
+            // 
+            // imgError
+            // 
+            imgError.Image = (Image)resources.GetObject("imgError.Image");
+            imgError.Location = new Point(415, 34);
+            imgError.Name = "imgError";
+            imgError.Size = new Size(18, 20);
+            imgError.SizeMode = PictureBoxSizeMode.Zoom;
+            imgError.TabIndex = 16;
+            imgError.TabStop = false;
+            imgError.Visible = false;
             // 
             // FrmPasajeros
             // 
@@ -162,6 +176,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(702, 481);
+            Controls.Add(imgError);
             Controls.Add(lblError);
             Controls.Add(panel1);
             Controls.Add(imgBuscar);
@@ -180,6 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)imgBuscar).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +211,6 @@
         private Panel panel1;
         private ToolTip toolTip1;
         private Label lblError;
+        private PictureBox imgError;
     }
 }

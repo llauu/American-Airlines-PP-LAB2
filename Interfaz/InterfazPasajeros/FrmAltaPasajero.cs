@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Interfaz.InterfazPasajeros {
-    public partial class FrmAltaPasajero : Form {
+    public partial class FrmAltaPasajero : FrmBotonCancelar {
         Pasajero? pasajeroAgregado;
 
         public Pasajero PasajeroAgregado {
@@ -25,10 +26,6 @@ namespace Interfaz.InterfazPasajeros {
             this.dateFechaNacimiento.MaxDate = DateTime.Now;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            this.Close();
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e) {
             string apellido = this.txtApellido.Text;
             string nombre = this.txtNombre.Text;
@@ -37,15 +34,17 @@ namespace Interfaz.InterfazPasajeros {
 
             int.TryParse(this.txtDni.Text, out dni);
 
-            lblError.Visible = false;
+            this.imgError.Visible = false;
+            this.lblError.Visible = false;
 
             try {
                 this.pasajeroAgregado = new Pasajero(apellido, nombre, dni, fechaNacimiento);
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) {
-                lblError.Visible = true;
-                lblError.Text = ex.Message;
+                this.imgError.Visible = true;
+                this.lblError.Visible = true;
+                this.lblError.Text = ex.Message;
             }
         }
     }

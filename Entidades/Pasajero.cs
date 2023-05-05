@@ -16,9 +16,9 @@ namespace Entidades {
             this.edad = Validador.CalcularEdad(fechaDeNacimiento);
         }
 
+        public DateTime FechaDeNacimiento { get { return this.fechaDeNacimiento; } set { this.fechaDeNacimiento = value; } }
         public int Dni { get { return this.dni; } set { this.dni = value; } }
         public int Edad { get { return this.edad; } set { this.edad = value; } }
-        public DateTime FechaDeNacimiento { get { return this.fechaDeNacimiento; } set { this.fechaDeNacimiento = value; } }
 
         public override string ToString() {
             StringBuilder sb = new StringBuilder();

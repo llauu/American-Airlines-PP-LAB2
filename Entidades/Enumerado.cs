@@ -2,3 +2,9 @@
     Turista,
     Premium
 }
+
+public enum EPerfil {
+    administrador,
+    supervisor,
+    vendedor
+}

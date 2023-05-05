@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace Entidades {
     public class Pasaje {
         private Pasajero? pasajero;
+        private Vuelo? vuelo;
+        private ETipoClase clasePasajero;
         private bool equipajeDeMano;
         //     numero equipaje, kg de equipaje
         private Dictionary<int, int> equipajesBodega;
-        private ETipoClase clasePasajero;
 
         private Pasaje() {
             this.equipajesBodega = new Dictionary<int, int>();

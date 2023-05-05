@@ -67,7 +67,7 @@ namespace Interfaz {
             }
             else {
                 indiceUsuarioIngresado = Sistema.IniciarSesion(correoIngresado, claveIngresada);
-
+                
                 if (indiceUsuarioIngresado >= 0) {
                     AccederMenuPrincipal(indiceUsuarioIngresado);
                 }
@@ -87,5 +87,9 @@ namespace Interfaz {
             }
         }
 
+        private void FrmLogin_VisibleChanged(object sender, EventArgs e) {
+            this.txtCorreo.Text = "";
+            this.txtClave.Text = "";
+        }
     }
 }

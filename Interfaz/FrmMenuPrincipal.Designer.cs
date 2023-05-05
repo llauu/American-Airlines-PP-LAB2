@@ -261,7 +261,7 @@
             lblOpcionActiva.ForeColor = Color.White;
             lblOpcionActiva.Location = new Point(15, 0);
             lblOpcionActiva.Name = "lblOpcionActiva";
-            lblOpcionActiva.Size = new Size(267, 45);
+            lblOpcionActiva.Size = new Size(374, 45);
             lblOpcionActiva.TabIndex = 0;
             lblOpcionActiva.Text = "Inicio";
             lblOpcionActiva.TextAlign = ContentAlignment.MiddleLeft;

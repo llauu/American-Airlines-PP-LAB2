@@ -35,12 +35,14 @@
             lblError = new Label();
             panel1 = new Panel();
             toolTip1 = new ToolTip(components);
+            imgError = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnEditar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAeronaves).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgBuscar).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgError).BeginInit();
             SuspendLayout();
             // 
             // btnEditar
@@ -103,14 +105,14 @@
             dataGridAeronaves.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridAeronaves.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridAeronaves.EnableHeadersVisualStyles = false;
-            dataGridAeronaves.Location = new Point(12, 79);
+            dataGridAeronaves.Location = new Point(44, 79);
             dataGridAeronaves.MultiSelect = false;
             dataGridAeronaves.Name = "dataGridAeronaves";
             dataGridAeronaves.ReadOnly = true;
             dataGridAeronaves.RowHeadersVisible = false;
             dataGridAeronaves.RowTemplate.Height = 25;
             dataGridAeronaves.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridAeronaves.Size = new Size(622, 390);
+            dataGridAeronaves.Size = new Size(590, 378);
             dataGridAeronaves.TabIndex = 8;
             dataGridAeronaves.TabStop = false;
             dataGridAeronaves.VirtualMode = true;
@@ -118,7 +120,7 @@
             // imgBuscar
             // 
             imgBuscar.Image = (Image)resources.GetObject("imgBuscar.Image");
-            imgBuscar.Location = new Point(12, 30);
+            imgBuscar.Location = new Point(44, 30);
             imgBuscar.Name = "imgBuscar";
             imgBuscar.Size = new Size(26, 25);
             imgBuscar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -139,7 +141,7 @@
             // 
             lblError.AutoSize = true;
             lblError.ForeColor = Color.IndianRed;
-            lblError.Location = new Point(394, 36);
+            lblError.Location = new Point(440, 36);
             lblError.Name = "lblError";
             lblError.Size = new Size(40, 15);
             lblError.TabIndex = 14;
@@ -150,10 +152,21 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(txtBuscar);
-            panel1.Location = new Point(44, 30);
+            panel1.Location = new Point(76, 30);
             panel1.Name = "panel1";
             panel1.Size = new Size(334, 25);
             panel1.TabIndex = 13;
+            // 
+            // imgError
+            // 
+            imgError.Image = (Image)resources.GetObject("imgError.Image");
+            imgError.Location = new Point(416, 34);
+            imgError.Name = "imgError";
+            imgError.Size = new Size(18, 20);
+            imgError.SizeMode = PictureBoxSizeMode.Zoom;
+            imgError.TabIndex = 15;
+            imgError.TabStop = false;
+            imgError.Visible = false;
             // 
             // FrmAeronaves
             // 
@@ -161,6 +174,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(702, 481);
+            Controls.Add(imgError);
             Controls.Add(imgBuscar);
             Controls.Add(lblError);
             Controls.Add(panel1);
@@ -179,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)imgBuscar).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,5 +208,6 @@
         private Label lblError;
         private Panel panel1;
         private ToolTip toolTip1;
+        private PictureBox imgError;
     }
 }

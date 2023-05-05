@@ -61,7 +61,7 @@ namespace Interfaz {
                     break;
 
                 default:
-                    foreach(Control item in panelMenuNav.Controls) {
+                    foreach (Control item in panelMenuNav.Controls) {
                         item.Enabled = false;
                     }
                     break;
@@ -118,31 +118,33 @@ namespace Interfaz {
             AbrirFormOpcionElegida(new FrmAeronaves());
         }
 
+        private void RedimensionarFuenteBoton(Button boton, Single tam) {
+            boton.Font = new Font("Segoe UI", tam, FontStyle.Regular, GraphicsUnit.Point);
+        }
+
         private void FrmMenuPrincipal_Resize(object sender, EventArgs e) {
             if (this.Size.Width > 1000 && this.Size.Height > 800) {
                 this.panelMenuArriba.Height = 55;
                 this.panelMenuNav.Width = 210;
                 this.lblOpcionActiva.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-                this.btnAeronaves.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-                this.btnEstadisticas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-                this.btnPasajeros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-                this.btnVenderViaje.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-                this.btnViajes.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-                this.btnViajesDisponibles.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-                this.btnVenderViaje.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+
+                foreach(Control item in this.panelMenuNav.Controls) {
+                    if(item is Button) {
+                        RedimensionarFuenteBoton((Button)item, 12F);
+                    }
+                }
             }
             else {
                 if (this.Size.Width < 1000 && this.Size.Height < 800) {
                     this.panelMenuArriba.Height = 45;
                     this.panelMenuNav.Width = 176;
                     this.lblOpcionActiva.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-                    this.btnAeronaves.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-                    this.btnEstadisticas.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-                    this.btnPasajeros.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-                    this.btnVenderViaje.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-                    this.btnViajes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-                    this.btnViajesDisponibles.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-                    this.btnVenderViaje.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+
+                    foreach (Control item in this.panelMenuNav.Controls) {
+                        if (item is Button) {
+                            RedimensionarFuenteBoton((Button)item, 10F);
+                        }
+                    }
                 }
             }
         }

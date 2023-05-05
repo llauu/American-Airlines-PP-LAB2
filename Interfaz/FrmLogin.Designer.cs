@@ -29,10 +29,10 @@
             lblPass = new Label();
             txtCorreo = new TextBox();
             btnLogin = new Button();
-            btnCancelar = new Button();
             lblAlerta = new Label();
             imgAlerta = new PictureBox();
             panel1 = new Panel();
+            btnCancelar = new Button();
             btnMostrarClave = new PictureBox();
             panel3 = new Panel();
             txtClave = new TextBox();
@@ -95,21 +95,6 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.BackColor = Color.Silver;
-            btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(52, 208);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(100, 31);
-            btnCancelar.TabIndex = 4;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
             // lblAlerta
             // 
             lblAlerta.AutoSize = true;
@@ -137,6 +122,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnMostrarClave);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
@@ -145,12 +131,26 @@
             panel1.Controls.Add(lblAlerta);
             panel1.Controls.Add(imgAlerta);
             panel1.Controls.Add(lblCorreo);
-            panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnLogin);
             panel1.Location = new Point(47, 190);
             panel1.Name = "panel1";
             panel1.Size = new Size(340, 308);
             panel1.TabIndex = 9;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Silver;
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(52, 208);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 31);
+            btnCancelar.TabIndex = 12;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnMostrarClave
             // 
@@ -207,9 +207,10 @@
             // 
             imgPrincipal.Anchor = AnchorStyles.None;
             imgPrincipal.Image = (Image)resources.GetObject("imgPrincipal.Image");
-            imgPrincipal.Location = new Point(68, 33);
+            imgPrincipal.Location = new Point(-131, -58);
             imgPrincipal.Name = "imgPrincipal";
-            imgPrincipal.Size = new Size(297, 113);
+            imgPrincipal.Size = new Size(693, 300);
+            imgPrincipal.SizeMode = PictureBoxSizeMode.Zoom;
             imgPrincipal.TabIndex = 11;
             imgPrincipal.TabStop = false;
             // 
@@ -219,13 +220,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(436, 543);
-            Controls.Add(imgPrincipal);
             Controls.Add(panel1);
+            Controls.Add(imgPrincipal);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             Text = "American Airlines";
             Load += FrmLogin_Load;
+            VisibleChanged += FrmLogin_VisibleChanged;
             ((System.ComponentModel.ISupportInitialize)imgAlerta).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -243,7 +245,6 @@
         private Label lblPass;
         private TextBox txtCorreo;
         private Button btnLogin;
-        private Button btnCancelar;
         private Label lblAlerta;
         private PictureBox imgAlerta;
         private Panel panel1;
@@ -254,5 +255,6 @@
         private Panel panel3;
         private PictureBox btnMostrarClave;
         private ToolTip toolTip1;
+        public Button btnCancelar;
     }
 }

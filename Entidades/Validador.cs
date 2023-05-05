@@ -15,21 +15,27 @@ namespace Entidades {
         }
 
         public static int ValidarDni(int dni) {
-            if(dni < 1 || dni > 99999999) {
+            if (dni < 1 || dni > 99999999) {
                 throw new Exception("DNI no valido.");
             }
 
-            if(Sistema.ListaPasajeros != null) {
+            if (Sistema.ListaPasajeros != null) {
+                ValidarDniUnico(dni);
+            }
+
+            return dni;
+        }
+
+        public static void ValidarDniUnico(int dni) {
+            if (Sistema.ListaPasajeros != null) {
                 foreach (Pasajero pasajero in Sistema.ListaPasajeros) {
                     if (pasajero.Dni == dni) {
                         throw new Exception("Ya existe un pasajero registrado con ese DNI.");
                     }
                 }
             }
-
-            return dni;
         }
-
+        
         public static int CalcularEdad(DateTime fechaDeNacimiento) {
             int edad = DateTime.Now.Year - fechaDeNacimiento.Year;
 
@@ -50,10 +56,25 @@ namespace Entidades {
 
         public static int ValidarNumeroPositivo(int numero) {
             if (!(numero > 0)) {
-                throw new Exception("No se permite el ingreso de numeros negativos.");
+                throw new Exception("Campos numericos no validos.");
             }
 
             return numero;
+        }
+
+        public static bool ValidarMatriculaUnica(string matricula) {
+            bool seRepite = false;
+
+            if(Sistema.ListaAeronaves != null) {
+                foreach(Aeronave aeronave in Sistema.ListaAeronaves) {
+                    if(aeronave.Matricula == matricula) {
+                        seRepite = true; 
+                        break;
+                    }
+                }
+            }
+
+            return seRepite;
         }
     }
 }

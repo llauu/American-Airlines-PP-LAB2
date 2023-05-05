@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades {
     public class Vuelo {
         private const int precioHoraVueloNacionalTurista = 50;
-        private const int precioHoraVueloInternacionalTurista = 50;
+        private const int precioHoraVueloInternacionalTurista = 100;
 
         private int idVuelo;
         private string? ciudadPartida;
@@ -20,8 +20,8 @@ namespace Entidades {
         private List<Pasajero> listaPasajeros;
 
         private Vuelo() {
-            this.listaPasajeros = new List<Pasajero>();
             this.idVuelo = GenerarIdVuelo();
+            this.listaPasajeros = new List<Pasajero>();
         }
 
         public Vuelo(string ciudadPartida, string ciudadDestino, DateTime fechaDeVuelo, Aeronave avion, int cantAsientosPremium, int cantAsientosTurista, int duracionVuelo) :this() {
