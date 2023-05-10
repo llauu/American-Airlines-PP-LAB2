@@ -6,56 +6,53 @@ using System.Threading.Tasks;
 
 namespace Entidades {
     public class Vuelo {
-        private const int precioHoraVueloNacionalTurista = 50;
-        private const int precioHoraVueloInternacionalTurista = 100;
+        private static int precioHoraVueloNacionalTurista = 50;
+        private static int precioHoraVueloInternacionalTurista = 100;
 
         private int idVuelo;
         private string? ciudadPartida;
         private string? ciudadDestino;
         private DateTime fechaDeVuelo;
         private Aeronave? avion;
+        private EEstadoVuelo estadoDelVuelo;
         private int cantAsientosPremium;
         private int cantAsientosTurista;
         private int duracionVuelo;
         private List<Pasajero> listaPasajeros;
 
         private Vuelo() {
-            this.idVuelo = GenerarIdVuelo();
+            this.idVuelo = ObtenerIdVueloUnico();
             this.listaPasajeros = new List<Pasajero>();
+            this.estadoDelVuelo = EEstadoVuelo.EnTierra;
         }
 
-        public Vuelo(string ciudadPartida, string ciudadDestino, DateTime fechaDeVuelo, Aeronave avion, int cantAsientosPremium, int cantAsientosTurista, int duracionVuelo) :this() {
+        public Vuelo(string ciudadPartida, string ciudadDestino, DateTime fechaDeVuelo, Aeronave avion, int cantAsientos) : this() {
             this.ciudadPartida = ciudadPartida;
             this.ciudadDestino = ciudadDestino;
             this.fechaDeVuelo = fechaDeVuelo;
             this.avion = avion;
-            this.cantAsientosPremium = cantAsientosPremium;
-            this.cantAsientosTurista = cantAsientosTurista;
-            this.duracionVuelo = duracionVuelo;
+            CalcularAsientosPremiumYTurista(cantAsientos, out this.cantAsientosPremium, out this.cantAsientosTurista);
         }
 
-        private int GenerarIdVuelo() {
+        public int IdVuelo { get { return this.idVuelo; } }
+
+        private int ObtenerIdVueloUnico() {
             Random rand = new Random();
             int idGenerado;
-            bool idRepetido = false;
 
             do {
-                idGenerado = rand.Next(100000, 1000000);
-
-                if (Sistema.ListaVuelos != null) {
-                    foreach (Vuelo vuelo in Sistema.ListaVuelos) {
-                        if (vuelo.idVuelo == idGenerado) {
-                            idRepetido = true;
-                            break;
-                        }
-                    }
-                }                    
-            } while (idRepetido);
+                idGenerado = Sistema.GenerarIdNumerico();                    
+            } while (Validador.ValidarIdVueloUnico(idGenerado));
             
             return idGenerado;
         }
 
 
+        private void CalcularAsientosPremiumYTurista(int cantAsientos, out int cantPremium, out int cantTurista) {
+            cantAsientos = Validador.ValidarNumeroPositivo(cantAsientos);
 
+            cantPremium = (int)Math.Floor(cantAsientos / 0.2);
+            cantTurista = cantAsientos - cantPremium;
+        }
     }
 }

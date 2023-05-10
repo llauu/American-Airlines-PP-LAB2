@@ -55,6 +55,7 @@
             // 
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.Location = new Point(66, 446);
+            btnCancelar.TabIndex = 9;
             // 
             // label2
             // 
@@ -89,7 +90,7 @@
             checkInternet.Location = new Point(23, 244);
             checkInternet.Name = "checkInternet";
             checkInternet.Size = new Size(98, 19);
-            checkInternet.TabIndex = 4;
+            checkInternet.TabIndex = 7;
             checkInternet.Text = "Tiene internet";
             checkInternet.UseVisualStyleBackColor = true;
             // 
@@ -99,7 +100,7 @@
             checkComida.Location = new Point(23, 219);
             checkComida.Name = "checkComida";
             checkComida.Size = new Size(97, 19);
-            checkComida.TabIndex = 5;
+            checkComida.TabIndex = 6;
             checkComida.Text = "Tiene comida";
             checkComida.UseVisualStyleBackColor = true;
             // 
@@ -109,8 +110,8 @@
             txtCantAsientos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCantAsientos.Location = new Point(3, 3);
             txtCantAsientos.Name = "txtCantAsientos";
-            txtCantAsientos.Size = new Size(200, 18);
-            txtCantAsientos.TabIndex = 6;
+            txtCantAsientos.Size = new Size(225, 18);
+            txtCantAsientos.TabIndex = 1;
             // 
             // txtCantBanios
             // 
@@ -118,8 +119,8 @@
             txtCantBanios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCantBanios.Location = new Point(3, 3);
             txtCantBanios.Name = "txtCantBanios";
-            txtCantBanios.Size = new Size(200, 18);
-            txtCantBanios.TabIndex = 7;
+            txtCantBanios.Size = new Size(225, 18);
+            txtCantBanios.TabIndex = 3;
             // 
             // txtCantBodega
             // 
@@ -127,8 +128,8 @@
             txtCantBodega.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCantBodega.Location = new Point(3, 3);
             txtCantBodega.Name = "txtCantBodega";
-            txtCantBodega.Size = new Size(200, 18);
-            txtCantBodega.TabIndex = 8;
+            txtCantBodega.Size = new Size(225, 18);
+            txtCantBodega.TabIndex = 5;
             // 
             // btnAceptar
             // 
@@ -141,7 +142,7 @@
             btnAceptar.Location = new Point(245, 446);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(100, 31);
-            btnAceptar.TabIndex = 58;
+            btnAceptar.TabIndex = 10;
             btnAceptar.Text = "Agregar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
@@ -210,7 +211,7 @@
             panel1.Location = new Point(66, 92);
             panel1.Name = "panel1";
             panel1.Size = new Size(279, 326);
-            panel1.TabIndex = 63;
+            panel1.TabIndex = 8;
             // 
             // panel4
             // 
@@ -219,7 +220,7 @@
             panel4.Location = new Point(23, 172);
             panel4.Name = "panel4";
             panel4.Size = new Size(231, 23);
-            panel4.TabIndex = 59;
+            panel4.TabIndex = 4;
             // 
             // panel3
             // 
@@ -228,7 +229,7 @@
             panel3.Location = new Point(23, 105);
             panel3.Name = "panel3";
             panel3.Size = new Size(231, 23);
-            panel3.TabIndex = 58;
+            panel3.TabIndex = 2;
             // 
             // panel2
             // 
@@ -237,7 +238,7 @@
             panel2.Location = new Point(23, 43);
             panel2.Name = "panel2";
             panel2.Size = new Size(231, 23);
-            panel2.TabIndex = 57;
+            panel2.TabIndex = 0;
             // 
             // imgError
             // 

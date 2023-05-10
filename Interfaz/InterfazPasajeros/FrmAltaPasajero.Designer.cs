@@ -55,6 +55,7 @@
             // 
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.Location = new Point(66, 446);
+            btnCancelar.TabIndex = 8;
             // 
             // txtDni
             // 
@@ -62,8 +63,8 @@
             txtDni.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtDni.Location = new Point(3, 2);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(195, 18);
-            txtDni.TabIndex = 48;
+            txtDni.Size = new Size(225, 18);
+            txtDni.TabIndex = 6;
             // 
             // lblError
             // 
@@ -113,8 +114,8 @@
             txtNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtNombre.Location = new Point(3, 3);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(195, 18);
-            txtNombre.TabIndex = 40;
+            txtNombre.Size = new Size(225, 18);
+            txtNombre.TabIndex = 4;
             // 
             // label2
             // 
@@ -132,8 +133,8 @@
             txtApellido.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtApellido.Location = new Point(3, 3);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(192, 18);
-            txtApellido.TabIndex = 37;
+            txtApellido.Size = new Size(225, 18);
+            txtApellido.TabIndex = 2;
             // 
             // label1
             // 
@@ -153,7 +154,7 @@
             dateFechaNacimiento.Location = new Point(23, 240);
             dateFechaNacimiento.Name = "dateFechaNacimiento";
             dateFechaNacimiento.Size = new Size(231, 23);
-            dateFechaNacimiento.TabIndex = 49;
+            dateFechaNacimiento.TabIndex = 7;
             // 
             // btnAceptar
             // 
@@ -166,7 +167,7 @@
             btnAceptar.Location = new Point(245, 446);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(100, 31);
-            btnAceptar.TabIndex = 50;
+            btnAceptar.TabIndex = 9;
             btnAceptar.Text = "Agregar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
@@ -187,7 +188,7 @@
             panel1.Location = new Point(66, 92);
             panel1.Name = "panel1";
             panel1.Size = new Size(279, 326);
-            panel1.TabIndex = 51;
+            panel1.TabIndex = 0;
             // 
             // imgError
             // 
@@ -207,7 +208,7 @@
             panel4.Location = new Point(23, 172);
             panel4.Name = "panel4";
             panel4.Size = new Size(231, 23);
-            panel4.TabIndex = 2;
+            panel4.TabIndex = 5;
             // 
             // panel3
             // 
@@ -216,7 +217,7 @@
             panel3.Location = new Point(23, 105);
             panel3.Name = "panel3";
             panel3.Size = new Size(231, 23);
-            panel3.TabIndex = 2;
+            panel3.TabIndex = 3;
             // 
             // panel2
             // 

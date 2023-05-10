@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPasajeros));
             dataGridPasajeros = new DataGridView();
             btnAgregar = new PictureBox();
@@ -55,17 +55,17 @@
             dataGridPasajeros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridPasajeros.BackgroundColor = SystemColors.Menu;
             dataGridPasajeros.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridPasajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridPasajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridPasajeros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridPasajeros.EnableHeadersVisualStyles = false;
-            dataGridPasajeros.Location = new Point(44, 79);
+            dataGridPasajeros.Location = new Point(45, 82);
             dataGridPasajeros.MultiSelect = false;
             dataGridPasajeros.Name = "dataGridPasajeros";
             dataGridPasajeros.ReadOnly = true;
@@ -83,7 +83,7 @@
             btnAgregar.BackColor = Color.Gainsboro;
             btnAgregar.Cursor = Cursors.Hand;
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
-            btnAgregar.Location = new Point(640, 79);
+            btnAgregar.Location = new Point(641, 82);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(50, 50);
             btnAgregar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@
             btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.Cursor = Cursors.Hand;
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.Location = new Point(640, 135);
+            btnEliminar.Location = new Point(641, 138);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(50, 50);
             btnEliminar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -109,7 +109,7 @@
             btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEditar.Cursor = Cursors.Hand;
             btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
-            btnEditar.Location = new Point(640, 191);
+            btnEditar.Location = new Point(641, 194);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(50, 50);
             btnEditar.SizeMode = PictureBoxSizeMode.Zoom;

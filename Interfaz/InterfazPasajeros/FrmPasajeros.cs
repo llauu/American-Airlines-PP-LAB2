@@ -80,8 +80,9 @@ namespace Interfaz {
         }
 
         private static void ActualizarDataGridView(DataGridView dataGridView) {
+            dataGridView.DataSource = null;
+
             if (Sistema.ListaPasajeros != null && Sistema.ListaPasajeros.Count > 0) {
-                dataGridView.DataSource = null;
                 dataGridView.DataSource = Sistema.ListaPasajeros;
 
                 dataGridView.Columns["Apellido"].DisplayIndex = 0;
@@ -91,9 +92,6 @@ namespace Interfaz {
                 dataGridView.Columns["Edad"].DisplayIndex = 4;
 
                 dataGridView.Columns["FechaDeNacimiento"].HeaderText = "Fecha de nacimiento";
-            }
-            else {
-                dataGridView.DataSource = null;
             }
         }
     }

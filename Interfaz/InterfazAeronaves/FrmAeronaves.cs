@@ -74,9 +74,10 @@ namespace Interfaz {
             }
         }
 
-        private static void ActualizarDataGridView(DataGridView dataGridView) {
+        public static void ActualizarDataGridView(DataGridView dataGridView) {
+            dataGridView.DataSource = null;
+
             if (Sistema.ListaAeronaves != null && Sistema.ListaAeronaves.Count > 0) {
-                dataGridView.DataSource = null;
                 dataGridView.DataSource = Sistema.ListaAeronaves;
 
                 dataGridView.Columns["CantAsientos"].HeaderText = "Cantidad de asientos";
@@ -84,9 +85,7 @@ namespace Interfaz {
                 dataGridView.Columns["OfreceInternet"].HeaderText = "Ofrece internet";
                 dataGridView.Columns["OfreceComida"].HeaderText = "Ofrece comida";
                 dataGridView.Columns["CapacidadBodega"].HeaderText = "Capacidad de bodega (kg)";
-            }
-            else {
-                dataGridView.DataSource = null;
+                dataGridView.Columns["EnVuelo"].HeaderText = "En vuelo";
             }
         }
     }

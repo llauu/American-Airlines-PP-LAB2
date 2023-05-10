@@ -15,7 +15,7 @@ namespace Entidades {
         }
 
         public static int ValidarDni(int dni) {
-            if (dni < 1 || dni > 99999999) {
+            if (dni < 3000000 || dni > 99999999) {
                 throw new Exception("DNI no valido.");
             }
 
@@ -30,7 +30,7 @@ namespace Entidades {
             if (Sistema.ListaPasajeros != null) {
                 foreach (Pasajero pasajero in Sistema.ListaPasajeros) {
                     if (pasajero.Dni == dni) {
-                        throw new Exception("Ya existe un pasajero registrado con ese DNI.");
+                        throw new Exception("Ya existe un pasajero con ese DNI.");
                     }
                 }
             }
@@ -76,5 +76,21 @@ namespace Entidades {
 
             return seRepite;
         }
+
+        public static bool ValidarIdVueloUnico(int id) {
+            bool seRepite = false;
+
+            if (Sistema.ListaVuelos != null) {
+                foreach (Vuelo vuelo in Sistema.ListaVuelos) {
+                    if (vuelo.IdVuelo == id) {
+                        seRepite = true;
+                        break;
+                    }
+                }
+            }
+
+            return seRepite;
+        }
+
     }
 }

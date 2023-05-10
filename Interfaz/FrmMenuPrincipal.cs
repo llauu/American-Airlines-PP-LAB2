@@ -11,32 +11,43 @@ using System.Windows.Forms;
 
 namespace Interfaz {
     public partial class FrmMenuPrincipal : Form {
-        private FrmLogin formLogin;
+        private FrmLogin? formLogin;
         private Form? formOpcionActiva;
-        bool cerrandoSesion;
+        private bool cerrandoSesion;
 
-        public FrmMenuPrincipal(Usuario usuarioActivo, FrmLogin formLogin) {
+        private FrmMenuPrincipal() {
             InitializeComponent();
-
-            string fechaHoy = DateTime.UtcNow.ToString("d");
 
             this.StartPosition = FormStartPosition.CenterScreen;
             this.toolTip1.SetToolTip(btnCerrarSesion, "Cerrar sesion");
             this.toolTip1.SetToolTip(imgLogo, "Inicio");
+        }
 
-            this.lblFecha.Text = fechaHoy;
-
-            this.MinimumSize = new Size(894, 565);
+        public FrmMenuPrincipal(Usuario usuarioActivo, FrmLogin formLogin) :this() {
+            string fechaHoy = DateTime.UtcNow.ToString("d");
 
             CargarPerfilUsuario(usuarioActivo);
 
+            this.lblFecha.Text = fechaHoy;
+            this.MinimumSize = new Size(894, 565);
             this.lblPerfil.Text = $"{usuarioActivo.Nombre} {usuarioActivo.Apellido}";
             this.cerrandoSesion = false;
             this.formLogin = formLogin;
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e) {
-            AbrirFormOpcionElegida(new FrmInicio());
+            try {
+                Sistema.CargarAvionesJson();
+
+
+
+                AbrirFormOpcionElegida(new FrmInicio());
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"Error al cargar los archivos. Se cerrara la aplicacion. \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Application.Exit();
+            }
         }
 
         private void CargarPerfilUsuario(Usuario usuario) {
@@ -61,6 +72,7 @@ namespace Interfaz {
                     break;
 
                 default:
+                    // Desactivo todos los botones por si se llega a ingresar sin ningun perfil
                     foreach (Control item in panelMenuNav.Controls) {
                         item.Enabled = false;
                     }
@@ -118,34 +130,12 @@ namespace Interfaz {
             AbrirFormOpcionElegida(new FrmAeronaves());
         }
 
-        private void RedimensionarFuenteBoton(Button boton, Single tam) {
-            boton.Font = new Font("Segoe UI", tam, FontStyle.Regular, GraphicsUnit.Point);
-        }
-
         private void FrmMenuPrincipal_Resize(object sender, EventArgs e) {
             if (this.Size.Width > 1000 && this.Size.Height > 800) {
-                this.panelMenuArriba.Height = 55;
-                this.panelMenuNav.Width = 210;
-                this.lblOpcionActiva.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-
-                foreach(Control item in this.panelMenuNav.Controls) {
-                    if(item is Button) {
-                        RedimensionarFuenteBoton((Button)item, 12F);
-                    }
-                }
+                CambiarTamanioControles(55, 210, 20F, 12F);
             }
             else {
-                if (this.Size.Width < 1000 && this.Size.Height < 800) {
-                    this.panelMenuArriba.Height = 45;
-                    this.panelMenuNav.Width = 176;
-                    this.lblOpcionActiva.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-
-                    foreach (Control item in this.panelMenuNav.Controls) {
-                        if (item is Button) {
-                            RedimensionarFuenteBoton((Button)item, 10F);
-                        }
-                    }
-                }
+                CambiarTamanioControles(45, 176, 16F, 10F);
             }
         }
 
@@ -157,16 +147,26 @@ namespace Interfaz {
             btnPasajeros.BackColor = Color.Transparent;
             btnAeronaves.BackColor = Color.Transparent;
         }
-
+        
         private void ActualizarOpcionActiva(Button opcion) {
             ReiniciarFondoOpciones();
             ActualizarTitulo(opcion.Text);
             opcion.BackColor = Color.LightSteelBlue;
         }
 
-        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e) {
-            if (!cerrandoSesion) {
-                Application.Exit();
+        private void RedimensionarFuenteBoton(Button boton, Single tam) {
+            boton.Font = new Font("Segoe UI", tam, FontStyle.Regular, GraphicsUnit.Point);
+        }
+
+        private void CambiarTamanioControles(int alturaMenuArriba, int anchoMenuNav, Single tamFuenteTitulo, Single tamFuenteBoton) {
+            this.panelMenuArriba.Height = alturaMenuArriba;
+            this.panelMenuNav.Width = anchoMenuNav;
+            this.lblOpcionActiva.Font = new Font("Segoe UI", tamFuenteTitulo, FontStyle.Bold, GraphicsUnit.Point);
+
+            foreach (Control item in this.panelMenuNav.Controls) {
+                if (item is Button) {
+                    RedimensionarFuenteBoton((Button)item, tamFuenteBoton);
+                }
             }
         }
 
@@ -185,6 +185,14 @@ namespace Interfaz {
             }
             catch (Exception ex) {
                 MessageBox.Show($"Error inesperado. \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e) {
+            Sistema.GuardarAvionesJson();
+
+            if (!cerrandoSesion) {
+                Application.Exit();
             }
         }
     }

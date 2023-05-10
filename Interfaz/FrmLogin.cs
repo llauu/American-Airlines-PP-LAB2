@@ -86,8 +86,9 @@ namespace Interfaz {
                 menuPrincipal.Show();
             }
         }
-
+         
         private void FrmLogin_VisibleChanged(object sender, EventArgs e) {
+            // Reinicio los campos de texto cuando se muestra nuevamente el login con .Show()
             this.txtCorreo.Text = "";
             this.txtClave.Text = "";
         }

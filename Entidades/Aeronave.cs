@@ -12,9 +12,11 @@ namespace Entidades {
         private bool ofreceInternet;
         private bool ofreceComida;
         private int capacidadBodega;
+        private bool enVuelo;
 
         private Aeronave() {
-            this.matricula = GenerarIdAlfanumerico();
+            this.matricula = ObtenerMatriculaUnica();
+            this.enVuelo = false;
         }
 
         public Aeronave(int cantAsientos, int cantBanios, bool ofreceInternet, bool ofreceComida, int capacidadBodega) :this() {
@@ -25,28 +27,23 @@ namespace Entidades {
             this.capacidadBodega = Validador.ValidarNumeroPositivo(capacidadBodega);
         }
 
-        public string Matricula { get { return this.matricula; } }
+        public string Matricula { get { return this.matricula; } set { this.matricula = value; } }
         public int CantAsientos { get {  return this.cantAsientos; } set { this.cantAsientos = value; } }
         public int CantBanios { get {  return this.cantBanios; } set { this.cantBanios = value; } }
         public bool OfreceInternet { get { return this.ofreceInternet; } set { this.ofreceInternet = value; } }
         public bool OfreceComida { get { return this.ofreceComida; } set { this.ofreceComida = value; } }
         public int CapacidadBodega { get { return this.capacidadBodega; } set { this.capacidadBodega = value; } }
+        public bool EnVuelo { get { return this.enVuelo; } set { this.enVuelo = value; } }
 
-        private string GenerarIdAlfanumerico() {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            char[] arrayAlfanumerico = new char[8];
-            string idAlfanumericoUnico;
+
+        private string ObtenerMatriculaUnica() {
+            string matriculaAlfanumerica;
 
             do {
-                for (int i = 0; i < arrayAlfanumerico.Length; i++) {
-                    arrayAlfanumerico[i] = chars[random.Next(chars.Length)];
-                }
+                matriculaAlfanumerica = Sistema.GenerarIdAlfanumerico();
+            } while (Validador.ValidarMatriculaUnica(matriculaAlfanumerica));
 
-                idAlfanumericoUnico = new string(arrayAlfanumerico);
-            } while (Validador.ValidarMatriculaUnica(idAlfanumericoUnico));
-            
-            return idAlfanumericoUnico;
+            return matriculaAlfanumerica;
         }
 
         public override string ToString() {

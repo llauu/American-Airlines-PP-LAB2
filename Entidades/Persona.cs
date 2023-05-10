@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades {
-    public abstract class Persona {
+    public class Persona {
         protected string apellido;
         protected string nombre;
 
