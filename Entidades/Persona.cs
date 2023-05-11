@@ -9,7 +9,12 @@ namespace Entidades {
         protected string apellido;
         protected string nombre;
 
-        protected Persona(string apellido, string nombre) {
+        protected Persona() {
+            this.apellido = String.Empty;
+            this.nombre = String.Empty;
+        }
+        
+        protected Persona(string apellido, string nombre) : this() {
             this.apellido = Validador.ValidarCadena(apellido);
             this.nombre = Validador.ValidarCadena(nombre);
         }

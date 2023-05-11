@@ -37,9 +37,8 @@ namespace Interfaz {
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e) {
             try {
-                Sistema.CargarAvionesJson();
-
-
+                Sistema.CargarArchivos();
+                Sistema.ChequearEstadoVuelos();
 
                 AbrirFormOpcionElegida(new FrmInicio());
             }
@@ -83,7 +82,7 @@ namespace Interfaz {
         private void btnCerrarSesion_Click(object sender, EventArgs e) {
             DialogResult rta = MessageBox.Show("Estas seguro que deseas cerrar sesion?", "Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.Yes) {
+            if (rta == DialogResult.Yes && formLogin != null) {
                 cerrandoSesion = true;
                 formLogin.Show();
                 this.Close();
@@ -189,9 +188,15 @@ namespace Interfaz {
         }
 
         private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e) {
-            Sistema.GuardarAvionesJson();
+            try {
+                Sistema.EscribirArchivos();
 
-            if (!cerrandoSesion) {
+                if (!cerrandoSesion) {
+                    Application.Exit();
+                }
+            }
+            catch(Exception ex) {
+                MessageBox.Show($"Error al guardar los archivos. Se cerrara la aplicacion. \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
         }

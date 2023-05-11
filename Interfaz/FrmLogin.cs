@@ -13,7 +13,7 @@ namespace Interfaz {
 
         private void FrmLogin_Load(object sender, EventArgs e) {
             try {
-                Sistema.CargarUsuariosJson();
+                Sistema.CargarUsuarios();
             }
             catch (Exception ex) {
                 MessageBox.Show($"Error al cargar el archivo json de usuarios. Se cerrara la aplicacion. \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

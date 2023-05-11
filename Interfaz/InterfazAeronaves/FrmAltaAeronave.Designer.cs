@@ -151,27 +151,27 @@
             // 
             flowLayoutPanel4.BackColor = Color.FromArgb(57, 57, 57);
             flowLayoutPanel4.Dock = DockStyle.Bottom;
-            flowLayoutPanel4.Location = new Point(12, 501);
+            flowLayoutPanel4.Location = new Point(8, 505);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(389, 12);
+            flowLayoutPanel4.Size = new Size(397, 8);
             flowLayoutPanel4.TabIndex = 62;
             // 
             // flowLayoutPanel3
             // 
             flowLayoutPanel3.BackColor = Color.FromArgb(57, 57, 57);
             flowLayoutPanel3.Dock = DockStyle.Left;
-            flowLayoutPanel3.Location = new Point(0, 12);
+            flowLayoutPanel3.Location = new Point(0, 8);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(12, 501);
+            flowLayoutPanel3.Size = new Size(8, 505);
             flowLayoutPanel3.TabIndex = 61;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.BackColor = Color.FromArgb(57, 57, 57);
             flowLayoutPanel2.Dock = DockStyle.Right;
-            flowLayoutPanel2.Location = new Point(401, 12);
+            flowLayoutPanel2.Location = new Point(405, 8);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(12, 501);
+            flowLayoutPanel2.Size = new Size(8, 505);
             flowLayoutPanel2.TabIndex = 60;
             // 
             // flowLayoutPanel1
@@ -180,7 +180,7 @@
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(413, 12);
+            flowLayoutPanel1.Size = new Size(413, 8);
             flowLayoutPanel1.TabIndex = 59;
             // 
             // label1

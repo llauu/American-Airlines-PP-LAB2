@@ -41,18 +41,23 @@ namespace Interfaz {
 
         private void btnEditar_Click(object sender, EventArgs e) {
             if (this.dataGridAeronaves.Rows.Count > 0) {
-                FrmEditarAeronave frmEditar = new FrmEditarAeronave((Aeronave)dataGridAeronaves.CurrentRow.DataBoundItem);
+                Aeronave aeronaveAEditar = (Aeronave)dataGridAeronaves.CurrentRow.DataBoundItem;
 
-                DialogResult res = frmEditar.ShowDialog();
+                if (!aeronaveAEditar.VueloProgramado) {
+                    FrmEditarAeronave frmEditar = new FrmEditarAeronave(aeronaveAEditar);
 
-                if (res == DialogResult.OK) {
-                    ActualizarDataGridView(dataGridAeronaves);
+                    DialogResult res = frmEditar.ShowDialog();
+
+                    if (res == DialogResult.OK) {
+                        ActualizarDataGridView(dataGridAeronaves);
+                    }
+                }
+                else {
+                    ActualizarMensajeDeError("La aeronave que se esta queriendo editar tiene un vuelo programado.");
                 }
             }
             else {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = "No hay pasajeros cargados para editar.";
+                ActualizarMensajeDeError("No hay aeronaves cargadas para editar.");
             }
         }
 
@@ -60,17 +65,20 @@ namespace Interfaz {
             if (this.dataGridAeronaves.Rows.Count > 0) {
                 Aeronave aeronaveAEliminar = (Aeronave)dataGridAeronaves.CurrentRow.DataBoundItem;
 
-                DialogResult res = MessageBox.Show($"Se va a eliminar la aeronave: \n{aeronaveAEliminar}\nEsta seguro?", "Eliminar aeronave", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (!aeronaveAEliminar.VueloProgramado) {
+                    DialogResult res = MessageBox.Show($"Se va a eliminar la aeronave: \n{aeronaveAEliminar}\nEsta seguro?", "Eliminar aeronave", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
-                if (res == DialogResult.Yes) {
-                    Sistema.BajaAeronave(aeronaveAEliminar);
-                    ActualizarDataGridView(dataGridAeronaves);
+                    if (res == DialogResult.Yes) {
+                        Sistema.BajaAeronave(aeronaveAEliminar);
+                        ActualizarDataGridView(dataGridAeronaves);
+                    }
+                }
+                else {
+                    ActualizarMensajeDeError("La aeronave que se esta queriendo eliminar tiene un vuelo programado.");
                 }
             }
             else {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = "No hay pasajeros cargados para eliminar.";
+                ActualizarMensajeDeError("No hay aeronaves cargadas para eliminar.");
             }
         }
 
@@ -85,8 +93,14 @@ namespace Interfaz {
                 dataGridView.Columns["OfreceInternet"].HeaderText = "Ofrece internet";
                 dataGridView.Columns["OfreceComida"].HeaderText = "Ofrece comida";
                 dataGridView.Columns["CapacidadBodega"].HeaderText = "Capacidad de bodega (kg)";
-                dataGridView.Columns["EnVuelo"].HeaderText = "En vuelo";
+                dataGridView.Columns["VueloProgramado"].HeaderText = "Vuelo programado";
             }
+        }
+
+        public void ActualizarMensajeDeError(string mensaje) {
+            this.imgError.Visible = true;
+            this.lblError.Visible = true;
+            this.lblError.Text = mensaje;
         }
     }
 }

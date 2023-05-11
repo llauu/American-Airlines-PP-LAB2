@@ -139,11 +139,10 @@
             // 
             // lblError
             // 
-            lblError.AutoSize = true;
             lblError.ForeColor = Color.IndianRed;
             lblError.Location = new Point(440, 36);
             lblError.Name = "lblError";
-            lblError.Size = new Size(40, 15);
+            lblError.Size = new Size(250, 40);
             lblError.TabIndex = 14;
             lblError.Text = "(error)";
             lblError.Visible = false;
@@ -195,7 +194,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

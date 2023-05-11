@@ -1,6 +1,1 @@
-[{"Apellido":"Gorgen","Nombre":"Corey","Legajo":1,"Correo":"cgorgen@vendedor.com","Clave":"123abc45","Perfil":"vendedor"},
-{"Apellido":"Harroll","Nombre":"Ingrid","Legajo":2,"Correo":"iharroll@vendedor.com","Clave":"qweasdzx","Perfil":"vendedor"},
-{"Apellido":"Harris","Nombre":"Steve","Legajo":3,"Correo":"sharris@maiden.com.uk","Clave":"eddie666","Perfil":"vendedor"},
-{"Apellido":"Robinson","Nombre":"Tilda","Legajo":4,"Correo":"trobinson@super.com","Clave":"12345678","Perfil":"supervisor"},
-{"Apellido":"Jordan","Nombre":"Michael","Legajo":5,"Correo":"admin@admin.com","Clave":"12345678","Perfil":"administrador"},
-{"Apellido":"Monserrat","Nombre":"Lautaro","Legajo":6,"Correo":"admin","Clave":"admin","Perfil":"administrador"}]
+[{"Legajo":1,"Correo":"cgorgen@vendedor.com","Clave":"123abc45","Perfil":"vendedor","Apellido":"Gorgen","Nombre":"Corey"},{"Legajo":2,"Correo":"iharroll@vendedor.com","Clave":"qweasdzx","Perfil":"vendedor","Apellido":"Harroll","Nombre":"Ingrid"},{"Legajo":3,"Correo":"sharris@maiden.com.uk","Clave":"eddie666","Perfil":"vendedor","Apellido":"Harris","Nombre":"Steve"},{"Legajo":4,"Correo":"trobinson@super.com","Clave":"12345678","Perfil":"supervisor","Apellido":"Robinson","Nombre":"Tilda"},{"Legajo":5,"Correo":"admin@admin.com","Clave":"12345678","Perfil":"administrador","Apellido":"Jordan","Nombre":"Michael"},{"Legajo":6,"Correo":"admin","Clave":"admin","Perfil":"administrador","Apellido":"Monserrat","Nombre":"Lautaro"}]

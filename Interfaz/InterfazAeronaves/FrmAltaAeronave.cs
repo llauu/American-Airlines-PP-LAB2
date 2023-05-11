@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Interfaz.InterfazAeronaves {
     public partial class FrmAltaAeronave : FrmBotonCancelar {
-        Aeronave? aeronaveAgregada;
+        private Aeronave? aeronaveAgregada;
 
         public Aeronave AeronaveAgregada {
             get { return this.aeronaveAgregada!; }

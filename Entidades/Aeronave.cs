@@ -12,19 +12,19 @@ namespace Entidades {
         private bool ofreceInternet;
         private bool ofreceComida;
         private int capacidadBodega;
-        private bool enVuelo;
+        private bool vueloProgramado;
 
         private Aeronave() {
             this.matricula = ObtenerMatriculaUnica();
-            this.enVuelo = false;
+            this.vueloProgramado = false;
         }
 
         public Aeronave(int cantAsientos, int cantBanios, bool ofreceInternet, bool ofreceComida, int capacidadBodega) :this() {
+            this.capacidadBodega = Validador.ValidarNumeroPositivo(capacidadBodega);
             this.cantAsientos = Validador.ValidarNumeroPositivo(cantAsientos);
             this.cantBanios = Validador.ValidarNumeroPositivo(cantBanios);
             this.ofreceInternet = ofreceInternet;
             this.ofreceComida = ofreceComida;
-            this.capacidadBodega = Validador.ValidarNumeroPositivo(capacidadBodega);
         }
 
         public string Matricula { get { return this.matricula; } set { this.matricula = value; } }
@@ -33,7 +33,7 @@ namespace Entidades {
         public bool OfreceInternet { get { return this.ofreceInternet; } set { this.ofreceInternet = value; } }
         public bool OfreceComida { get { return this.ofreceComida; } set { this.ofreceComida = value; } }
         public int CapacidadBodega { get { return this.capacidadBodega; } set { this.capacidadBodega = value; } }
-        public bool EnVuelo { get { return this.enVuelo; } set { this.enVuelo = value; } }
+        public bool VueloProgramado { get { return this.vueloProgramado; } set { this.vueloProgramado = value; } }
 
 
         private string ObtenerMatriculaUnica() {
@@ -54,7 +54,7 @@ namespace Entidades {
             sb.AppendLine($"Cantidad de baños: {this.cantBanios}");
             sb.AppendLine($"Ofrece internet: {this.ofreceInternet}");
             sb.AppendLine($"Ofrece comida: {this.ofreceComida}");
-            sb.AppendLine($"Capacidad de bodega (kg): {this.capacidadBodega}");
+            sb.AppendLine($"Capacidad de bodega: {this.capacidadBodega}kg");
 
             return sb.ToString();
         }

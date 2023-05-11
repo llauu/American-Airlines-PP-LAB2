@@ -10,6 +10,9 @@ namespace Entidades {
         private int edad;
         private DateTime fechaDeNacimiento;
 
+        // Constructor sin parametros para serializar xml
+        public Pasajero() {}
+
         public Pasajero(string apellido, string nombre, int dni, DateTime fechaDeNacimiento) : base(apellido, nombre) {
             this.dni = Validador.ValidarDni(dni);
             this.fechaDeNacimiento = Validador.ValidarFechaDeNacimiento(fechaDeNacimiento);

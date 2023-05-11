@@ -36,6 +36,7 @@
             btnAgregar = new PictureBox();
             dataGridViajes = new DataGridView();
             toolTip1 = new ToolTip(components);
+            btnInfoAvion = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)imgBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgError).BeginInit();
             panel1.SuspendLayout();
@@ -43,6 +44,7 @@
             ((System.ComponentModel.ISupportInitialize)btnEliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViajes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnInfoAvion).BeginInit();
             SuspendLayout();
             // 
             // imgBuscar
@@ -78,12 +80,11 @@
             // 
             // lblError
             // 
-            lblError.AutoSize = true;
             lblError.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblError.ForeColor = Color.IndianRed;
             lblError.Location = new Point(439, 37);
             lblError.Name = "lblError";
-            lblError.Size = new Size(40, 15);
+            lblError.Size = new Size(252, 42);
             lblError.TabIndex = 23;
             lblError.Text = "(error)";
             lblError.Visible = false;
@@ -120,6 +121,7 @@
             btnEliminar.SizeMode = PictureBoxSizeMode.Zoom;
             btnEliminar.TabIndex = 19;
             btnEliminar.TabStop = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
@@ -167,12 +169,26 @@
             dataGridViajes.TabStop = false;
             dataGridViajes.VirtualMode = true;
             // 
+            // btnInfoAvion
+            // 
+            btnInfoAvion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnInfoAvion.Cursor = Cursors.Hand;
+            btnInfoAvion.Image = (Image)resources.GetObject("btnInfoAvion.Image");
+            btnInfoAvion.Location = new Point(641, 410);
+            btnInfoAvion.Name = "btnInfoAvion";
+            btnInfoAvion.Size = new Size(50, 50);
+            btnInfoAvion.SizeMode = PictureBoxSizeMode.Zoom;
+            btnInfoAvion.TabIndex = 25;
+            btnInfoAvion.TabStop = false;
+            btnInfoAvion.Click += btnInfoAvion_Click;
+            // 
             // FrmViajes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(702, 481);
+            Controls.Add(btnInfoAvion);
             Controls.Add(imgBuscar);
             Controls.Add(imgError);
             Controls.Add(lblError);
@@ -193,8 +209,8 @@
             ((System.ComponentModel.ISupportInitialize)btnEliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViajes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnInfoAvion).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -209,5 +225,6 @@
         private PictureBox btnAgregar;
         private DataGridView dataGridViajes;
         private ToolTip toolTip1;
+        private PictureBox btnInfoAvion;
     }
 }

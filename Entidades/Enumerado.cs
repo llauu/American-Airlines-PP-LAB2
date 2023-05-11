@@ -9,3 +9,7 @@ public enum ETipoClase {
     Premium
 }
 
+public enum ETipoVuelo {
+    Nacional,
+    Internacional
+}
