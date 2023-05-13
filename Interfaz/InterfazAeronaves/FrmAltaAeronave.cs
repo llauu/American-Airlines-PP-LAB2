@@ -27,11 +27,11 @@ namespace Interfaz.InterfazAeronaves {
             int cantBanios;
             bool ofreceInternet = this.checkInternet.Checked;
             bool ofreceComida = this.checkComida.Checked;
-            int capacidadBodega;
+            float capacidadBodega;
 
             int.TryParse(this.txtCantAsientos.Text, out cantAsientos);
             int.TryParse(this.txtCantBanios.Text, out cantBanios);
-            int.TryParse(this.txtCantBodega.Text, out capacidadBodega);
+            float.TryParse(this.txtCantBodega.Text, out capacidadBodega);
 
             this.imgError.Visible = false;
             this.lblError.Visible = false;

@@ -34,3 +34,4 @@ C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\n
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmBotonCancelar.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmAltaViaje.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazViajes.FrmInfoVuelo.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazViajes.FrmEditarViaje.resources

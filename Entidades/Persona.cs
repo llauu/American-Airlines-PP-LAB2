@@ -21,5 +21,14 @@ namespace Entidades {
 
         public string Apellido { get { return this.apellido; } set { this.apellido = value; } }
         public string Nombre { get { return this.nombre; } set { this.nombre = value; } }
+
+        public override string ToString() {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Nombre: {this.nombre}");
+            sb.AppendLine($"Apellido: {this.apellido}");
+
+            return sb.ToString();
+        }
     }
 }

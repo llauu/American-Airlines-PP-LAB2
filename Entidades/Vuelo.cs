@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades {
     public class Vuelo {
-        private static int precioHoraVueloNacionalTurista = 50;
-        private static int precioHoraVueloInternacionalTurista = 100;
+        private static int precioHoraVueloNacionalTurista;
+        private static int precioHoraVueloInternacionalTurista;
         private static List<string> destinosInternacionales;
 
         private int idVuelo;
@@ -23,7 +23,10 @@ namespace Entidades {
         private ETipoVuelo tipoVuelo;
 
         static Vuelo() {
-            destinosInternacionales = new List<string>() {
+        precioHoraVueloNacionalTurista = 50;
+        precioHoraVueloInternacionalTurista = 100;
+
+        destinosInternacionales = new List<string>() {
                 "Recife (Brasil)",
                 "Roma (Italia)",
                 "Acapulco (México)",
@@ -112,13 +115,36 @@ namespace Entidades {
             return duracionDelVuelo;
         }
 
+        public static bool operator ==(Vuelo v1, Vuelo v2) {
+            bool iguales = false;
+
+            if (v1 is not null && v2 is not null) {
+                iguales = v1.idVuelo == v2.idVuelo;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator !=(Vuelo v1, Vuelo v2) {
+            return !(v1 == v2);
+        }
+
+        public override bool Equals(object? obj) {
+            Vuelo? vuelo = obj as Vuelo;
+            return vuelo is not null && this == vuelo;
+        }
+
+        public override int GetHashCode() {
+            return this.idVuelo;
+        }
+
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine($"ID: {this.idVuelo}");
             sb.AppendLine($"Ciudad de partida: {this.ciudadPartida}");
             sb.AppendLine($"Ciudad de destino: {this.ciudadDestino}");
-            sb.AppendLine($"Fecha del vuelo: {this.fechaDeVuelo}");
+            sb.AppendLine($"Fecha del vuelo: {this.fechaDeVuelo.ToString("dd/MM/yyyy")}");
             sb.AppendLine($"Asientos premium: {this.cantAsientosPremium}");
             sb.AppendLine($"Asientos turista: {this.cantAsientosTurista}");
             sb.AppendLine($"Duracion del vuelo: {this.duracionVuelo}hs"); 

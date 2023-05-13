@@ -53,11 +53,11 @@ namespace Interfaz {
                     }
                 }
                 else {
-                    ActualizarMensajeDeError("La aeronave que se esta queriendo editar tiene un vuelo programado.");
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "La aeronave que se esta queriendo editar tiene un vuelo programado.");
                 }
             }
             else {
-                ActualizarMensajeDeError("No hay aeronaves cargadas para editar.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay aeronaves cargadas para editar.");
             }
         }
 
@@ -74,11 +74,11 @@ namespace Interfaz {
                     }
                 }
                 else {
-                    ActualizarMensajeDeError("La aeronave que se esta queriendo eliminar tiene un vuelo programado.");
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "La aeronave que se esta queriendo eliminar tiene un vuelo programado.");
                 }
             }
             else {
-                ActualizarMensajeDeError("No hay aeronaves cargadas para eliminar.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay aeronaves cargadas para eliminar.");
             }
         }
 
@@ -95,12 +95,6 @@ namespace Interfaz {
                 dataGridView.Columns["CapacidadBodega"].HeaderText = "Capacidad de bodega (kg)";
                 dataGridView.Columns["VueloProgramado"].HeaderText = "Vuelo programado";
             }
-        }
-
-        public void ActualizarMensajeDeError(string mensaje) {
-            this.imgError.Visible = true;
-            this.lblError.Visible = true;
-            this.lblError.Text = mensaje;
         }
     }
 }

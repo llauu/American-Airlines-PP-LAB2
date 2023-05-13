@@ -12,45 +12,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Interfaz {
-    public partial class FrmViajes : Form {
+    public partial class FrmViajes : FrmViajesDisponibles {
         public FrmViajes() {
             InitializeComponent();
 
             this.toolTip1.SetToolTip(btnAgregar, "Agregar vuelo");
             this.toolTip1.SetToolTip(btnEliminar, "Eliminar vuelo");
-            this.toolTip1.SetToolTip(btnInfoAvion, "Informacion del avion");
             this.toolTip1.SetToolTip(btnEditar, "Editar vuelo");
-            this.toolTip1.SetToolTip(txtBuscar, "Buscar vuelo");
         }
 
-        private void FrmViajes_Load(object sender, EventArgs e) {
-            ActualizarDataGridView(dataGridViajes);
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e) {
-            FrmAltaViaje frmAlta = new FrmAltaViaje();
-            this.imgError.Visible = false;
-            this.lblError.Visible = false;
+            if (Sistema.ListaAeronaves != null && Sistema.ListaAeronaves.Count > 0) {
+                FrmAltaViaje frmAlta = new FrmAltaViaje();
+                this.imgError.Visible = false;
+                this.lblError.Visible = false;
 
-            DialogResult res = frmAlta.ShowDialog();
+                DialogResult res = frmAlta.ShowDialog();
 
-            if (res == DialogResult.OK) {
-                Sistema.AltaVuelo(frmAlta.VueloAgregado);
-                ActualizarDataGridView(dataGridViajes);
-            }
-        }
-
-        private void btnInfoAvion_Click(object sender, EventArgs e) {
-            if (this.dataGridViajes.Rows.Count > 0) {
-                FrmInfoVuelo frmInfo = new FrmInfoVuelo((Vuelo)dataGridViajes.CurrentRow.DataBoundItem);
-
-                frmInfo.ShowDialog();
+                if (res == DialogResult.OK) {
+                    Sistema.AltaVuelo(frmAlta.VueloAgregado);
+                    ActualizarDataGridView(dataGridViajes);
+                }
             }
             else {
-                ActualizarMensajeDeError("No hay vuelos cargados para visualizar mas informacion.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No se puede dar de alta un vuelo si no hay aviones cargadados.");
             }
         }
-
 
         private static void ActualizarDataGridView(DataGridView dataGridView) {
             dataGridView.DataSource = null;
@@ -84,18 +72,32 @@ namespace Interfaz {
                     }
                 }
                 else {
-                    ActualizarMensajeDeError("El vuelo que esta queriendo eliminar se encuentra en curso o finalizado.");
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "El vuelo que esta queriendo eliminar se encuentra en curso o finalizado.");
                 }
             }
             else {
-                ActualizarMensajeDeError("No hay vuelos cargados para eliminar.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay vuelos cargados para eliminar.");
             }
         }
 
-        public void ActualizarMensajeDeError(string mensaje) {
-            this.imgError.Visible = true;
-            this.lblError.Visible = true;
-            this.lblError.Text = mensaje;
+        private void btnEditar_Click(object sender, EventArgs e) {
+            if (this.dataGridViajes.Rows.Count > 0) {
+                this.imgError.Visible = false;
+                this.lblError.Visible = false;
+
+                Vuelo vueloAEditar = (Vuelo)dataGridViajes.CurrentRow.DataBoundItem;
+
+                FrmEditarViaje frmEditar = new FrmEditarViaje(vueloAEditar);
+
+                DialogResult res = frmEditar.ShowDialog();
+
+                if (res == DialogResult.OK) {
+                    ActualizarDataGridView(dataGridViajes);
+                }
+            }
+            else {
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay vuelos cargados para editar.");
+            }
         }
     }
 }

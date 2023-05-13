@@ -23,11 +23,33 @@ namespace Entidades {
         public int Dni { get { return this.dni; } set { this.dni = value; } }
         public int Edad { get { return this.edad; } set { this.edad = value; } }
 
+        public static bool operator ==(Pasajero p1, Pasajero p2) {
+            bool iguales = false;
+
+            if(p1 is not null && p2 is not null) {
+                iguales = p1.dni == p2.dni && p1.fechaDeNacimiento == p2.fechaDeNacimiento;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator !=(Pasajero p1, Pasajero p2) {
+            return !(p1 == p2);
+        }
+
+        public override bool Equals(object? obj) {
+            Pasajero? pasajero = obj as Pasajero; 
+            return pasajero is not null && this == pasajero;
+        }
+
+        public override int GetHashCode() {
+            return this.dni;
+        }
+
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Nombre: {this.nombre}");
-            sb.AppendLine($"Apellido: {this.apellido}");
+            sb.Append(base.ToString());
             sb.AppendLine($"DNI: {this.dni}");
             sb.AppendLine($"Edad: {this.edad}");
 

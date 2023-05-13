@@ -23,7 +23,7 @@ namespace Interfaz {
             this.toolTip1.SetToolTip(imgLogo, "Inicio");
         }
 
-        public FrmMenuPrincipal(Usuario usuarioActivo, FrmLogin formLogin) :this() {
+        public FrmMenuPrincipal(Usuario usuarioActivo, FrmLogin formLogin) : this() {
             string fechaHoy = DateTime.UtcNow.ToString("d");
 
             CargarPerfilUsuario(usuarioActivo);
@@ -146,7 +146,7 @@ namespace Interfaz {
             btnPasajeros.BackColor = Color.Transparent;
             btnAeronaves.BackColor = Color.Transparent;
         }
-        
+
         private void ActualizarOpcionActiva(Button opcion) {
             ReiniciarFondoOpciones();
             ActualizarTitulo(opcion.Text);
@@ -195,10 +195,16 @@ namespace Interfaz {
                     Application.Exit();
                 }
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 MessageBox.Show($"Error al guardar los archivos. Se cerrara la aplicacion. \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
+        }
+
+        public static void ActualizarMensajeDeError(PictureBox imgError, Label lblError, string mensaje) {
+            imgError.Visible = true;
+            lblError.Visible = true;
+            lblError.Text = mensaje;
         }
     }
 }

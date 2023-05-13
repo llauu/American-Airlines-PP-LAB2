@@ -28,7 +28,7 @@ namespace Interfaz {
         }
 
         private void FrmAltaViaje_Load(object sender, EventArgs e) {
-            ActualizarDataGridView(dataGridAeronaves);
+            ActualizarDataGridView(aeronavesDisponibles, dataGridAeronaves);
 
             if (Sistema.ListaCiudades != null) {
                 foreach (string ciudad in Sistema.ListaCiudades) {
@@ -38,28 +38,13 @@ namespace Interfaz {
             }
         }
 
-        private void CargarListaAeronavesDisponibles() {
-            if (Sistema.ListaAeronaves != null) {
-                foreach (Aeronave aeronave in Sistema.ListaAeronaves) {
-                    if (!aeronave.VueloProgramado) {
-                        aeronavesDisponibles.Add(aeronave);
-                    }
-                }
-            }
-        }
 
-        public void ActualizarMensajeDeError(string mensaje) {
-            this.imgError.Visible = true;
-            this.lblError.Visible = true;
-            this.lblError.Text = mensaje;
-        }
-
-        public void ActualizarDataGridView(DataGridView dataGridView) {
-            CargarListaAeronavesDisponibles();
+        public static void ActualizarDataGridView(List<Aeronave> listaAeronavesDisponibles, DataGridView dataGridView) {
+            listaAeronavesDisponibles = Sistema.CargarListaAeronavesDisponibles();
             dataGridView.DataSource = null;
 
-            if (aeronavesDisponibles.Count > 0) {
-                dataGridView.DataSource = aeronavesDisponibles;
+            if (listaAeronavesDisponibles.Count > 0) {
+                dataGridView.DataSource = listaAeronavesDisponibles;
 
                 dataGridView.Columns["CantAsientos"].HeaderText = "Cant. de asientos";
                 dataGridView.Columns["CantBanios"].HeaderText = "Cant. de baños";
@@ -75,14 +60,19 @@ namespace Interfaz {
             this.lblError.Visible = false;
 
             try {
-                Aeronave aeronave = (Aeronave)dataGridAeronaves.CurrentRow.DataBoundItem;
+                if (aeronavesDisponibles.Count > 0) {
+                    Aeronave aeronave = (Aeronave)dataGridAeronaves.CurrentRow.DataBoundItem;
 
-                this.vueloAgregado = new Vuelo(this.cbCiudadPartida.Text, this.cbCiudadDestino.Text, this.dateFechaVuelo.Value.Date, aeronave);
-                aeronave.VueloProgramado = true;
-                this.DialogResult = DialogResult.OK;
+                    this.vueloAgregado = new Vuelo(this.cbCiudadPartida.Text, this.cbCiudadDestino.Text, this.dateFechaVuelo.Value.Date, aeronave);
+                    aeronave.VueloProgramado = true;
+                    this.DialogResult = DialogResult.OK;
+                }
+                else {
+                    FrmMenuPrincipal.ActualizarMensajeDeError(imgError, lblError, "La alta de vuelos no esta disponible ya que no hay aviones disponibles.");
+                }
             }
             catch (Exception ex) {
-                ActualizarMensajeDeError(ex.Message);
+                FrmMenuPrincipal.ActualizarMensajeDeError(imgError, lblError, ex.Message);
             }
         }
     }

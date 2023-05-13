@@ -55,9 +55,7 @@ namespace Interfaz {
                 }
             }
             else {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = "No hay pasajeros cargados para editar.";
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay pasajeros cargados para editar.");
             }
         }
 
@@ -73,9 +71,7 @@ namespace Interfaz {
                 }
             }
             else {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = "No hay pasajeros cargados para eliminar.";
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay pasajeros cargados para eliminar.");
             }
         }
 

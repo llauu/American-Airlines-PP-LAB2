@@ -157,8 +157,10 @@ namespace Entidades {
         public static bool BajaVuelo(Vuelo vuelo) {
             bool eliminado = false;
 
-            if (vuelo != null && listaVuelos != null) {
-                vuelo.Avion.VueloProgramado = false;
+            if (vuelo != null && listaVuelos != null && listaAeronaves != null) {
+                int i = listaAeronaves.IndexOf(vuelo.Avion);
+                listaAeronaves[i].VueloProgramado = false;
+
                 listaVuelos.Remove(vuelo);
                 eliminado = true;
             }
@@ -204,6 +206,21 @@ namespace Entidades {
                 }
             }
         }
+
+        public static List<Aeronave> CargarListaAeronavesDisponibles() {
+            List<Aeronave> aeronavesDisponibles = new List<Aeronave>();
+
+            if (listaAeronaves != null) {
+                foreach (Aeronave aeronave in listaAeronaves) {
+                    if (!aeronave.VueloProgramado) {
+                        aeronavesDisponibles.Add(aeronave);
+                    }
+                }
+            }
+
+            return aeronavesDisponibles;
+        }
+
 
     }
 }

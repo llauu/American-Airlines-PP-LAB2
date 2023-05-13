@@ -28,8 +28,8 @@ namespace Entidades {
 
         public static void ValidarDniUnico(int dni) {
             if (Sistema.ListaPasajeros != null) {
-                foreach (Pasajero pasajero in Sistema.ListaPasajeros) {
-                    if (pasajero.Dni == dni) {
+                foreach (Pasajero pasajero in Sistema.ListaPasajeros) { 
+                    if (pasajero.GetHashCode() == dni) {
                         throw new Exception("Ya existe un pasajero con ese DNI.");
                     }
                 }
@@ -62,12 +62,20 @@ namespace Entidades {
             return numero;
         }
 
+        public static float ValidarFlotantePositivo(float numero) {
+            if (!(numero > 0)) {
+                throw new Exception("Campos numericos no validos.");
+            }
+
+            return numero;
+        }
+
         public static bool ValidarMatriculaUnica(string matricula) {
             bool seRepite = false;
 
             if(Sistema.ListaAeronaves != null) {
                 foreach(Aeronave aeronave in Sistema.ListaAeronaves) {
-                    if(aeronave.Matricula == matricula) {
+                    if(aeronave.Matricula == matricula) {  
                         seRepite = true; 
                         break;
                     }
@@ -82,7 +90,7 @@ namespace Entidades {
 
             if (Sistema.ListaVuelos != null) {
                 foreach (Vuelo vuelo in Sistema.ListaVuelos) {
-                    if (vuelo.IdVuelo == id) {
+                    if (vuelo.GetHashCode() == id) {
                         seRepite = true;
                         break;
                     }
