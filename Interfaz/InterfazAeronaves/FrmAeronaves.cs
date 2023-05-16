@@ -19,7 +19,6 @@ namespace Interfaz {
             this.toolTip1.SetToolTip(btnAgregar, "Agregar aeronave");
             this.toolTip1.SetToolTip(btnEliminar, "Eliminar aeronave");
             this.toolTip1.SetToolTip(btnEditar, "Editar aeronave");
-            this.toolTip1.SetToolTip(txtBuscar, "Buscar aeronave");
         }
 
         private void FrmAeronaves_Load(object sender, EventArgs e) {
@@ -82,18 +81,23 @@ namespace Interfaz {
             }
         }
 
-        public static void ActualizarDataGridView(DataGridView dataGridView) {
+        public void ActualizarDataGridView(DataGridView dataGridView) {
             dataGridView.DataSource = null;
 
             if (Sistema.ListaAeronaves != null && Sistema.ListaAeronaves.Count > 0) {
                 dataGridView.DataSource = Sistema.ListaAeronaves;
 
                 dataGridView.Columns["CantAsientos"].HeaderText = "Cantidad de asientos";
+                dataGridView.Columns["cantAsientosPremium"].HeaderText = "Asientos para premium";
+                dataGridView.Columns["cantAsientosTurista"].HeaderText = "Asientos para turista";
                 dataGridView.Columns["CantBanios"].HeaderText = "Cantidad de baños";
                 dataGridView.Columns["OfreceInternet"].HeaderText = "Ofrece internet";
                 dataGridView.Columns["OfreceComida"].HeaderText = "Ofrece comida";
                 dataGridView.Columns["CapacidadBodega"].HeaderText = "Capacidad de bodega (kg)";
                 dataGridView.Columns["VueloProgramado"].HeaderText = "Vuelo programado";
+            }
+            else {
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay aeronaves cargadas para mostrar.");
             }
         }
     }

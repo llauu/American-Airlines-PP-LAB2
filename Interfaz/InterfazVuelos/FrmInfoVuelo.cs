@@ -21,12 +21,14 @@ namespace Interfaz.InterfazViajes {
         private void FrmInfoVuelo_Load(object sender, EventArgs e) {
             this.dataGridPasajeros.DataSource = vueloSeleccionado.ListaPasajes;
 
-            this.dataGridPasajeros.Columns["EquipajeDeMano"].Visible = false; 
+            this.dataGridPasajeros.Columns["EquipajeDeMano"].Visible = false;
             this.dataGridPasajeros.Columns["EquipajesDeBodega"].Visible = false;
             this.dataGridPasajeros.Columns["NumeroDeEquipaje"].Visible = false;
             this.dataGridPasajeros.Columns["Vuelo"].Visible = false;
 
+            this.dataGridPasajeros.Columns["IdPasaje"].HeaderText = "ID pasaje";
             this.dataGridPasajeros.Columns["ClasePasajero"].HeaderText = "Clase pasajero";
+            this.dataGridPasajeros.Columns["CostoPasaje"].HeaderText = "Costo del pasaje (en $)";
 
             this.txtInfoAvion.Text = vueloSeleccionado.Avion.ToString();
 

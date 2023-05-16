@@ -28,8 +28,8 @@ namespace Interfaz {
 
             CargarPerfilUsuario(usuarioActivo);
 
-            this.lblFecha.Text = fechaHoy;
-            this.MinimumSize = new Size(894, 565);
+            this.lblFecha.Text = fechaHoy; 
+            this.MinimumSize = new Size(964, 574);
             this.lblPerfil.Text = $"{usuarioActivo.Nombre} {usuarioActivo.Apellido}";
             this.cerrandoSesion = false;
             this.formLogin = formLogin;

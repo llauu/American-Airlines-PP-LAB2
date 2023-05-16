@@ -55,7 +55,7 @@ namespace Entidades {
         }
 
         public static int ValidarNumeroPositivo(int numero) {
-            if (!(numero > 0)) {
+            if (!(numero > 0 && numero < 100000)) {
                 throw new Exception("Campos numericos no validos.");
             }
 
@@ -63,7 +63,7 @@ namespace Entidades {
         }
 
         public static float ValidarFlotantePositivo(float numero) {
-            if (!(numero > 0)) {
+            if (!(numero > 0 && numero < 100000)) {
                 throw new Exception("Campos numericos no validos.");
             }
 
@@ -129,6 +129,24 @@ namespace Entidades {
         public static void ValidarInternacional(string partida, string destino, ETipoVuelo tipoVuelo) {
             if(tipoVuelo == ETipoVuelo.Internacional && partida != "Buenos Aires" && partida != "Buenos Aires") {
                 throw new Exception("Los vuelos internacionales deben salir o llegar a Buenos Aires.");
+            }
+        }
+
+        public static void ValidarDisponibilidadAsientos(Vuelo vuelo, ETipoClase clase, int asientosTuristaOcupados, int asientosPremiumOcupados) {
+            vuelo.ContarAsientosOcupados();
+
+            switch (clase) {
+                case ETipoClase.Turista:
+                    if(!(asientosTuristaOcupados < vuelo.Avion.CantAsientosTurista)) {
+                        throw new Exception("Ya no hay mas asientos para clase turista disponibles.");
+                    }
+                    break;
+
+                case ETipoClase.Premium:
+                    if (!(asientosPremiumOcupados < vuelo.Avion.CantAsientosPremium)) {
+                        throw new Exception("Ya no hay mas asientos para clase premium disponibles.");
+                    }
+                    break;
             }
         }
     }

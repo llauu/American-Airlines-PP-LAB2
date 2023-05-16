@@ -128,9 +128,9 @@
             // 
             // lblError
             // 
-            lblError.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblError.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblError.ForeColor = Color.IndianRed;
-            lblError.Location = new Point(67, 25);
+            lblError.Location = new Point(67, 22);
             lblError.Name = "lblError";
             lblError.Size = new Size(525, 17);
             lblError.TabIndex = 30;
@@ -159,7 +159,7 @@
             btnInfoAvion.TabStop = false;
             btnInfoAvion.Click += btnInfoAvion_Click;
             // 
-            // FrmViajes
+            // FrmVuelos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -174,7 +174,7 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmViajes";
+            Name = "FrmVuelos";
             Text = "FrmViajes";
             Load += FrmViajes_Load;
             ((System.ComponentModel.ISupportInitialize)btnEditar).EndInit();

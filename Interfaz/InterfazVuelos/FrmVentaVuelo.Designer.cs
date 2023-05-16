@@ -66,7 +66,7 @@
             // btnCancelar
             // 
             btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.Location = new Point(537, 383);
+            btnCancelar.Location = new Point(544, 383);
             // 
             // flowLayoutPanel4
             // 
@@ -118,14 +118,14 @@
             panel1.Controls.Add(dataGridPasajeros);
             panel1.Location = new Point(52, 81);
             panel1.Name = "panel1";
-            panel1.Size = new Size(720, 282);
+            panel1.Size = new Size(727, 282);
             panel1.TabIndex = 64;
             // 
             // btnDatosEquipajes
             // 
             btnDatosEquipajes.Cursor = Cursors.Hand;
             btnDatosEquipajes.Image = (Image)resources.GetObject("btnDatosEquipajes.Image");
-            btnDatosEquipajes.Location = new Point(663, 189);
+            btnDatosEquipajes.Location = new Point(668, 189);
             btnDatosEquipajes.Name = "btnDatosEquipajes";
             btnDatosEquipajes.Size = new Size(49, 37);
             btnDatosEquipajes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -184,7 +184,7 @@
             // 
             btnAgregarEquipaje.Cursor = Cursors.Hand;
             btnAgregarEquipaje.Image = (Image)resources.GetObject("btnAgregarEquipaje.Image");
-            btnAgregarEquipaje.Location = new Point(663, 232);
+            btnAgregarEquipaje.Location = new Point(668, 232);
             btnAgregarEquipaje.Name = "btnAgregarEquipaje";
             btnAgregarEquipaje.Size = new Size(49, 37);
             btnAgregarEquipaje.SizeMode = PictureBoxSizeMode.Zoom;
@@ -341,7 +341,7 @@
             btnAceptar.FlatStyle = FlatStyle.Flat;
             btnAceptar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnAceptar.ForeColor = SystemColors.ControlText;
-            btnAceptar.Location = new Point(672, 383);
+            btnAceptar.Location = new Point(679, 383);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(100, 31);
             btnAceptar.TabIndex = 65;
@@ -356,7 +356,7 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(8, 28);
             label1.Name = "label1";
-            label1.Size = new Size(791, 32);
+            label1.Size = new Size(819, 32);
             label1.TabIndex = 64;
             label1.Text = "VENTA DE PASAJES";
             label1.TextAlign = ContentAlignment.MiddleCenter;

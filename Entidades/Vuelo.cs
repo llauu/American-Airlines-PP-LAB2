@@ -7,8 +7,6 @@ using System.Xml.Serialization;
 
 namespace Entidades {
     public class Vuelo {
-        private static int precioHoraVueloNacionalTurista;
-        private static int precioHoraVueloInternacionalTurista;
         private static List<string> destinosInternacionales;
 
         private int idVuelo;
@@ -17,18 +15,16 @@ namespace Entidades {
         private DateTime fechaDeVuelo;
         private Aeronave? avion;
         private EEstadoVuelo estadoDelVuelo;
-        private int cantAsientosPremium;
-        private int cantAsientosTurista;
+        //private int cantAsientosPremium;
+        //private int cantAsientosTurista;
         private int asientosPremiumOcupados;
         private int asientosTuristaOcupados;
         private int duracionVuelo;
         private List<Pasaje> listaPasajes;
         private ETipoVuelo tipoVuelo;
+        private float pesoBodegaOcupada;
 
         static Vuelo() {
-            precioHoraVueloNacionalTurista = 50;
-            precioHoraVueloInternacionalTurista = 100;
-
             destinosInternacionales = new List<string>() {
                     "Recife (Brasil)",
                     "Roma (Italia)",
@@ -43,6 +39,7 @@ namespace Entidades {
             this.estadoDelVuelo = EEstadoVuelo.EnTierra;
             this.asientosPremiumOcupados = 0;
             this.asientosTuristaOcupados = 0;
+            this.pesoBodegaOcupada = 0;
         }
 
         public Vuelo(string ciudadPartida, string ciudadDestino, DateTime fechaDeVuelo, Aeronave avion) : this() {
@@ -51,8 +48,8 @@ namespace Entidades {
             this.ciudadDestino = ciudadDestino;
             this.fechaDeVuelo = fechaDeVuelo;
             this.avion = avion;
-            this.cantAsientosPremium = CalcularAsientosPremium(avion.CantAsientos);
-            this.cantAsientosTurista = avion.CantAsientos - this.cantAsientosPremium;
+            //this.cantAsientosPremium = CalcularAsientosPremium(avion.CantAsientos);
+            //this.cantAsientosTurista = avion.CantAsientos - this.cantAsientosPremium;
             this.tipoVuelo = ObtenerTipoDeVuelo(ciudadPartida, ciudadDestino);
             Validador.ValidarInternacional(ciudadPartida, ciudadDestino, this.tipoVuelo);
             this.duracionVuelo = CalcularDuracionDeVuelo(this.tipoVuelo);
@@ -67,10 +64,11 @@ namespace Entidades {
         public int DuracionVuelo { get { return this.duracionVuelo; } set { this.duracionVuelo = value; } }
         public ETipoVuelo TipoVuelo { get { return this.tipoVuelo; } set { this.tipoVuelo = value; } }
         public List<Pasaje> ListaPasajes { get { return this.listaPasajes; } set { this.listaPasajes = value; } }
-        public int CantAsientosPremium { get { return this.cantAsientosPremium; } set { this.cantAsientosPremium = value; } }
-        public int CantAsientosTurista { get { return this.cantAsientosTurista; } set { this.cantAsientosTurista = value; } }
+        //public int CantAsientosPremium { get { return this.cantAsientosPremium; } set { this.cantAsientosPremium = value; } }
+        //public int CantAsientosTurista { get { return this.cantAsientosTurista; } set { this.cantAsientosTurista = value; } }
         public int AsientosPremiumOcupados { get { return this.asientosPremiumOcupados; } set { this.asientosPremiumOcupados = value; } }
         public int AsientosTuristaOcupados { get { return this.asientosTuristaOcupados; } set { this.asientosTuristaOcupados = value; } }
+        public float PesoBodegaOcupada { get { return this.pesoBodegaOcupada; } set { this.pesoBodegaOcupada = value; } }
 
         private int ObtenerIdVueloUnico() {
             int idGenerado;
@@ -83,14 +81,14 @@ namespace Entidades {
         }
 
 
-        private int CalcularAsientosPremium(int cantAsientos) {
-            int cantPremium;
+        //private int CalcularAsientosPremium(int cantAsientos) {
+        //    int cantPremium;
 
-            cantAsientos = Validador.ValidarNumeroPositivo(cantAsientos);
-            cantPremium = (int)Math.Floor(cantAsientos * 0.2);
+        //    cantAsientos = Validador.ValidarNumeroPositivo(cantAsientos);
+        //    cantPremium = (int)Math.Floor(cantAsientos * 0.2);
 
-            return cantPremium;
-        }
+        //    return cantPremium;
+        //}
 
 
         private ETipoVuelo ObtenerTipoDeVuelo(string partida, string destino) {
@@ -122,17 +120,18 @@ namespace Entidades {
 
         public void ContarAsientosOcupados() {
             this.asientosTuristaOcupados = 0;
-            this.AsientosPremiumOcupados = 0;
+            this.asientosPremiumOcupados = 0;
 
             foreach (Pasaje pasaje in ListaPasajes) {
                 if(pasaje.ClasePasajero == ETipoClase.Turista) {
                     this.asientosTuristaOcupados++;
                 }
                 else {
-                    this.AsientosPremiumOcupados++;
+                    this.asientosPremiumOcupados++;
                 }
             }
         }
+
 
         public static bool operator ==(Vuelo v1, Vuelo v2) {
             bool iguales = false;
@@ -164,8 +163,8 @@ namespace Entidades {
             sb.AppendLine($"Ciudad de partida: {this.ciudadPartida}");
             sb.AppendLine($"Ciudad de destino: {this.ciudadDestino}");
             sb.AppendLine($"Fecha del vuelo: {this.fechaDeVuelo.ToString("dd/MM/yyyy")}");
-            sb.AppendLine($"Asientos premium: {this.cantAsientosPremium}");
-            sb.AppendLine($"Asientos turista: {this.cantAsientosTurista}");
+            sb.AppendLine($"Asientos premium ocupados: {this.asientosPremiumOcupados}");
+            sb.AppendLine($"Asientos turista ocupados: {this.asientosTuristaOcupados}");
             sb.AppendLine($"Duracion del vuelo: {this.duracionVuelo}hs"); 
 
             return sb.ToString();

@@ -72,9 +72,9 @@
             // 
             // lblError
             // 
-            lblError.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblError.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblError.ForeColor = Color.IndianRed;
-            lblError.Location = new Point(67, 25);
+            lblError.Location = new Point(67, 22);
             lblError.Name = "lblError";
             lblError.Size = new Size(525, 17);
             lblError.TabIndex = 28;
@@ -113,7 +113,7 @@
             dataGridViajes.TabStop = false;
             dataGridViajes.VirtualMode = true;
             // 
-            // FrmViajesDisponibles
+            // FrmVuelosDisponibles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -125,7 +125,7 @@
             Controls.Add(lblError);
             Controls.Add(dataGridViajes);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmViajesDisponibles";
+            Name = "FrmVuelosDisponibles";
             Text = "FrmViajesDisponibles";
             Load += FrmViajesDisponibles_Load;
             ((System.ComponentModel.ISupportInitialize)btnInfoAvion).EndInit();

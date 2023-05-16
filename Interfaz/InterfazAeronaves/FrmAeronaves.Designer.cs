@@ -30,18 +30,13 @@
             btnEliminar = new PictureBox();
             btnAgregar = new PictureBox();
             dataGridAeronaves = new DataGridView();
-            imgBuscar = new PictureBox();
-            txtBuscar = new TextBox();
             lblError = new Label();
-            panel1 = new Panel();
             toolTip1 = new ToolTip(components);
             imgError = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnEditar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAeronaves).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)imgBuscar).BeginInit();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgError).BeginInit();
             SuspendLayout();
             // 
@@ -105,61 +100,33 @@
             dataGridAeronaves.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridAeronaves.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridAeronaves.EnableHeadersVisualStyles = false;
-            dataGridAeronaves.Location = new Point(44, 79);
+            dataGridAeronaves.Location = new Point(45, 61);
             dataGridAeronaves.MultiSelect = false;
             dataGridAeronaves.Name = "dataGridAeronaves";
             dataGridAeronaves.ReadOnly = true;
             dataGridAeronaves.RowHeadersVisible = false;
             dataGridAeronaves.RowTemplate.Height = 25;
             dataGridAeronaves.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridAeronaves.Size = new Size(590, 378);
+            dataGridAeronaves.Size = new Size(590, 388);
             dataGridAeronaves.TabIndex = 8;
             dataGridAeronaves.TabStop = false;
             dataGridAeronaves.VirtualMode = true;
             // 
-            // imgBuscar
-            // 
-            imgBuscar.Image = (Image)resources.GetObject("imgBuscar.Image");
-            imgBuscar.Location = new Point(44, 30);
-            imgBuscar.Name = "imgBuscar";
-            imgBuscar.Size = new Size(26, 25);
-            imgBuscar.SizeMode = PictureBoxSizeMode.Zoom;
-            imgBuscar.TabIndex = 12;
-            imgBuscar.TabStop = false;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.BackColor = Color.White;
-            txtBuscar.BorderStyle = BorderStyle.None;
-            txtBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscar.Location = new Point(3, 4);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(331, 18);
-            txtBuscar.TabIndex = 4;
-            // 
             // lblError
             // 
+            lblError.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblError.ForeColor = Color.IndianRed;
-            lblError.Location = new Point(440, 36);
+            lblError.Location = new Point(67, 22);
             lblError.Name = "lblError";
-            lblError.Size = new Size(250, 40);
+            lblError.Size = new Size(549, 17);
             lblError.TabIndex = 14;
             lblError.Text = "(error)";
             lblError.Visible = false;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(txtBuscar);
-            panel1.Location = new Point(76, 30);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(334, 25);
-            panel1.TabIndex = 13;
-            // 
             // imgError
             // 
             imgError.Image = (Image)resources.GetObject("imgError.Image");
-            imgError.Location = new Point(416, 34);
+            imgError.Location = new Point(43, 22);
             imgError.Name = "imgError";
             imgError.Size = new Size(18, 20);
             imgError.SizeMode = PictureBoxSizeMode.Zoom;
@@ -174,9 +141,7 @@
             BackColor = Color.Gainsboro;
             ClientSize = new Size(702, 481);
             Controls.Add(imgError);
-            Controls.Add(imgBuscar);
             Controls.Add(lblError);
-            Controls.Add(panel1);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
@@ -189,9 +154,6 @@
             ((System.ComponentModel.ISupportInitialize)btnEliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAeronaves).EndInit();
-            ((System.ComponentModel.ISupportInitialize)imgBuscar).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
             ResumeLayout(false);
         }
@@ -201,10 +163,7 @@
         private PictureBox btnEliminar;
         private PictureBox btnAgregar;
         private DataGridView dataGridAeronaves;
-        private PictureBox imgBuscar;
-        private TextBox txtBuscar;
         private Label lblError;
-        private Panel panel1;
         private ToolTip toolTip1;
         private PictureBox imgError;
     }

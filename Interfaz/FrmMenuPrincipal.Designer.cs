@@ -65,7 +65,7 @@
             panelMenuNav.Dock = DockStyle.Left;
             panelMenuNav.Location = new Point(0, 0);
             panelMenuNav.Name = "panelMenuNav";
-            panelMenuNav.Size = new Size(176, 526);
+            panelMenuNav.Size = new Size(176, 535);
             panelMenuNav.TabIndex = 0;
             // 
             // btnEstadisticas
@@ -209,7 +209,7 @@
             lblPerfil.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblPerfil.ForeColor = Color.White;
             lblPerfil.ImageAlign = ContentAlignment.MiddleLeft;
-            lblPerfil.Location = new Point(511, 0);
+            lblPerfil.Location = new Point(581, 0);
             lblPerfil.Name = "lblPerfil";
             lblPerfil.Size = new Size(154, 45);
             lblPerfil.TabIndex = 21;
@@ -227,7 +227,7 @@
             panelMenuArriba.Dock = DockStyle.Top;
             panelMenuArriba.Location = new Point(176, 0);
             panelMenuArriba.Name = "panelMenuArriba";
-            panelMenuArriba.Size = new Size(702, 45);
+            panelMenuArriba.Size = new Size(772, 45);
             panelMenuArriba.TabIndex = 2;
             // 
             // lblFecha
@@ -236,7 +236,7 @@
             lblFecha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblFecha.ForeColor = Color.White;
             lblFecha.ImageAlign = ContentAlignment.MiddleRight;
-            lblFecha.Location = new Point(371, 0);
+            lblFecha.Location = new Point(441, 0);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(111, 45);
             lblFecha.TabIndex = 22;
@@ -247,7 +247,7 @@
             // 
             imgPerfil.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             imgPerfil.Image = (Image)resources.GetObject("imgPerfil.Image");
-            imgPerfil.Location = new Point(488, 12);
+            imgPerfil.Location = new Point(558, 12);
             imgPerfil.Name = "imgPerfil";
             imgPerfil.Size = new Size(24, 25);
             imgPerfil.SizeMode = PictureBoxSizeMode.Zoom;
@@ -271,7 +271,7 @@
             btnCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnCerrarSesion.Cursor = Cursors.Hand;
             btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
-            btnCerrarSesion.Location = new Point(665, 12);
+            btnCerrarSesion.Location = new Point(735, 12);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(25, 21);
             btnCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -285,7 +285,7 @@
             panelPantalla.Dock = DockStyle.Fill;
             panelPantalla.Location = new Point(176, 45);
             panelPantalla.Name = "panelPantalla";
-            panelPantalla.Size = new Size(702, 481);
+            panelPantalla.Size = new Size(772, 490);
             panelPantalla.TabIndex = 3;
             // 
             // FrmMenuPrincipal
@@ -293,7 +293,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(878, 526);
+            ClientSize = new Size(948, 535);
             Controls.Add(panelPantalla);
             Controls.Add(panelMenuArriba);
             Controls.Add(panelMenuNav);

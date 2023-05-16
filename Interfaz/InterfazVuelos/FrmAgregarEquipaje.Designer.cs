@@ -43,13 +43,14 @@
             // btnCancelar
             // 
             btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.Location = new Point(146, 181);
+            btnCancelar.Location = new Point(146, 216);
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // flowLayoutPanel4
             // 
             flowLayoutPanel4.BackColor = Color.FromArgb(57, 57, 57);
             flowLayoutPanel4.Dock = DockStyle.Bottom;
-            flowLayoutPanel4.Location = new Point(8, 222);
+            flowLayoutPanel4.Location = new Point(8, 259);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Size = new Size(387, 8);
             flowLayoutPanel4.TabIndex = 67;
@@ -60,7 +61,7 @@
             flowLayoutPanel3.Dock = DockStyle.Left;
             flowLayoutPanel3.Location = new Point(0, 8);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(8, 222);
+            flowLayoutPanel3.Size = new Size(8, 259);
             flowLayoutPanel3.TabIndex = 66;
             // 
             // flowLayoutPanel2
@@ -69,7 +70,7 @@
             flowLayoutPanel2.Dock = DockStyle.Right;
             flowLayoutPanel2.Location = new Point(395, 8);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(8, 222);
+            flowLayoutPanel2.Size = new Size(8, 259);
             flowLayoutPanel2.TabIndex = 65;
             // 
             // flowLayoutPanel1
@@ -89,7 +90,7 @@
             btnAceptar.FlatStyle = FlatStyle.Flat;
             btnAceptar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnAceptar.ForeColor = SystemColors.ControlText;
-            btnAceptar.Location = new Point(268, 181);
+            btnAceptar.Location = new Point(268, 216);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(100, 31);
             btnAceptar.TabIndex = 68;
@@ -126,7 +127,7 @@
             lblError.ForeColor = Color.IndianRed;
             lblError.Location = new Point(36, 71);
             lblError.Name = "lblError";
-            lblError.Size = new Size(290, 20);
+            lblError.Size = new Size(290, 52);
             lblError.TabIndex = 69;
             lblError.Text = "(error)";
             lblError.Visible = false;
@@ -149,7 +150,7 @@
             panel1.Controls.Add(lblError);
             panel1.Location = new Point(33, 66);
             panel1.Name = "panel1";
-            panel1.Size = new Size(335, 104);
+            panel1.Size = new Size(335, 139);
             panel1.TabIndex = 74;
             // 
             // numPesoEquipaje
@@ -163,7 +164,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(403, 230);
+            ClientSize = new Size(403, 267);
             Controls.Add(label1);
             Controls.Add(btnAceptar);
             Controls.Add(flowLayoutPanel4);

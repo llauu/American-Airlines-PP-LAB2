@@ -22,12 +22,22 @@ namespace Interfaz {
         }
 
         private void FrmPasajeros_Load(object sender, EventArgs e) {
-            ActualizarDataGridView(dataGridPasajeros);
+            if (Sistema.ListaPasajeros != null) {
+                ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
+            }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e) {
-            if (this.txtBuscar.Text.Length > 2) {
-                // HACER 
+            if(Sistema.ListaPasajeros != null) {
+                if (this.txtBuscar.Text.Length > 2 && !(string.IsNullOrEmpty(this.txtBuscar.Text))) {
+                    List<Pasajero> pasajerosEncontrados = new List<Pasajero>();
+
+                    Sistema.BuscarClientes(pasajerosEncontrados, this.txtBuscar.Text.ToUpper());
+                    ActualizarDataGridView(dataGridPasajeros, pasajerosEncontrados);
+                }
+                else {
+                    ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
+                }
             }
         }
 
@@ -38,9 +48,9 @@ namespace Interfaz {
 
             DialogResult res = frmAlta.ShowDialog();
 
-            if (res == DialogResult.OK) {
+            if (res == DialogResult.OK && Sistema.ListaPasajeros != null) {
                 Sistema.AltaPasajero(frmAlta.PasajeroAgregado);
-                ActualizarDataGridView(dataGridPasajeros);
+                ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
             }
         }
 
@@ -50,8 +60,8 @@ namespace Interfaz {
 
                 DialogResult res = frmEditar.ShowDialog();
 
-                if (res == DialogResult.OK) {
-                    ActualizarDataGridView(dataGridPasajeros);
+                if (res == DialogResult.OK && Sistema.ListaPasajeros != null) {
+                    ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
                 }
             }
             else {
@@ -65,9 +75,9 @@ namespace Interfaz {
 
                 DialogResult res = MessageBox.Show($"Se va a eliminar al cliente: \n{pasajeroAEliminar}\nEsta seguro?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
-                if (res == DialogResult.Yes) {
+                if (res == DialogResult.Yes && Sistema.ListaPasajeros != null) {
                     Sistema.BajaPasajero(pasajeroAEliminar);
-                    ActualizarDataGridView(dataGridPasajeros);
+                    ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
                 }
             }
             else {
@@ -75,11 +85,11 @@ namespace Interfaz {
             }
         }
 
-        private static void ActualizarDataGridView(DataGridView dataGridView) {
+        private static void ActualizarDataGridView(DataGridView dataGridView, List<Pasajero> listaPasajeros) {
             dataGridView.DataSource = null;
 
-            if (Sistema.ListaPasajeros != null && Sistema.ListaPasajeros.Count > 0) {
-                dataGridView.DataSource = Sistema.ListaPasajeros;
+            if (listaPasajeros != null && listaPasajeros.Count > 0) {
+                dataGridView.DataSource = listaPasajeros;
 
                 dataGridView.Columns["Apellido"].DisplayIndex = 0;
                 dataGridView.Columns["Nombre"].DisplayIndex = 1;

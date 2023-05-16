@@ -51,8 +51,7 @@ namespace Entidades {
             StringBuilder sb = new StringBuilder();
 
             sb.Append(base.ToString());
-            sb.AppendLine($"| DNI: {this.dni} ");
-            sb.AppendLine($"| Edad: {this.edad}");
+            sb.Append($"| DNI: {this.dni} ");
 
             return sb.ToString();
         }

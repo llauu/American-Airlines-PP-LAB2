@@ -89,9 +89,9 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(dataGridPasajeros);
-            panel1.Location = new Point(66, 42);
+            panel1.Location = new Point(44, 42);
             panel1.Name = "panel1";
-            panel1.Size = new Size(678, 313);
+            panel1.Size = new Size(719, 313);
             panel1.TabIndex = 64;
             // 
             // label2
@@ -99,7 +99,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Silver;
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(455, 24);
+            label2.Location = new Point(496, 24);
             label2.Name = "label2";
             label2.Size = new Size(62, 25);
             label2.TabIndex = 67;
@@ -120,7 +120,7 @@
             // 
             panel2.BackColor = SystemColors.Menu;
             panel2.Controls.Add(txtInfoAvion);
-            panel2.Location = new Point(455, 53);
+            panel2.Location = new Point(496, 53);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 236);
             panel2.TabIndex = 65;
@@ -169,7 +169,7 @@
             dataGridPasajeros.RowHeadersVisible = false;
             dataGridPasajeros.RowTemplate.Height = 25;
             dataGridPasajeros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridPasajeros.Size = new Size(402, 236);
+            dataGridPasajeros.Size = new Size(434, 236);
             dataGridPasajeros.TabIndex = 63;
             dataGridPasajeros.TabStop = false;
             dataGridPasajeros.VirtualMode = true;

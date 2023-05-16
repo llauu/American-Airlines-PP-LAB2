@@ -14,6 +14,8 @@ namespace Interfaz.InterfazViajes {
     public partial class FrmVentaVuelo : FrmBotonCancelar {
         private List<Pasaje> pasajesAgregados = new List<Pasaje>();
         private Vuelo vueloSeleccionado;
+        private int asientosPremiumOcupados;
+        private int asientosTuristaOcupados;
 
         public FrmVentaVuelo(Vuelo vueloSeleccionado) {
             InitializeComponent();
@@ -25,6 +27,9 @@ namespace Interfaz.InterfazViajes {
 
         private void FrmVentaVuelo_Load(object sender, EventArgs e) {
             ActualizarDataGridPasajeros();
+
+            asientosPremiumOcupados = vueloSeleccionado.AsientosPremiumOcupados;
+            asientosTuristaOcupados = vueloSeleccionado.AsientosTuristaOcupados;
         }
 
         public List<Pasaje> PasajesAgregados {
@@ -70,9 +75,8 @@ namespace Interfaz.InterfazViajes {
             if (Sistema.ListaPasajeros != null && Sistema.ListaPasajeros.Count > 0) {
                 if (dataGridPasajeros.CurrentRow != null) {
                     pasajero = (Pasajero)dataGridPasajeros.CurrentRow.DataBoundItem;
-                    Pasaje pasaje = new Pasaje(pasajero, equipajeDeMano, clasePasajero, vueloSeleccionado);
-                    pasajesAgregados.Add(pasaje);
-                    ActualizarDataGridPasajesAgregados();
+
+                    VenderPasaje(pasajero, equipajeDeMano, clasePasajero, vueloSeleccionado);
                 }
                 else {
                     FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "Seleccione un pasajero para venderle el pasaje.");
@@ -83,6 +87,30 @@ namespace Interfaz.InterfazViajes {
             }
         }
 
+        private void VenderPasaje(Pasajero pasajero, bool equipajeDeMano, ETipoClase clasePasajero, Vuelo vuelo) {
+            try {
+                Validador.ValidarDisponibilidadAsientos(vuelo, clasePasajero, asientosTuristaOcupados, asientosPremiumOcupados);
+
+                Pasaje pasaje = new Pasaje(pasajero, equipajeDeMano, clasePasajero, vuelo);
+                pasajesAgregados.Add(pasaje);
+
+                OcuparAsiento(clasePasajero);
+
+                ActualizarDataGridPasajesAgregados();
+            }
+            catch(Exception ex) {
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
+            }
+        }
+
+        private void OcuparAsiento(ETipoClase clasePasajero) {
+            if (clasePasajero == ETipoClase.Turista) {
+                asientosTuristaOcupados++;
+            }
+            else {
+                asientosPremiumOcupados++;
+            }
+        }
 
         private void btnAgregarEquipaje_Click(object sender, EventArgs e) {
             this.imgError.Visible = false;

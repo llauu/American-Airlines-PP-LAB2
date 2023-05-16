@@ -21,7 +21,7 @@ namespace Interfaz.InterfazVuelos {
         private void btnAceptar_Click(object sender, EventArgs e) {
             if (this.numPesoEquipaje != null) {
                 try {
-                    int pesoEquipaje = (int)this.numPesoEquipaje.Value;
+                    float pesoEquipaje = (float)this.numPesoEquipaje.Value;
 
                     pasajeSeleccionado.CargarEquipajeDeBodega(pesoEquipaje);
 
@@ -31,6 +31,10 @@ namespace Interfaz.InterfazVuelos {
                     FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
                 }
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e) {
+
         }
     }
 }

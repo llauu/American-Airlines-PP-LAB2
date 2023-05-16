@@ -192,6 +192,26 @@ namespace Entidades {
             return idGenerado;
         }
 
+        public static void BuscarClientes(List<Pasajero> pasajeroEncontrados, string textoABuscar) {
+            if (listaPasajeros != null) {
+                foreach (Pasajero pasajero in listaPasajeros) {
+                    if (pasajero.Nombre.ToUpper().StartsWith(textoABuscar)) {
+                        pasajeroEncontrados.Add(pasajero);
+                    }
+                    else {
+                        if (pasajero.Apellido.ToUpper().StartsWith(textoABuscar)) {
+                            pasajeroEncontrados.Add(pasajero);
+                        }
+                        else {
+                            if (pasajero.GetHashCode().ToString().StartsWith(textoABuscar)) {
+                                pasajeroEncontrados.Add(pasajero);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public static void ChequearEstadoVuelos() {
             if(listaVuelos != null) {
                 foreach (Vuelo vuelo in listaVuelos) {

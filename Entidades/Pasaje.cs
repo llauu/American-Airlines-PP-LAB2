@@ -6,19 +6,29 @@ using System.Threading.Tasks;
 
 namespace Entidades {
     public class Pasaje {
+        private static int precioHoraVueloNacionalTurista;
+        private static int precioHoraVueloInternacionalTurista;
+
         private int idPasaje;
         private Pasajero? pasajero;
         private ETipoClase clasePasajero;
         private Vuelo? vuelo;
         private bool equipajeDeMano;
         //     numero equipaje, kg de equipaje
-        private Dictionary<int, int> equipajesBodega;
+        private Dictionary<int, float> equipajesBodega;
         private int numeroDeEquipaje;
+        private double costoPasaje;
+
+        static Pasaje() {
+            precioHoraVueloNacionalTurista = 50;
+            precioHoraVueloInternacionalTurista = 100;
+        }
 
         public Pasaje() {
-            this.equipajesBodega = new Dictionary<int, int>();
+            this.equipajesBodega = new Dictionary<int, float>();
             this.numeroDeEquipaje = 0;
         }
+
 
         private int ObtenerIdPasajeUnico() {
             int idGenerado;
@@ -36,6 +46,7 @@ namespace Entidades {
             this.clasePasajero = clasePasajero;
             this.vuelo = vuelo;
             this.idPasaje = ObtenerIdPasajeUnico();
+            this.costoPasaje = CalcularCostoPasaje(vuelo.DuracionVuelo, vuelo.TipoVuelo, clasePasajero);
         }
 
         public int IdPasaje { get { return this.idPasaje; } set { this.idPasaje = value; } }
@@ -43,15 +54,57 @@ namespace Entidades {
         public ETipoClase ClasePasajero { get { return this.clasePasajero; } set { this.clasePasajero = value; } }
         public Vuelo? Vuelo { get { return this.vuelo; } set { this.vuelo = value; } }
         public bool EquipajeDeMano { get { return this.equipajeDeMano; } set { this.equipajeDeMano = value; } }
-        public Dictionary<int, int> EquipajesDeBodega { get { return this.equipajesBodega; } }
+        public Dictionary<int, float> EquipajesDeBodega { get { return this.equipajesBodega; } }
         public int NumeroDeEquipaje { get { return this.numeroDeEquipaje; } set { this.numeroDeEquipaje = value; } }
+        public double CostoPasaje { get { return this.costoPasaje; } set { this.costoPasaje = value; } }
 
-        public void CargarEquipajeDeBodega(int kilosDeEquipaje) {
+        private double CalcularCostoPasaje(int horasDeVuelo, ETipoVuelo tipoDeVuelo, ETipoClase clasePasajero) {
+            double costo = 0;
+
+            switch(tipoDeVuelo) {
+                case ETipoVuelo.Nacional:
+                    costo = precioHoraVueloNacionalTurista * horasDeVuelo;
+                    break;
+
+                case ETipoVuelo.Internacional:
+                    costo = precioHoraVueloInternacionalTurista * horasDeVuelo;
+                    break;
+            }
+
+            if(clasePasajero == ETipoClase.Premium) {
+                costo += costo * 0.35;
+            }
+
+            return costo;
+        }
+
+        private bool ChequearPesoDeLaBodega(float kilosAAgregar) {
+            bool hayEspacio = false;
+            float pesoBodegaAux;
+
+            if (this.vuelo is not null) {
+                pesoBodegaAux = this.vuelo.PesoBodegaOcupada + kilosAAgregar;
+
+                if (pesoBodegaAux <= this.vuelo.Avion.CapacidadBodega) {
+                    this.numeroDeEquipaje++;
+                    this.equipajesBodega.Add(numeroDeEquipaje, kilosAAgregar);
+                    this.vuelo.PesoBodegaOcupada = pesoBodegaAux;
+
+                    hayEspacio = true;
+                }
+                else {
+                    throw new Exception("Se supero la capacidad de la bodega, ingrese menos kilos o espere al proximo viaje.");
+                }
+            }
+
+            return hayEspacio;
+        }
+
+        public void CargarEquipajeDeBodega(float kilosDeEquipaje) {
             switch(this.clasePasajero) {
                 case ETipoClase.Turista:
                     if(kilosDeEquipaje <= 25 && this.numeroDeEquipaje < 1) {
-                        this.numeroDeEquipaje++;
-                        this.equipajesBodega.Add(numeroDeEquipaje, kilosDeEquipaje);
+                        ChequearPesoDeLaBodega(kilosDeEquipaje);
                     }
                     else {
                         throw new Exception("Se supero el peso o el numero de equipajes disponibles.");
@@ -61,8 +114,7 @@ namespace Entidades {
 
                 case ETipoClase.Premium:
                     if (kilosDeEquipaje <= 21 && this.numeroDeEquipaje < 2) {
-                        this.numeroDeEquipaje++;
-                        this.equipajesBodega.Add(numeroDeEquipaje, kilosDeEquipaje);
+                        ChequearPesoDeLaBodega(kilosDeEquipaje);
                     }
                     else {
                         throw new Exception("Se supero el peso o el numero de equipajes disponibles.");
@@ -78,7 +130,7 @@ namespace Entidades {
             string bolsoDeMano = this.equipajeDeMano ? "Si" : "No";
             sb.AppendLine($"Lleva bolso de mano: {bolsoDeMano}");
 
-            foreach (KeyValuePair<int, int> equipaje in this.equipajesBodega) {
+            foreach (KeyValuePair<int, float> equipaje in this.equipajesBodega) {
                 sb.AppendLine($"Equipaje {equipaje.Key}: { equipaje.Value}kg.");
             }
 

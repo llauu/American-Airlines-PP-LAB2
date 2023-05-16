@@ -40,15 +40,13 @@ namespace Interfaz {
                 dataGridView.Columns["CiudadPartida"].HeaderText = "Ciudad de partida";
                 dataGridView.Columns["CiudadDestino"].HeaderText = "Ciudad de destino";
                 dataGridView.Columns["FechaDeVuelo"].HeaderText = "Fecha del vuelo";
-                dataGridView.Columns["EstadoDelVuelo"].HeaderText = "Estado del vuelo"; 
-                dataGridView.Columns["CantAsientosPremium"].HeaderText = "Cant. asientos premium";
-                dataGridView.Columns["CantAsientosTurista"].HeaderText = "Cant. asientos turista";
-                dataGridView.Columns["AsientosPremiumOcupados"].HeaderText = "Cant. asientos premium ocupados";
-                dataGridView.Columns["AsientosTuristaOcupados"].HeaderText = "Cant. asientos turista ocupados";
-                dataGridView.Columns["DuracionVuelo"].HeaderText = "Duracion del vuelo";
+                dataGridView.Columns["EstadoDelVuelo"].HeaderText = "Estado del vuelo";
+                dataGridView.Columns["AsientosPremiumOcupados"].HeaderText = "Asientos premium ocupados";
+                dataGridView.Columns["AsientosTuristaOcupados"].HeaderText = "Asientos turista ocupados";
+                dataGridView.Columns["DuracionVuelo"].HeaderText = "Duracion del vuelo (hs)";
                 dataGridView.Columns["TipoVuelo"].HeaderText = "Tipo de vuelo";
+                dataGridView.Columns["PesoBodegaOcupada"].HeaderText = "Kg. cargados en bodega";
                 dataGridView.Columns["Avion"].Visible = false;
-                //dataGridView.Columns["ListaPasajeros"].Visible = false;
             }
             else {
                 FrmMenuPrincipal.ActualizarMensajeDeError(imgError, lblError, "No hay vuelos disponibles para visualizar.");
