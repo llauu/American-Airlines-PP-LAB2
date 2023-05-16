@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Interfaz {
-    public partial class FrmAltaViaje : FrmBotonCancelar {
+    public partial class FrmAltaVuelo : FrmBotonCancelar {
         private Vuelo? vueloAgregado;
         private List<Aeronave> aeronavesDisponibles;
 
@@ -19,7 +19,7 @@ namespace Interfaz {
         }
 
 
-        public FrmAltaViaje() {
+        public FrmAltaVuelo() {
             InitializeComponent();
             this.aeronavesDisponibles = new List<Aeronave>();
 
@@ -40,7 +40,7 @@ namespace Interfaz {
 
 
         public static void ActualizarDataGridView(List<Aeronave> listaAeronavesDisponibles, DataGridView dataGridView) {
-            listaAeronavesDisponibles = Sistema.CargarListaAeronavesDisponibles();
+            listaAeronavesDisponibles = Sistema.CargarListaAeronavesDisponibles(listaAeronavesDisponibles);
             dataGridView.DataSource = null;
 
             if (listaAeronavesDisponibles.Count > 0) {

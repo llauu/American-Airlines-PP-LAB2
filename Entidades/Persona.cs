@@ -25,8 +25,7 @@ namespace Entidades {
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Nombre: {this.nombre}");
-            sb.AppendLine($"Apellido: {this.apellido}");
+            sb.AppendLine($"{this.nombre} {this.apellido} ");
 
             return sb.ToString();
         }

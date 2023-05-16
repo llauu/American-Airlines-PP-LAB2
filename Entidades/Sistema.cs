@@ -37,7 +37,7 @@ namespace Entidades {
             rutaUsuariosJson = @"..\..\..\..\db\MOCK_DATA.json";
             rutaAvionesJson = @"..\..\..\..\db\datosAviones.json";
             rutaPasajerosXML = @"..\..\..\..\db\datosPasajeros.xml";
-            rutaVuelosXML = @"..\..\..\..\db\datosVuelos.xml";
+            rutaVuelosXML = @"..\..\..\..\db\datosVuelos.json";
         }
 
         private static void CargarListaCiudades() { 
@@ -72,15 +72,15 @@ namespace Entidades {
         
         public static void CargarArchivos() {
             listaAeronaves = Archivos.LeerArchivoJson(listaAeronaves, rutaAvionesJson);
-            listaPasajeros = Archivos.LeerArchivoXML(listaPasajeros, rutaPasajerosXML);
-            listaVuelos = Archivos.LeerArchivoXML(listaVuelos, rutaVuelosXML);
+            listaPasajeros = Archivos.LeerArchivoXML(listaPasajeros, rutaPasajerosXML); 
+            listaVuelos = Archivos.LeerArchivoJson(listaVuelos, rutaVuelosXML);
         }
 
         public static void EscribirArchivos() {
             Archivos.EscribirArchivoJson(listaUsuarios, rutaUsuariosJson);
             Archivos.EscribirArchivoJson(listaAeronaves, rutaAvionesJson);
             Archivos.EscribirArchivoXML(listaPasajeros, rutaPasajerosXML);
-            Archivos.EscribirArchivoXML(listaVuelos, rutaVuelosXML);
+            Archivos.EscribirArchivoJson(listaVuelos, rutaVuelosXML);
         }
        
 
@@ -102,7 +102,7 @@ namespace Entidades {
         public static bool AltaPasajero(Pasajero pasajero) {
             bool agregado = false;
             
-            if (pasajero != null && listaPasajeros != null) {
+            if (listaPasajeros != null) {
                 listaPasajeros.Add(pasajero);
                 agregado = true;
             }
@@ -113,7 +113,7 @@ namespace Entidades {
         public static bool BajaPasajero(Pasajero pasajero) {
             bool eliminado = false;
 
-            if (pasajero != null && listaPasajeros != null) {
+            if (listaPasajeros != null) {
                 listaPasajeros.Remove(pasajero);
                 eliminado = true;
             }
@@ -124,7 +124,7 @@ namespace Entidades {
         public static bool AltaAeronave(Aeronave aeronave) {
             bool agregado = false;
 
-            if (aeronave != null && listaAeronaves != null) {
+            if (listaAeronaves != null) {
                 listaAeronaves.Add(aeronave);
                 agregado = true;
             }
@@ -135,7 +135,7 @@ namespace Entidades {
         public static bool BajaAeronave(Aeronave aeronave) {
             bool eliminado = false;
 
-            if (aeronave != null && listaAeronaves != null) {
+            if (listaAeronaves != null) {
                 listaAeronaves.Remove(aeronave);
                 eliminado = true;
             }
@@ -146,7 +146,7 @@ namespace Entidades {
         public static bool AltaVuelo(Vuelo vuelo) {
             bool agregado = false;
 
-            if (vuelo != null && listaVuelos != null) {
+            if (listaVuelos != null) {
                 listaVuelos.Add(vuelo);
                 agregado = true;
             }
@@ -157,7 +157,7 @@ namespace Entidades {
         public static bool BajaVuelo(Vuelo vuelo) {
             bool eliminado = false;
 
-            if (vuelo != null && listaVuelos != null && listaAeronaves != null) {
+            if (listaVuelos != null && listaAeronaves != null) {
                 int i = listaAeronaves.IndexOf(vuelo.Avion);
                 listaAeronaves[i].VueloProgramado = false;
 
@@ -207,9 +207,7 @@ namespace Entidades {
             }
         }
 
-        public static List<Aeronave> CargarListaAeronavesDisponibles() {
-            List<Aeronave> aeronavesDisponibles = new List<Aeronave>();
-
+        public static List<Aeronave> CargarListaAeronavesDisponibles(List<Aeronave> aeronavesDisponibles) {
             if (listaAeronaves != null) {
                 foreach (Aeronave aeronave in listaAeronaves) {
                     if (!aeronave.VueloProgramado) {
@@ -221,6 +219,18 @@ namespace Entidades {
             return aeronavesDisponibles;
         }
 
+        public static List<Vuelo> CargarListaVuelosDisponibles() {
+            List<Vuelo> vuelosDisponibles = new List<Vuelo> ();
 
+            if(listaVuelos != null) {
+                foreach(Vuelo vuelo in listaVuelos) {
+                    if(vuelo.EstadoDelVuelo == EEstadoVuelo.EnTierra) {
+                        vuelosDisponibles.Add(vuelo);
+                    }
+                }
+            }
+
+            return vuelosDisponibles;
+        }
     }
 }

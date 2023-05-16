@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Qk43pPFMg5k1u9QROzJHZPZj/oCfW6r1FX3Qoqj1Rhvb+pSAgqyulR1WzQNxSINR01M2NEXcD442hE4BV+GEfQ==",
+  "dgSpecHash": "ap6P1twA38XSeKlvMy5ur4k93vSK23IKdU64zh6smKNl3vmJZVuykg4I+3JCLdLLNUGpXMw5gW9qt2Jsi0Z3EA==",
   "success": true,
   "projectFilePath": "C:\\Users\\monse\\source\\repos\\Monserrat.Lautaro.PrimerParcial\\Entidades\\Entidades.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\monse\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

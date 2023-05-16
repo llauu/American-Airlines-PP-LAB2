@@ -33,7 +33,7 @@
             btnPasajeros = new Button();
             btnViajes = new Button();
             btnViajesDisponibles = new Button();
-            btnVenderViaje = new Button();
+            btnVenderVuelo = new Button();
             imgLogo = new PictureBox();
             lblPerfil = new Label();
             panelMenuArriba = new Panel();
@@ -60,7 +60,7 @@
             panelMenuNav.Controls.Add(btnPasajeros);
             panelMenuNav.Controls.Add(btnViajes);
             panelMenuNav.Controls.Add(btnViajesDisponibles);
-            panelMenuNav.Controls.Add(btnVenderViaje);
+            panelMenuNav.Controls.Add(btnVenderVuelo);
             panelMenuNav.Controls.Add(imgLogo);
             panelMenuNav.Dock = DockStyle.Left;
             panelMenuNav.Location = new Point(0, 0);
@@ -151,7 +151,7 @@
             btnViajes.Name = "btnViajes";
             btnViajes.Size = new Size(176, 52);
             btnViajes.TabIndex = 5;
-            btnViajes.Text = "Viajes";
+            btnViajes.Text = "Vuelos";
             btnViajes.UseVisualStyleBackColor = false;
             btnViajes.Click += btnViajes_Click;
             // 
@@ -168,26 +168,26 @@
             btnViajesDisponibles.Name = "btnViajesDisponibles";
             btnViajesDisponibles.Size = new Size(176, 52);
             btnViajesDisponibles.TabIndex = 3;
-            btnViajesDisponibles.Text = "Viajes disponibles";
+            btnViajesDisponibles.Text = "Vuelos disponibles";
             btnViajesDisponibles.UseVisualStyleBackColor = false;
             btnViajesDisponibles.Click += btnViajesDisponibles_Click;
             // 
-            // btnVenderViaje
+            // btnVenderVuelo
             // 
-            btnVenderViaje.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnVenderViaje.BackColor = Color.Transparent;
-            btnVenderViaje.Cursor = Cursors.Hand;
-            btnVenderViaje.FlatAppearance.BorderSize = 0;
-            btnVenderViaje.FlatStyle = FlatStyle.Flat;
-            btnVenderViaje.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnVenderViaje.ForeColor = Color.Black;
-            btnVenderViaje.Location = new Point(0, 240);
-            btnVenderViaje.Name = "btnVenderViaje";
-            btnVenderViaje.Size = new Size(176, 52);
-            btnVenderViaje.TabIndex = 4;
-            btnVenderViaje.Text = "Vender viaje";
-            btnVenderViaje.UseVisualStyleBackColor = false;
-            btnVenderViaje.Click += btnVenderViaje_Click;
+            btnVenderVuelo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnVenderVuelo.BackColor = Color.Transparent;
+            btnVenderVuelo.Cursor = Cursors.Hand;
+            btnVenderVuelo.FlatAppearance.BorderSize = 0;
+            btnVenderVuelo.FlatStyle = FlatStyle.Flat;
+            btnVenderVuelo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVenderVuelo.ForeColor = Color.Black;
+            btnVenderVuelo.Location = new Point(0, 240);
+            btnVenderVuelo.Name = "btnVenderVuelo";
+            btnVenderVuelo.Size = new Size(176, 52);
+            btnVenderVuelo.TabIndex = 4;
+            btnVenderVuelo.Text = "Vender vuelo";
+            btnVenderVuelo.UseVisualStyleBackColor = false;
+            btnVenderVuelo.Click += btnVenderViaje_Click;
             // 
             // imgLogo
             // 
@@ -322,7 +322,7 @@
         private PictureBox btnCerrarSesion;
         private ToolTip toolTip1;
         private Button btnViajes;
-        private Button btnVenderViaje;
+        private Button btnVenderVuelo;
         private Button btnViajesDisponibles;
         private Button btnPasajeros;
         private Button btnEstadisticas;

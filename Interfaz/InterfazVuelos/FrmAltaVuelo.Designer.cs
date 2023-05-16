@@ -1,5 +1,5 @@
 ﻿namespace Interfaz {
-    partial class FrmAltaViaje {
+    partial class FrmAltaVuelo {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaViaje));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaVuelo));
             flowLayoutPanel4 = new FlowLayoutPanel();
             flowLayoutPanel3 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();

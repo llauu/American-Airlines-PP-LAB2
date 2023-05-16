@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades {
     public class Vuelo {
@@ -18,26 +19,30 @@ namespace Entidades {
         private EEstadoVuelo estadoDelVuelo;
         private int cantAsientosPremium;
         private int cantAsientosTurista;
+        private int asientosPremiumOcupados;
+        private int asientosTuristaOcupados;
         private int duracionVuelo;
-        private List<Pasajero> listaPasajeros;
+        private List<Pasaje> listaPasajes;
         private ETipoVuelo tipoVuelo;
 
         static Vuelo() {
-        precioHoraVueloNacionalTurista = 50;
-        precioHoraVueloInternacionalTurista = 100;
+            precioHoraVueloNacionalTurista = 50;
+            precioHoraVueloInternacionalTurista = 100;
 
-        destinosInternacionales = new List<string>() {
-                "Recife (Brasil)",
-                "Roma (Italia)",
-                "Acapulco (México)",
-                "Miami (EE.UU.)"
+            destinosInternacionales = new List<string>() {
+                    "Recife (Brasil)",
+                    "Roma (Italia)",
+                    "Acapulco (México)",
+                    "Miami (EE.UU.)"
             };
         }
 
-        private Vuelo() {
+        public Vuelo() {
             this.idVuelo = ObtenerIdVueloUnico();
-            this.listaPasajeros = new List<Pasajero>();
+            this.listaPasajes = new List<Pasaje>();
             this.estadoDelVuelo = EEstadoVuelo.EnTierra;
+            this.asientosPremiumOcupados = 0;
+            this.asientosTuristaOcupados = 0;
         }
 
         public Vuelo(string ciudadPartida, string ciudadDestino, DateTime fechaDeVuelo, Aeronave avion) : this() {
@@ -59,15 +64,15 @@ namespace Entidades {
         public DateTime FechaDeVuelo { get { return this.fechaDeVuelo!; } set { this.fechaDeVuelo = value; } }
         public Aeronave Avion { get { return this.avion!; } set { this.avion = value; } }
         public EEstadoVuelo EstadoDelVuelo { get { return this.estadoDelVuelo; } set { this.estadoDelVuelo = value; } }
+        public int DuracionVuelo { get { return this.duracionVuelo; } set { this.duracionVuelo = value; } }
+        public ETipoVuelo TipoVuelo { get { return this.tipoVuelo; } set { this.tipoVuelo = value; } }
+        public List<Pasaje> ListaPasajes { get { return this.listaPasajes; } set { this.listaPasajes = value; } }
         public int CantAsientosPremium { get { return this.cantAsientosPremium; } set { this.cantAsientosPremium = value; } }
         public int CantAsientosTurista { get { return this.cantAsientosTurista; } set { this.cantAsientosTurista = value; } }
-        public int DuracionVuelo { get { return this.duracionVuelo; } set { this.duracionVuelo = value; } }
-        public List<Pasajero> ListaPasajeros { get { return this.listaPasajeros; } set { this.listaPasajeros = value; } }
-        public ETipoVuelo TipoVuelo { get { return this.tipoVuelo; } set { this.tipoVuelo = value; } }
-
+        public int AsientosPremiumOcupados { get { return this.asientosPremiumOcupados; } set { this.asientosPremiumOcupados = value; } }
+        public int AsientosTuristaOcupados { get { return this.asientosTuristaOcupados; } set { this.asientosTuristaOcupados = value; } }
 
         private int ObtenerIdVueloUnico() {
-            Random rand = new Random();
             int idGenerado;
 
             do {
@@ -113,6 +118,20 @@ namespace Entidades {
             }
 
             return duracionDelVuelo;
+        }
+
+        public void ContarAsientosOcupados() {
+            this.asientosTuristaOcupados = 0;
+            this.AsientosPremiumOcupados = 0;
+
+            foreach (Pasaje pasaje in ListaPasajes) {
+                if(pasaje.ClasePasajero == ETipoClase.Turista) {
+                    this.asientosTuristaOcupados++;
+                }
+                else {
+                    this.AsientosPremiumOcupados++;
+                }
+            }
         }
 
         public static bool operator ==(Vuelo v1, Vuelo v2) {

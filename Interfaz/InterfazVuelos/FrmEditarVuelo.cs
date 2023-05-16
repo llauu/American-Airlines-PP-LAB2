@@ -10,20 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Interfaz.InterfazViajes {
-    public partial class FrmEditarViaje : FrmBotonCancelar {
+    public partial class FrmEditarVuelo : FrmBotonCancelar {
         private Vuelo vueloAEditar;
         private List<Aeronave> aeronavesDisponibles;
 
 
-        public FrmEditarViaje(Vuelo vuelo) {
+        public FrmEditarVuelo(Vuelo vuelo) {
             InitializeComponent();
             this.vueloAEditar = vuelo;
             this.aeronavesDisponibles = new List<Aeronave>();
+            this.aeronavesDisponibles.Add(vuelo.Avion);
             this.dateFechaVuelo.MinDate = DateTime.Now.AddDays(1);
         }
 
         private void FrmEditarViaje_Load(object sender, EventArgs e) {
-            FrmAltaViaje.ActualizarDataGridView(aeronavesDisponibles, dataGridAeronaves);
+            FrmAltaVuelo.ActualizarDataGridView(aeronavesDisponibles, dataGridAeronaves);
 
             if (Sistema.ListaCiudades != null) {
                 foreach (string ciudad in Sistema.ListaCiudades) {

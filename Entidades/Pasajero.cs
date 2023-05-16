@@ -11,7 +11,8 @@ namespace Entidades {
         private DateTime fechaDeNacimiento;
 
         // Constructor sin parametros para serializar xml
-        public Pasajero() {}
+        public Pasajero() {
+        }
 
         public Pasajero(string apellido, string nombre, int dni, DateTime fechaDeNacimiento) : base(apellido, nombre) {
             this.dni = Validador.ValidarDni(dni);
@@ -50,8 +51,8 @@ namespace Entidades {
             StringBuilder sb = new StringBuilder();
 
             sb.Append(base.ToString());
-            sb.AppendLine($"DNI: {this.dni}");
-            sb.AppendLine($"Edad: {this.edad}");
+            sb.AppendLine($"| DNI: {this.dni} ");
+            sb.AppendLine($"| Edad: {this.edad}");
 
             return sb.ToString();
         }

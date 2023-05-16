@@ -100,6 +100,21 @@ namespace Entidades {
             return seRepite;
         }
 
+        public static bool ValidarIdPasajeUnico(Vuelo vuelo, int idGenerado) {
+            bool seRepite = false;
+
+            if (vuelo.ListaPasajes != null) {
+                foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                    if (pasaje.GetHashCode() == idGenerado) {
+                        seRepite = true;
+                        break;
+                    }
+                }
+            }
+
+            return seRepite;
+        }
+
         public static void ValidarCiudades(string partida, string destino) {
             if (partida == destino) {
                 throw new Exception("Ciudad de partida y destino no pueden ser las mismas.");

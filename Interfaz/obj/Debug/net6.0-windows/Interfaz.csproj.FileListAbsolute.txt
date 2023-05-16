@@ -20,11 +20,8 @@ C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\n
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.genruntimeconfig.cache
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\ref\Interfaz.dll
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmEstadisticas.resources
-C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmViajesDisponibles.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmAeronaves.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmPasajeros.resources
-C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmVenderViaje.resources
-C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmViajes.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmInicio.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.Properties.Resources.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazPasajeros.FrmAltaPasajero.resources
@@ -32,6 +29,12 @@ C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\n
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazAeronaves.FrmAltaAeronave.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazAeronaves.FrmEditarAeronave.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmBotonCancelar.resources
-C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmAltaViaje.resources
 C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazViajes.FrmInfoVuelo.resources
-C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazViajes.FrmEditarViaje.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmAltaVuelo.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazViajes.FrmEditarVuelo.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmVenderVuelo.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazViajes.FrmVentaVuelo.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmVuelos.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.FrmVuelosDisponibles.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\obj\Debug\net6.0-windows\Interfaz.InterfazVuelos.FrmAgregarEquipaje.resources
+C:\Users\monse\source\repos\Monserrat.Lautaro.PrimerParcial\Interfaz\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

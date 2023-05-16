@@ -58,7 +58,7 @@ namespace Interfaz {
 
                 case "supervisor":
                     this.btnViajesDisponibles.Enabled = false;
-                    this.btnVenderViaje.Enabled = false;
+                    this.btnVenderVuelo.Enabled = false;
                     this.btnViajes.Enabled = false;
                     this.btnAeronaves.Enabled = false;
                     break;
@@ -106,17 +106,17 @@ namespace Interfaz {
 
         private void btnViajesDisponibles_Click(object sender, EventArgs e) {
             ActualizarOpcionActiva(btnViajesDisponibles);
-            AbrirFormOpcionElegida(new FrmViajesDisponibles());
+            AbrirFormOpcionElegida(new FrmVuelosDisponibles());
         }
 
         private void btnVenderViaje_Click(object sender, EventArgs e) {
-            ActualizarOpcionActiva(btnVenderViaje);
-            AbrirFormOpcionElegida(new FrmVenderViaje());
+            ActualizarOpcionActiva(btnVenderVuelo);
+            AbrirFormOpcionElegida(new FrmVenderVuelo());
         }
 
         private void btnViajes_Click(object sender, EventArgs e) {
             ActualizarOpcionActiva(btnViajes);
-            AbrirFormOpcionElegida(new FrmViajes());
+            AbrirFormOpcionElegida(new FrmVuelos());
         }
 
         private void btnPasajeros_Click(object sender, EventArgs e) {
@@ -140,7 +140,7 @@ namespace Interfaz {
 
         private void ReiniciarFondoOpciones() {
             btnViajesDisponibles.BackColor = Color.Transparent;
-            btnVenderViaje.BackColor = Color.Transparent;
+            btnVenderVuelo.BackColor = Color.Transparent;
             btnEstadisticas.BackColor = Color.Transparent;
             btnViajes.BackColor = Color.Transparent;
             btnPasajeros.BackColor = Color.Transparent;
@@ -150,7 +150,7 @@ namespace Interfaz {
         private void ActualizarOpcionActiva(Button opcion) {
             ReiniciarFondoOpciones();
             ActualizarTitulo(opcion.Text);
-            opcion.BackColor = Color.LightSteelBlue;
+            opcion.BackColor = Color.DarkGray;
         }
 
         private void RedimensionarFuenteBoton(Button boton, Single tam) {

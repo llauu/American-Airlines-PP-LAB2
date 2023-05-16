@@ -1,5 +1,5 @@
 ﻿namespace Interfaz.InterfazViajes {
-    partial class FrmEditarViaje {
+    partial class FrmEditarVuelo {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarViaje));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarVuelo));
             btnAceptar = new Button();
             flowLayoutPanel4 = new FlowLayoutPanel();
             flowLayoutPanel3 = new FlowLayoutPanel();

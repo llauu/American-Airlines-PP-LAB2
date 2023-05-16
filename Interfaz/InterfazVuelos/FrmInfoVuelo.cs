@@ -19,15 +19,20 @@ namespace Interfaz.InterfazViajes {
         }
 
         private void FrmInfoVuelo_Load(object sender, EventArgs e) {
-            this.dataGridPasajeros.DataSource = vueloSeleccionado.ListaPasajeros;
-            this.dataGridPasajeros.Columns["Apellido"].DisplayIndex = 0;
-            this.dataGridPasajeros.Columns["Nombre"].DisplayIndex = 1;
-            this.dataGridPasajeros.Columns["Dni"].DisplayIndex = 2;
-            this.dataGridPasajeros.Columns["FechaDeNacimiento"].DisplayIndex = 3;
-            this.dataGridPasajeros.Columns["Edad"].DisplayIndex = 4;
-            this.dataGridPasajeros.Columns["FechaDeNacimiento"].HeaderText = "Fecha de nacimiento";
+            this.dataGridPasajeros.DataSource = vueloSeleccionado.ListaPasajes;
+
+            this.dataGridPasajeros.Columns["EquipajeDeMano"].Visible = false; 
+            this.dataGridPasajeros.Columns["EquipajesDeBodega"].Visible = false;
+            this.dataGridPasajeros.Columns["NumeroDeEquipaje"].Visible = false;
+            this.dataGridPasajeros.Columns["Vuelo"].Visible = false;
+
+            this.dataGridPasajeros.Columns["ClasePasajero"].HeaderText = "Clase pasajero";
 
             this.txtInfoAvion.Text = vueloSeleccionado.Avion.ToString();
+
+            dataGridPasajeros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridPasajeros.AutoResizeColumns();
         }
     }
 }
