@@ -13,6 +13,7 @@ namespace Entidades {
         private static string rutaAvionesJson;
         private static string rutaPasajerosXML;
         private static string rutaVuelosXML;
+        private static string rutaRegistroUsuarios;
         private static List<Usuario>? listaUsuarios;
         private static List<Pasajero>? listaPasajeros;
         private static List<Aeronave>? listaAeronaves;
@@ -38,6 +39,7 @@ namespace Entidades {
             rutaAvionesJson = @"..\..\..\..\db\datosAviones.json";
             rutaPasajerosXML = @"..\..\..\..\db\datosPasajeros.xml";
             rutaVuelosXML = @"..\..\..\..\db\datosVuelos.json";
+            rutaRegistroUsuarios = @"..\..\..\..\db\usuario.log";
         }
 
         private static void CargarListaCiudades() { 
@@ -83,6 +85,13 @@ namespace Entidades {
             Archivos.EscribirArchivoJson(listaVuelos, rutaVuelosXML);
         }
        
+        public static void RegistrarConexion(Usuario usuario) {
+            Archivos.GuardarConexionDeUsuario(usuario, rutaRegistroUsuarios);
+        }
+
+        public static void RegistrarDesconexion(Usuario usuario) {
+            Archivos.GuardarDesconexionDeUsuario(usuario, rutaRegistroUsuarios);
+        }
 
         public static int IniciarSesion(string correo, string clave) {
             int indice = -1;

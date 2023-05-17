@@ -1,84 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Entidades.Aeronave" Collapsed="true">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+  <Class Name="Entidades.Aeronave">
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQIEAgFCBRAAAEgABAAAAIRAQAAIAGAQAAAhEAAiA=</HashCode>
       <FileName>Aeronave.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entidades.Archivos" Collapsed="true">
-    <Position X="12.25" Y="2.5" Width="1.5" />
+  <Class Name="Entidades.Archivos">
+    <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIgAAAAAAAAAAAAAAAAAACAAAABAAAAAAAA=</HashCode>
       <FileName>Archivos.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entidades.Pasaje" Collapsed="true">
-    <Position X="14" Y="2.5" Width="1.5" />
+  <Class Name="Entidades.Pasaje">
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACIgAAACIAgAEggEoAAAgQAACAUAEIkEAIAABAAAAiQ=</HashCode>
       <FileName>Pasaje.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Pasajero">
-    <Position X="8" Y="3.75" Width="1.5" />
+    <Position X="2.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAABAAAAABAEgAAQAAAAAAAEAoAAAAIAAAAAAiA=</HashCode>
       <FileName>Pasajero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Persona">
-    <Position X="3.25" Y="2" Width="1.25" />
+    <Position X="2" Y="0.5" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAACEAAAAgAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entidades.Sistema" Collapsed="true">
-    <Position X="10.5" Y="3.5" Width="1.5" />
+  <Class Name="Entidades.Sistema">
+    <Position X="16.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>GEBEgAQAABAAKAENAkSQBwFIFIIAEACAMAAAFAIQCBA=</HashCode>
       <FileName>Sistema.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Usuario">
-    <Position X="1.25" Y="4" Width="1.5" />
+    <Position X="0.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAIEgQAABAAEAIQEAICAAAAQAAAAEiA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Validador">
-    <Position X="12.25" Y="3.5" Width="1.5" />
+    <Position X="14.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAABAAQAAAAABgAAAgAAEAAAAAAIAAAAAgQAEAQAA=</HashCode>
       <FileName>Validador.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entidades.Vuelo" Collapsed="true">
-    <Position X="14" Y="3.5" Width="1.5" />
+  <Class Name="Entidades.Vuelo">
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BQIIAAQAACARBLAkgESAAABIABAAAIAYAAgAEAEKCjA=</HashCode>
       <FileName>Vuelo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="EEstadoVuelo" Collapsed="true">
-    <Position X="10.5" Y="4.75" Width="1.5" />
+  <Enum Name="EEstadoVuelo">
+    <Position X="12" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAABAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Enumerado.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ETipoClase" Collapsed="true">
-    <Position X="12.25" Y="4.75" Width="1.5" />
+  <Enum Name="ETipoClase">
+    <Position X="12" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerado.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ETipoVuelo">
-    <Position X="14" Y="4.75" Width="1.5" />
+    <Position X="12" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAA=</HashCode>
       <FileName>Enumerado.cs</FileName>

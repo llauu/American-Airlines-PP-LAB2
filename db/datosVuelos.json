@@ -1,6 +1,6 @@
 [
   {
-    "IdVuelo": 167613,
+    "IdVuelo": 512220,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Roma (Italia)",
     "FechaDeVuelo": "2023-05-19T00:00:00",
@@ -219,7 +219,7 @@
     "PesoBodegaOcupada": 25.0
   },
   {
-    "IdVuelo": 584516,
+    "IdVuelo": 838870,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Recife (Brasil)",
     "FechaDeVuelo": "2023-05-19T00:00:00",
@@ -411,7 +411,7 @@
     "PesoBodegaOcupada": 24.0
   },
   {
-    "IdVuelo": 467587,
+    "IdVuelo": 653657,
     "CiudadPartida": "Santa Rosa",
     "CiudadDestino": "Iguazú",
     "FechaDeVuelo": "2023-06-04T00:00:00",

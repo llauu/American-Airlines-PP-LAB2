@@ -90,18 +90,6 @@ namespace Entidades {
             return guardado;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
         public static List<Pasajero>? LeerArchivoXML(List<Pasajero>? lista, string rutaXML) {
             if (File.Exists(rutaXML)) {
                 using (XmlTextReader reader = new XmlTextReader(rutaXML)) {
@@ -127,6 +115,22 @@ namespace Entidades {
             }
 
             return guardado;
+        }
+
+        public static void GuardarConexionDeUsuario(Usuario usuarioConectado, string rutaLog) {
+            string registroDeInicio = $"[{DateTime.Now}] El {usuarioConectado.Perfil} {usuarioConectado.Nombre} {usuarioConectado.Apellido} se ha conectado.";
+            
+            using (StreamWriter sw = new StreamWriter(rutaLog, true)) {
+                sw.WriteLine(registroDeInicio); 
+            }
+        }
+
+        public static void GuardarDesconexionDeUsuario(Usuario usuarioDesconectado, string rutaLog) {
+            string registroDeSalida = $"[{DateTime.Now}] El {usuarioDesconectado.Perfil} {usuarioDesconectado.Nombre} {usuarioDesconectado.Apellido} se ha desconectado.";
+
+            using (StreamWriter sw = new StreamWriter(rutaLog, true)) {
+                sw.WriteLine(registroDeSalida);
+            }
         }
     }
 }

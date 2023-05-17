@@ -301,7 +301,7 @@
             IsMdiContainer = true;
             Name = "FrmMenuPrincipal";
             Text = "American Airlines";
-            FormClosed += FrmMenuPrincipal_FormClosed;
+            FormClosing += FrmMenuPrincipal_FormClosing;
             Load += FrmMenuPrincipal_Load;
             Resize += FrmMenuPrincipal_Resize;
             panelMenuNav.ResumeLayout(false);

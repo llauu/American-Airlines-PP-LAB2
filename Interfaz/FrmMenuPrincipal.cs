@@ -13,6 +13,7 @@ namespace Interfaz {
     public partial class FrmMenuPrincipal : Form {
         private FrmLogin? formLogin;
         private Form? formOpcionActiva;
+        private Usuario? usuarioActivo;
         private bool cerrandoSesion;
 
         private FrmMenuPrincipal() {
@@ -26,9 +27,10 @@ namespace Interfaz {
         public FrmMenuPrincipal(Usuario usuarioActivo, FrmLogin formLogin) : this() {
             string fechaHoy = DateTime.UtcNow.ToString("d");
 
+            this.usuarioActivo = usuarioActivo;
             CargarPerfilUsuario(usuarioActivo);
 
-            this.lblFecha.Text = fechaHoy; 
+            this.lblFecha.Text = fechaHoy;
             this.MinimumSize = new Size(964, 574);
             this.lblPerfil.Text = $"{usuarioActivo.Nombre} {usuarioActivo.Apellido}";
             this.cerrandoSesion = false;
@@ -38,6 +40,7 @@ namespace Interfaz {
         private void FrmMenuPrincipal_Load(object sender, EventArgs e) {
             try {
                 Sistema.CargarArchivos();
+                Sistema.RegistrarConexion(usuarioActivo!);
                 Sistema.ChequearEstadoVuelos();
 
                 AbrirFormOpcionElegida(new FrmInicio());
@@ -64,10 +67,10 @@ namespace Interfaz {
                     break;
 
                 case "administrador":
-                    //this.btnEstadisticas.Enabled = false;
-                    //this.btnViajesDisponibles.Enabled = false;
-                    //this.btnVenderViaje.Enabled = false;
-                    //this.btnPasajeros.Enabled = false;
+                    this.btnEstadisticas.Enabled = false;
+                    this.btnViajesDisponibles.Enabled = false;
+                    this.btnVenderVuelo.Enabled = false;
+                    this.btnPasajeros.Enabled = false;
                     break;
 
                 default:
@@ -187,24 +190,32 @@ namespace Interfaz {
             }
         }
 
-        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e) {
+        public static void ActualizarMensajeDeError(PictureBox imgError, Label lblError, string mensaje) {
+            imgError.Visible = true;
+            lblError.Visible = true;
+            lblError.Text = mensaje;
+        }
+
+        private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e) {
             try {
                 Sistema.EscribirArchivos();
+                Sistema.RegistrarDesconexion(usuarioActivo!);
 
                 if (!cerrandoSesion) {
-                    Application.Exit();
+                    DialogResult res = MessageBox.Show($"Esta seguro que desea salir de la aplicacion?", "Cerrar aplicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (res == DialogResult.Yes) {
+                        formLogin!.Close();
+                    }
+
+                    // cancelo cierre de la aplicacion
+                    e.Cancel = true;
                 }
             }
             catch (Exception ex) {
                 MessageBox.Show($"Error al guardar los archivos. Se cerrara la aplicacion. \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
-        }
-
-        public static void ActualizarMensajeDeError(PictureBox imgError, Label lblError, string mensaje) {
-            imgError.Visible = true;
-            lblError.Visible = true;
-            lblError.Text = mensaje;
         }
     }
 }
