@@ -68,31 +68,54 @@ namespace Entidades {
             }; 
         }
 
+        /// <summary>
+        /// Lee el archivo de los usuarios generados anteriormente para el inicio de sesion
+        /// </summary>
         public static void CargarUsuarios() {
             listaUsuarios = Archivos.LeerArchivoJson(listaUsuarios, rutaUsuariosJson);
         }
         
+        /// <summary>
+        /// Lee los archivos en donde se encuentran los datos utilizados anteriormente
+        /// </summary>
         public static void CargarArchivos() {
             listaAeronaves = Archivos.LeerArchivoJson(listaAeronaves, rutaAvionesJson);
             listaPasajeros = Archivos.LeerArchivoXML(listaPasajeros, rutaPasajerosXML); 
             listaVuelos = Archivos.LeerArchivoJson(listaVuelos, rutaVuelosXML);
         }
 
+        /// <summary>
+        /// Escribe los datos en archivos para tener permanencia de ellos
+        /// </summary>
         public static void EscribirArchivos() {
             Archivos.EscribirArchivoJson(listaUsuarios, rutaUsuariosJson);
             Archivos.EscribirArchivoJson(listaAeronaves, rutaAvionesJson);
             Archivos.EscribirArchivoXML(listaPasajeros, rutaPasajerosXML);
             Archivos.EscribirArchivoJson(listaVuelos, rutaVuelosXML);
         }
-       
+
+        /// <summary>
+        /// Registra la conexion de un usuario al sistema
+        /// </summary>
+        /// <param name="usuario">Usuario que se conecto</param>
         public static void RegistrarConexion(Usuario usuario) {
             Archivos.GuardarConexionDeUsuario(usuario, rutaRegistroUsuarios);
         }
-
+        
+        /// <summary>
+        /// Registra la desconexion de un usuario del sistema
+        /// </summary>
+        /// <param name="usuario">Usuario que se desconecto</param>
         public static void RegistrarDesconexion(Usuario usuario) {
             Archivos.GuardarDesconexionDeUsuario(usuario, rutaRegistroUsuarios);
         }
 
+        /// <summary>
+        /// Permite el inicio de sesion a traves de un correo y una clave iniciada, recorre la lista de usuario previamente cargados para validarlos
+        /// </summary>
+        /// <param name="correo">Correo ingresado</param>
+        /// <param name="clave">Clave ingresada</param>
+        /// <returns>Indice donde se encuentra el usuario en la lista de usuarios</returns>
         public static int IniciarSesion(string correo, string clave) {
             int indice = -1;
             
@@ -108,6 +131,11 @@ namespace Entidades {
             return indice;
         }
 
+        /// <summary>
+        /// Permite el alta de un pasajero en el sistema, agregandolo a la lista de pasajeros
+        /// </summary>
+        /// <param name="pasajero">Pasajero a agregar a la lista</param>
+        /// <returns>true si se agrego correctamente, false si no</returns>
         public static bool AltaPasajero(Pasajero pasajero) {
             bool agregado = false;
             
@@ -119,6 +147,11 @@ namespace Entidades {
             return agregado;
         }
 
+        /// <summary>
+        /// Permite la baja de un pasajero en el sistema, quitandolo de la lista de pasajeros
+        /// </summary>
+        /// <param name="pasajero">Pasajero a eliminar de la lista</param>
+        /// <returns>true si se elimino correctamente, false si no</returns>
         public static bool BajaPasajero(Pasajero pasajero) {
             bool eliminado = false;
 
@@ -130,6 +163,12 @@ namespace Entidades {
             return eliminado;
         }
 
+
+        /// <summary>
+        /// Permite el alta de una aeronave en el sistema, agregandolo a la lista de aeronaves
+        /// </summary>
+        /// <param name="aeronave">Aeronave a agregar a la lista</param>
+        /// <returns>true si se agrego correctamente, false si no</returns>
         public static bool AltaAeronave(Aeronave aeronave) {
             bool agregado = false;
 
@@ -141,6 +180,11 @@ namespace Entidades {
             return agregado;
         }
 
+        /// <summary>
+        /// Permite la baja de una aeronave en el sistema, quitandola de la lista de aeronaves
+        /// </summary>
+        /// <param name="aeronave">Aeronave a eliminar de la lista</param>
+        /// <returns>true si se elimino correctamente, false si no</returns>
         public static bool BajaAeronave(Aeronave aeronave) {
             bool eliminado = false;
 
@@ -152,6 +196,11 @@ namespace Entidades {
             return eliminado;
         }
 
+        /// <summary>
+        /// Permite el alta de un vuelo en el sistema, agregandolo a la lista de vuelos
+        /// </summary>
+        /// <param name="vuelo">Vuelo a agregar a la lista</param>
+        /// <returns>true si se agrego correctamente, false si no</returns>
         public static bool AltaVuelo(Vuelo vuelo) {
             bool agregado = false;
 
@@ -163,6 +212,11 @@ namespace Entidades {
             return agregado;
         }
 
+        /// <summary>
+        /// Permite la baja de un vuelo en el sistema, quitandolo de la lista de vuelos
+        /// </summary>
+        /// <param name="vuelo">Vuelo a eliminar de la lista</param>
+        /// <returns>true si se elimino correctamente, false si no</returns>
         public static bool BajaVuelo(Vuelo vuelo) {
             bool eliminado = false;
 
@@ -177,6 +231,10 @@ namespace Entidades {
             return eliminado;
         }
 
+        /// <summary>
+        /// Genera un ID alfanumerico en base a las letras del abcedario y los numeros del 0 al 9
+        /// </summary>
+        /// <returns>Un string del id generado</returns>
         public static string GenerarIdAlfanumerico() {
             Random random = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -192,6 +250,10 @@ namespace Entidades {
             return idAlfanumericoUnico;
         }
 
+        /// <summary>
+        /// Genera un ID numerico entre 100000 y 999999 (incluidos)
+        /// </summary>
+        /// <returns>El ID generado</returns>
         public static int GenerarIdNumerico() {
             Random rand = new Random();
             int idGenerado;
@@ -201,6 +263,11 @@ namespace Entidades {
             return idGenerado;
         }
 
+        /// <summary>
+        /// Permite la busqueda de un pasajero en base a su nombre, apellido o dni
+        /// </summary>
+        /// <param name="pasajeroEncontrados">lista donde se van a cargar los pasajeros que coincidan con los criterios de busqueda</param>
+        /// <param name="textoABuscar">nombre, apellido o dni el cual se quiere buscar</param>
         public static void BuscarClientes(List<Pasajero> pasajeroEncontrados, string textoABuscar) {
             if (listaPasajeros != null) {
                 foreach (Pasajero pasajero in listaPasajeros) {
@@ -221,6 +288,10 @@ namespace Entidades {
             }
         }
 
+        /// <summary>
+        /// Recorre la lista de vuelos para verificar el estado de los mismos, lo que hace es si el dia actual es mayor al dia del vuelo, 
+        /// lo setea en finalizado, y si es igual, en curso.
+        /// </summary>
         public static void ChequearEstadoVuelos() {
             if(listaVuelos != null) {
                 foreach (Vuelo vuelo in listaVuelos) {
@@ -236,7 +307,11 @@ namespace Entidades {
             }
         }
 
-        public static List<Aeronave> CargarListaAeronavesDisponibles(List<Aeronave> aeronavesDisponibles) {
+        /// <summary>
+        /// Permite la carga de una lista con las aeronaves disponibles para viajar
+        /// </summary>
+        /// <param name="aeronavesDisponibles">lista donde se van a cargar las aeronaves disponibles para vuelos</param>
+        public static void CargarListaAeronavesDisponibles(List<Aeronave> aeronavesDisponibles) {
             if (listaAeronaves != null) {
                 foreach (Aeronave aeronave in listaAeronaves) {
                     if (!aeronave.VueloProgramado) {
@@ -244,10 +319,12 @@ namespace Entidades {
                     }
                 }
             }
-
-            return aeronavesDisponibles;
         }
 
+        /// <summary>
+        /// Permite la carga de una lista con los vuelos disponibles para vender
+        /// </summary>
+        /// <returns>La lista con los vuelos que aun estan en tierra disponibles para vender</returns>
         public static List<Vuelo> CargarListaVuelosDisponibles() {
             List<Vuelo> vuelosDisponibles = new List<Vuelo> ();
 
@@ -262,6 +339,11 @@ namespace Entidades {
             return vuelosDisponibles;
         }
 
+        /// <summary>
+        /// Permite la carga de los destinos con su correspondiente facturacion en total, lo hago atravez de un diccionario en donde la 
+        /// clave es el destino y el valor es la facturacion total
+        /// </summary>
+        /// <returns>Un diccionario con los destinos y las facturaciones cargadas</returns>
         public static Dictionary<string, double> CargarDestinosConSuFacturacion() {
             Dictionary<string, double> destinosConSuFacturacion = new Dictionary<string, double> ();
 
@@ -281,6 +363,11 @@ namespace Entidades {
             return destinosConSuFacturacion;
         }
 
+        /// <summary>
+        /// Ordena los destinos obtenidos en la funcion CargarDestinosConSuFacturacion() de manera descendente y los guarda en un nuevo
+        /// diccionario para cargar el valor con el signo $
+        /// </summary>
+        /// <returns>El diccionario de destinos ordenado descendentemente en base a su facturacion</returns>
         public static Dictionary<string, string> ObtenerDestinosOrdenadosPorSuFacturacion() {
             Dictionary<string, double> destinos = CargarDestinosConSuFacturacion();
             Dictionary<string, double> destinosOrdenados = new Dictionary<string, double>();
@@ -297,17 +384,21 @@ namespace Entidades {
             return destinosOrdenadosEnString;
         }
 
+        /// <summary>
+        /// Permite la carga de un diccionario con los pasajeros y su cantidad de vuelos en total, de la misma manera que antes, aprovechando la clave-valor
+        /// </summary>
+        /// <returns>Un diccionario con los pasajeros cargados con sus respectiva cantidad de viajes</returns>
         public static Dictionary<string, int> CargarPasajerosConCantidadDeVuelos() {
             Dictionary<string, int> pasajerosConCantidadDeVuelos = new Dictionary<string, int>();
 
             foreach (Pasajero pasajero in listaPasajeros!) {
-                pasajerosConCantidadDeVuelos.Add($"{pasajero.Nombre} {pasajero.Apellido}", 0);
+                pasajerosConCantidadDeVuelos.Add($"{pasajero}", 0);
 
                 foreach(Vuelo vuelo in listaVuelos!) {
                     if(vuelo.EstadoDelVuelo != EEstadoVuelo.EnTierra) {
                         foreach (Pasaje pasaje in vuelo.ListaPasajes) {
                             if (pasajero == pasaje.Pasajero!) {
-                                pasajerosConCantidadDeVuelos[$"{pasajero.Nombre} {pasajero.Apellido}"]++;
+                                pasajerosConCantidadDeVuelos[$"{pasajero}"]++;
                             }
                         }
                     }
@@ -317,6 +408,10 @@ namespace Entidades {
             return pasajerosConCantidadDeVuelos;
         }
 
+        /// <summary>
+        /// Ordena los pasajeros obtenidos en la funcion CargarPasajerosConCantidadDeVuelos() de manera descendente en base a su cantidad de vuelos
+        /// </summary>
+        /// <returns>Un diccionario con los pasajeros ordenados con su respeciva cantidad de viajes</returns>
         public static Dictionary<string, int> ObtenerPasajerosOrdenadosPorCantidadDeVuelos() {
             Dictionary<string, int> pasajerosConCantidadDeVuelos = CargarPasajerosConCantidadDeVuelos();
             Dictionary<string, int> pasajerosOrdenados = new Dictionary<string, int>();
@@ -326,7 +421,10 @@ namespace Entidades {
             return pasajerosOrdenados;
         }
 
-
+        /// <summary>
+        /// Calcula las ganancias totales de todos los pasajes vendidos de todos los vuelos
+        /// </summary>
+        /// <returns>Un double con las ganancias totales</returns>
         public static double CalcularGananciasTotales() {
             double gananciasTotales = 0;
             
@@ -339,6 +437,10 @@ namespace Entidades {
             return gananciasTotales;
         }
 
+        /// <summary>
+        /// Calcula las ganancias totales de todos los pasajes vendidos en vuelos internacionales
+        /// </summary>
+        /// <returns>Un double con las ganancias de los vuelos internacionales</returns>
         public static double CalcularGananciasVuelosInternacionales() {
             double gananciasTotales = 0;
 
@@ -353,6 +455,10 @@ namespace Entidades {
             return gananciasTotales;
         }
 
+        /// <summary>
+        /// Calcula las ganancias totales de todos los pasajes vendidos en vuelos nacionales
+        /// </summary>
+        /// <returns>Un double con las ganancias de los vuelos nacionales</returns>
         public static double CalcularGananciasVuelosNacionales() {
             double gananciasTotales = 0;
 
@@ -367,7 +473,11 @@ namespace Entidades {
             return gananciasTotales;
         }
 
-
+        /// <summary>
+        /// Permite la carga de un diccionario con los aviones y sus horas de vuelo en total, luego lo transformo en un diccionario con clave-valor de
+        /// tipo <string, string> para agregar el hs. al final de las horas totales para una mejor comprension
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<string, string> CargarAvionesConSusHorasDeVuelos() {
             Dictionary<string, int> avionesConHorasDeVuelos = new Dictionary<string, int>();
             Dictionary<string, string> avionesConHorasDeVuelosEnString = new Dictionary<string, string>();
@@ -390,10 +500,14 @@ namespace Entidades {
         }
 
 
-            //El destino más pedido por los clientes.
+        /// <summary>
+        /// Recorre todos los destinos que ofrece la empresa, y de acuerdo a la cantidad de pasajes por vuelo que se compraron se van sumando a un 
+        /// contador para encontrar el destino mas veces elegido.
+        /// </summary>
+        /// <returns>el destino mas pedido por los pasajeros</returns>
         public static string BuscarDestinoMasPedido() {
             string destinoMasPedido = "Ninguno";
-             int contadorDestinoMasPedido = 0;
+            int contadorDestinoMasPedido = 0;
             int contadorActual = 0;
             bool banderaPrimero = true;
 

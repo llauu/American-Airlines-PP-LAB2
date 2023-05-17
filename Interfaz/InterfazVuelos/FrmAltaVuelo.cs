@@ -40,7 +40,7 @@ namespace Interfaz {
 
 
         public static void ActualizarDataGridView(List<Aeronave> listaAeronavesDisponibles, DataGridView dataGridView) {
-            listaAeronavesDisponibles = Sistema.CargarListaAeronavesDisponibles(listaAeronavesDisponibles);
+            Sistema.CargarListaAeronavesDisponibles(listaAeronavesDisponibles);
             dataGridView.DataSource = null;
 
             if (listaAeronavesDisponibles.Count > 0) {
