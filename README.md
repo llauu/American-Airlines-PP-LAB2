@@ -8,6 +8,7 @@ Mi nombre es Lautaro Monserrat, y tengo 19 años. Este trabajo me presento un de
 La aplicacion es un programa para manejar la administracion de una aerolinea. Cuenta con altas, bajas y modificaciones de: Pasajeros, Aviones y Vuelos. Ademas de contar con una seccion para vender los vuelos a los pasajeros cargados en el sistema. Por ultimo, cuenta con una seccion para visualizar las estadisticas historicas de la aerolinea, tales como: una lista de destinos ordenados por facturacion, una lista de los pasajeros mas frecuentes con su cantidad de vuelos en total realizados, una lista de las aeronaves cargadas con todas sus horas de vuelo, y por ultimo, el total de las ganancias generadas, ademas de las ganancias generadas por vuelos internacionales y nacionales.
 
 ## Diagrama de clases
+(No se porque cuando agrego la imagen del diagrama de clases en el readme, se queda un tiempo y luego expira el link. De todas maneras hay una foto llamada diagramaDeClases.png en el proyecto con el diagrama de clases)
 ![](https://raw.githubusercontent.com/llauu/Monserrat.Lautaro.PrimerParcial/main/diagramaDeClases.png?token=GHSAT0AAAAAAB6AYHHIBWYXY44IOZWG3OXWZDEXN4A)
 
 ## Justificacion tecnica
