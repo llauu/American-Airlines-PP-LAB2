@@ -1,12 +1,24 @@
 # American Airlines (Primer parcial Laboratorio II)
 
+
 ## Sobre mi
 Mi nombre es Lautaro Monserrat, y tengo 19 años. Este trabajo me presento un desafio bastante grande, mas que nada al principio, ya que al comienzo no podia fijarme un camino para poder avanzar, ya que habia tantas cosas por hacer que cuando avanzaba en una seccion, tenia que avanzar con otra porque todo estaba conectado con todo. Aprendi bastante, mas que nada pude ver donde aplicar los conceptos aprendidos en clase en un proyecto bastante pesado y real.
 
 ## Resumen
 La aplicacion es un programa para manejar la administracion de una aerolinea. Cuenta con altas, bajas y modificaciones de: Pasajeros, Aviones y Vuelos. Ademas de contar con una seccion para vender los vuelos a los pasajeros cargados en el sistema. Por ultimo, cuenta con una seccion para visualizar las estadisticas historicas de la aerolinea, tales como: una lista de destinos ordenados por facturacion, una lista de los pasajeros mas frecuentes con su cantidad de vuelos en total realizados, una lista de las aeronaves cargadas con todas sus horas de vuelo, y por ultimo, el total de las ganancias generadas, ademas de las ganancias generadas por vuelos internacionales y nacionales.
 
+## Diagrama de clases
+
+
 ## Justificacion tecnica
-- asd
-- asd
-- asd
+- **Clases y métodos estáticos:** Utilice dos clases estaticas. Una para toda la logica del programa y otra para la lectura y escritura de archivos. Lo hice de esta manera ya que veia que era la manera mas conveniente ya que al ser clases que solo se van a utilizar para llamar metodos para mi logica del programa no tenia sentido tener clases que se deban instanciar.
+- **Programacion orientada a objetos:** Basicamente casi todo el programa esta escrito bajo este paradigma. Todas las entidades presentadas en mi programa son tratadas como objetos, teniendo sus propios atributos, propiedades y metodos para su correcta funcionalidad.
+- **Sobrecargas: Métodos, constructores y operadores:** Hice utilidad de las sobrecargas en metodos para la escritura y lectura de archivos, ya que me parecio una manera optima de utilizarlas, ya que como todos los metodos de lectura y escritura eran muy parecidos, lo que hice fue sobrecargarlos y en los parametros hacer que reciba una lista de la clase en cuestion que se quiere escribir o leer. Sobrecarga de constructores utilice en la mayoria de las clases de instancia, en donde los constructores sin parametros inicializaban listas o atributos los cuales eran necesarios para el correcto funcionamiento.
+- **Windows Forms:** Toda la interfaz visual del programa esta hecha con Windows Forms. Ademas hice uso de formularios MDI (Multiple Document Interface) en el menu principal de mi programa, ya que me parecia una manera bastante eficaz de manejar las ventanas de las diferentes opciones de mi programa, ademas de quedar mucho mas estetico y profesional.
+- **Arrays y colecciones:** Hice uso de dos tipos de colecciones, primero hice uso de las listas, las cuales las use para guardar todos los objetos que se vayan instanciando durante mi programa. Luego hice uso de los diccionarios, los cuales por su particularidad de clave-valor, me facilito procesos tales como la carga de equipajes en el avion, o la contabilidad de de datos para la seccion de las estadisticas, para el cual usaba la clave como identificador de un objeto, y en el valor tenia la cuenta de ciertas cosas. Por ejemplo para contar las horas de vuelo de un avion, mi clave era la matricula del avion y el valor era la cantidad de horas voladas que tenia ese avion.
+- **Administración de archivos y serialización:** Utilice la serializacion XML y JSON para guardar los diferentes datos de mi programa y que persistan en el tiempo.
+- **Herencia:** Hice uso de herencia tanto en formularios como en mis clases Pasajero y Usuario. Primero aplique herencia en algunos formularios en donde veia que repetia tanto funcionalidad como diseño, por ejemplo en el boton cancelar, el cual se repitia en varias ventanas y su funcionalidad siempre era la misma, cerrar el formulario actual. Luego utilice herencia en mis clases Pasajero y Usuario, en donde ambos poseian atributos tales como nombre y apellido, es por eso que diseñe una clase padre llamada Persona. 
+- **Polimorfismo:** Hice uso de polimorfismo en la sobreescritura del metodo ToString, ademas de cambiar el comportamiento de los metodos Equals y GetHashCode. Ademas aplique una jerarquía de herencia que aproveche el pilar de polimorfismo en un metodo llamado TieneCodigoDeDescuento(). En el cual agregue que los trabajadores, al tener usuarios creados en el sistema, hice como que tengan un codigo de descuento por ser trabajadores de la empresa. Mientras que los pasajeros normales se asume que no poseen ningun descuento.  
+
+## Propuesta de valor agregado para promoción:
+Como valor agregado propuse el uso de excepciones. Las utilice para la realizacion de validaciones. Ya que me parecio que me permitia manejar los errores de una manera mas sencilla, ya que si alguna validacion daba como incorrecta, en vez de tener que retornar un string con el error generado para utilizarlo en un Windows Forms, podia atraparlo desde el mismo Form con un catch(Exception ex), y mostrarlo como un ex.Message.

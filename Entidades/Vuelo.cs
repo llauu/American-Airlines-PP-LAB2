@@ -46,8 +46,6 @@ namespace Entidades {
             this.ciudadDestino = ciudadDestino;
             this.fechaDeVuelo = fechaDeVuelo;
             this.avion = avion;
-            //this.cantAsientosPremium = CalcularAsientosPremium(avion.CantAsientos);
-            //this.cantAsientosTurista = avion.CantAsientos - this.cantAsientosPremium;
             this.tipoVuelo = ObtenerTipoDeVuelo(ciudadPartida, ciudadDestino);
             Validador.ValidarInternacional(ciudadPartida, ciudadDestino, this.tipoVuelo);
             this.duracionVuelo = CalcularDuracionDeVuelo(this.tipoVuelo);
@@ -62,8 +60,6 @@ namespace Entidades {
         public int DuracionVuelo { get { return this.duracionVuelo; } set { this.duracionVuelo = value; } }
         public ETipoVuelo TipoVuelo { get { return this.tipoVuelo; } set { this.tipoVuelo = value; } }
         public List<Pasaje> ListaPasajes { get { return this.listaPasajes; } set { this.listaPasajes = value; } }
-        //public int CantAsientosPremium { get { return this.cantAsientosPremium; } set { this.cantAsientosPremium = value; } }
-        //public int CantAsientosTurista { get { return this.cantAsientosTurista; } set { this.cantAsientosTurista = value; } }
         public int AsientosPremiumOcupados { get { return this.asientosPremiumOcupados; } set { this.asientosPremiumOcupados = value; } }
         public int AsientosTuristaOcupados { get { return this.asientosTuristaOcupados; } set { this.asientosTuristaOcupados = value; } }
         public float PesoBodegaOcupada { get { return this.pesoBodegaOcupada; } set { this.pesoBodegaOcupada = value; } }
@@ -77,16 +73,6 @@ namespace Entidades {
             
             return idGenerado;
         }
-
-
-        //private int CalcularAsientosPremium(int cantAsientos) {
-        //    int cantPremium;
-
-        //    cantAsientos = Validador.ValidarNumeroPositivo(cantAsientos);
-        //    cantPremium = (int)Math.Floor(cantAsientos * 0.2);
-
-        //    return cantPremium;
-        //}
 
 
         private ETipoVuelo ObtenerTipoDeVuelo(string partida, string destino) {

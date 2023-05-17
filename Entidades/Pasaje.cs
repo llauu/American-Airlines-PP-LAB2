@@ -45,7 +45,7 @@ namespace Entidades {
             this.clasePasajero = clasePasajero;
             this.vuelo = vuelo;
             this.idPasaje = ObtenerIdPasajeUnico();
-            this.costoPasaje = CalcularCostoPasaje(vuelo.DuracionVuelo, vuelo.TipoVuelo, clasePasajero);
+            this.costoPasaje = CalcularCostoPasaje(vuelo.DuracionVuelo, vuelo.TipoVuelo, clasePasajero, pasajero);
         }
 
         public int IdPasaje { get { return this.idPasaje; } set { this.idPasaje = value; } }
@@ -57,7 +57,7 @@ namespace Entidades {
         public int NumeroDeEquipaje { get { return this.numeroDeEquipaje; } set { this.numeroDeEquipaje = value; } }
         public double CostoPasaje { get { return this.costoPasaje; } set { this.costoPasaje = value; } }
 
-        private double CalcularCostoPasaje(int horasDeVuelo, ETipoVuelo tipoDeVuelo, ETipoClase clasePasajero) {
+        private double CalcularCostoPasaje(int horasDeVuelo, ETipoVuelo tipoDeVuelo, ETipoClase clasePasajero, Pasajero pasajero) {
             double costo = 0;
 
             switch(tipoDeVuelo) {
@@ -68,6 +68,10 @@ namespace Entidades {
                 case ETipoVuelo.Internacional:
                     costo = precioHoraVueloInternacionalTurista * horasDeVuelo;
                     break;
+            }
+
+            if(pasajero.TieneCodigoDeDescuento()) {
+                costo -= (costo * 0.25);
             }
 
             if(clasePasajero == ETipoClase.Premium) {

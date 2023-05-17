@@ -24,6 +24,10 @@ namespace Entidades {
         public int Dni { get { return this.dni; } set { this.dni = value; } }
         public int Edad { get { return this.edad; } set { this.edad = value; } }
 
+        public override bool TieneCodigoDeDescuento() {
+            return false;
+        }
+
         public static bool operator ==(Pasajero p1, Pasajero p2) {
             bool iguales = false;
 

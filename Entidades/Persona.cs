@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades {
-    public class Persona {
+    public abstract class Persona {
         protected string apellido;
         protected string nombre;
 
@@ -21,6 +21,8 @@ namespace Entidades {
 
         public string Apellido { get { return this.apellido; } set { this.apellido = value; } }
         public string Nombre { get { return this.nombre; } set { this.nombre = value; } }
+
+        public abstract bool TieneCodigoDeDescuento();
 
         public override string ToString() {
             StringBuilder sb = new StringBuilder();

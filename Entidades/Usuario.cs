@@ -19,6 +19,10 @@ namespace Entidades {
         public string Clave { get { return this.clave; } set { this.clave = value; } }
         public string Perfil { get { return this.perfil; } set { this.perfil = value; } }
 
+        public override bool TieneCodigoDeDescuento() {
+            return true;
+        }
+
         public static bool operator ==(Usuario u1, Usuario u2) {
             bool iguales = false;
 
