@@ -40,6 +40,9 @@
     <Compile Update="InterfazVuelos\FrmEditarVuelo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="InterfazVuelos\FrmFacturaFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="InterfazVuelos\FrmInfoVuelo.cs">
       <SubType>Form</SubType>
     </Compile>

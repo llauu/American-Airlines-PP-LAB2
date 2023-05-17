@@ -15,8 +15,6 @@ namespace Entidades {
         private DateTime fechaDeVuelo;
         private Aeronave? avion;
         private EEstadoVuelo estadoDelVuelo;
-        //private int cantAsientosPremium;
-        //private int cantAsientosTurista;
         private int asientosPremiumOcupados;
         private int asientosTuristaOcupados;
         private int duracionVuelo;

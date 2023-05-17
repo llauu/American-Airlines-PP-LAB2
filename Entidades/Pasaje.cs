@@ -29,7 +29,6 @@ namespace Entidades {
             this.numeroDeEquipaje = 0;
         }
 
-
         private int ObtenerIdPasajeUnico() {
             int idGenerado;
 
@@ -137,13 +136,35 @@ namespace Entidades {
             return sb.ToString();
         }
 
+        public static bool operator ==(Pasaje p1, Pasaje p2) {
+            bool iguales = false;
+
+            if (p1 is not null && p2 is not null) {
+                iguales = p1.idPasaje == p2.idPasaje;
+            }
+
+            return iguales;
+        }
+
+        public static bool operator !=(Pasaje p1, Pasaje p2) {
+            return !(p1 == p2);
+        }
+
+        public override bool Equals(object? obj) {
+            Pasaje? pasaje = obj as Pasaje;
+            return pasaje is not null && this == pasaje;
+        }
+
+        public override int GetHashCode() {
+            return this.idPasaje;
+        }
+
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine($"Pasajero: \n{this.pasajero?.Nombre} {this.pasajero?.Apellido}");
             sb.AppendLine($"Clase: {this.clasePasajero}");
             sb.AppendLine($"Equipaje de mano: {this.equipajeDeMano}");
-            sb.AppendLine($"Equipajes en bodega: {this.equipajesBodega}");
 
             return sb.ToString();
         }

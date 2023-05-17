@@ -1,1 +1,630 @@
-[]
+[
+  {
+    "IdVuelo": 167613,
+    "CiudadPartida": "Buenos Aires",
+    "CiudadDestino": "Roma (Italia)",
+    "FechaDeVuelo": "2023-05-19T00:00:00",
+    "Avion": {
+      "Matricula": "XTFZYL7O",
+      "CantAsientos": 29,
+      "CantAsientosPremium": 5,
+      "CantAsientosTurista": 24,
+      "CantBanios": 1,
+      "OfreceInternet": true,
+      "OfreceComida": true,
+      "CapacidadBodega": 143.0,
+      "VueloProgramado": true
+    },
+    "EstadoDelVuelo": 0,
+    "DuracionVuelo": 9,
+    "TipoVuelo": 1,
+    "ListaPasajes": [
+      {
+        "IdPasaje": 233267,
+        "Pasajero": {
+          "FechaDeNacimiento": "2000-02-15T00:00:00",
+          "Dni": 28543679,
+          "Edad": 23,
+          "Apellido": "Gomez",
+          "Nombre": "Maria"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 178200,
+        "Pasajero": {
+          "FechaDeNacimiento": "1995-11-07T00:00:00",
+          "Dni": 38265941,
+          "Edad": 28,
+          "Apellido": "Lopez",
+          "Nombre": "Pablo"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 832798,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 913547,
+        "Pasajero": {
+          "FechaDeNacimiento": "1988-08-31T00:00:00",
+          "Dni": 21654897,
+          "Edad": 35,
+          "Apellido": "Rodriguez",
+          "Nombre": "Sofia"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 104526,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 240460,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 734009,
+        "Pasajero": {
+          "FechaDeNacimiento": "1992-04-13T00:00:00",
+          "Dni": 32789651,
+          "Edad": 31,
+          "Apellido": "Sanchez",
+          "Nombre": "Luis"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 288310,
+        "Pasajero": {
+          "FechaDeNacimiento": "1992-04-13T00:00:00",
+          "Dni": 32789651,
+          "Edad": 31,
+          "Apellido": "Sanchez",
+          "Nombre": "Luis"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 701868,
+        "Pasajero": {
+          "FechaDeNacimiento": "2000-02-15T00:00:00",
+          "Dni": 28543679,
+          "Edad": 23,
+          "Apellido": "Gomez",
+          "Nombre": "Maria"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 903412,
+        "Pasajero": {
+          "FechaDeNacimiento": "1992-04-13T00:00:00",
+          "Dni": 32789651,
+          "Edad": 31,
+          "Apellido": "Sanchez",
+          "Nombre": "Luis"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 625323,
+        "Pasajero": {
+          "FechaDeNacimiento": "2000-02-15T00:00:00",
+          "Dni": 28543679,
+          "Edad": 23,
+          "Apellido": "Gomez",
+          "Nombre": "Maria"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 387213,
+        "Pasajero": {
+          "FechaDeNacimiento": "2003-12-01T00:00:00",
+          "Dni": 45232142,
+          "Edad": 19,
+          "Apellido": "Monserrat",
+          "Nombre": "Lautaro"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {
+          "1": 25.0
+        },
+        "NumeroDeEquipaje": 1,
+        "CostoPasaje": 900.0
+      }
+    ],
+    "AsientosPremiumOcupados": 5,
+    "AsientosTuristaOcupados": 7,
+    "PesoBodegaOcupada": 25.0
+  },
+  {
+    "IdVuelo": 584516,
+    "CiudadPartida": "Buenos Aires",
+    "CiudadDestino": "Recife (Brasil)",
+    "FechaDeVuelo": "2023-05-19T00:00:00",
+    "Avion": {
+      "Matricula": "VXDDWZJY",
+      "CantAsientos": 190,
+      "CantAsientosPremium": 38,
+      "CantAsientosTurista": 152,
+      "CantBanios": 3,
+      "OfreceInternet": true,
+      "OfreceComida": true,
+      "CapacidadBodega": 430.0,
+      "VueloProgramado": true
+    },
+    "EstadoDelVuelo": 0,
+    "DuracionVuelo": 9,
+    "TipoVuelo": 1,
+    "ListaPasajes": [
+      {
+        "IdPasaje": 770578,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {
+          "1": 5.0,
+          "2": 5.0
+        },
+        "NumeroDeEquipaje": 2,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 205314,
+        "Pasajero": {
+          "FechaDeNacimiento": "1988-08-31T00:00:00",
+          "Dni": 21654897,
+          "Edad": 35,
+          "Apellido": "Rodriguez",
+          "Nombre": "Sofia"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {
+          "1": 6.0
+        },
+        "NumeroDeEquipaje": 1,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 144494,
+        "Pasajero": {
+          "FechaDeNacimiento": "1992-04-13T00:00:00",
+          "Dni": 32789651,
+          "Edad": 31,
+          "Apellido": "Sanchez",
+          "Nombre": "Luis"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {
+          "1": 8.0
+        },
+        "NumeroDeEquipaje": 1,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 355412,
+        "Pasajero": {
+          "FechaDeNacimiento": "2003-12-01T00:00:00",
+          "Dni": 45232142,
+          "Edad": 19,
+          "Apellido": "Monserrat",
+          "Nombre": "Lautaro"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 822848,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      },
+      {
+        "IdPasaje": 269589,
+        "Pasajero": {
+          "FechaDeNacimiento": "1995-11-07T00:00:00",
+          "Dni": 38265941,
+          "Edad": 28,
+          "Apellido": "Lopez",
+          "Nombre": "Pablo"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 542993,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 858163,
+        "Pasajero": {
+          "FechaDeNacimiento": "1976-03-07T00:00:00",
+          "Dni": 18652479,
+          "Edad": 47,
+          "Apellido": "Ramirez",
+          "Nombre": "Fernando"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 669943,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 900.0
+      },
+      {
+        "IdPasaje": 702604,
+        "Pasajero": {
+          "FechaDeNacimiento": "2003-12-01T00:00:00",
+          "Dni": 45232142,
+          "Edad": 19,
+          "Apellido": "Monserrat",
+          "Nombre": "Lautaro"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 1215.0
+      }
+    ],
+    "AsientosPremiumOcupados": 4,
+    "AsientosTuristaOcupados": 6,
+    "PesoBodegaOcupada": 24.0
+  },
+  {
+    "IdVuelo": 467587,
+    "CiudadPartida": "Santa Rosa",
+    "CiudadDestino": "Iguazú",
+    "FechaDeVuelo": "2023-06-04T00:00:00",
+    "Avion": {
+      "Matricula": "AW2OBKL5",
+      "CantAsientos": 111,
+      "CantAsientosPremium": 22,
+      "CantAsientosTurista": 89,
+      "CantBanios": 4,
+      "OfreceInternet": false,
+      "OfreceComida": true,
+      "CapacidadBodega": 157.0,
+      "VueloProgramado": true
+    },
+    "EstadoDelVuelo": 0,
+    "DuracionVuelo": 3,
+    "TipoVuelo": 0,
+    "ListaPasajes": [
+      {
+        "IdPasaje": 906091,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 202.5
+      },
+      {
+        "IdPasaje": 701886,
+        "Pasajero": {
+          "FechaDeNacimiento": "1988-08-31T00:00:00",
+          "Dni": 21654897,
+          "Edad": 35,
+          "Apellido": "Rodriguez",
+          "Nombre": "Sofia"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 433428,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 278753,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 329072,
+        "Pasajero": {
+          "FechaDeNacimiento": "2000-02-15T00:00:00",
+          "Dni": 28543679,
+          "Edad": 23,
+          "Apellido": "Gomez",
+          "Nombre": "Maria"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 274530,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 884642,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 202.5
+      },
+      {
+        "IdPasaje": 140510,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 202.5
+      },
+      {
+        "IdPasaje": 292844,
+        "Pasajero": {
+          "FechaDeNacimiento": "1992-04-13T00:00:00",
+          "Dni": 32789651,
+          "Edad": 31,
+          "Apellido": "Sanchez",
+          "Nombre": "Luis"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 201267,
+        "Pasajero": {
+          "FechaDeNacimiento": "2003-12-01T00:00:00",
+          "Dni": 45232142,
+          "Edad": 19,
+          "Apellido": "Monserrat",
+          "Nombre": "Lautaro"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 396804,
+        "Pasajero": {
+          "FechaDeNacimiento": "1989-10-23T00:00:00",
+          "Dni": 25849367,
+          "Edad": 34,
+          "Apellido": "Acosta",
+          "Nombre": "Lucia"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 150.0
+      },
+      {
+        "IdPasaje": 548717,
+        "Pasajero": {
+          "FechaDeNacimiento": "1989-10-23T00:00:00",
+          "Dni": 25849367,
+          "Edad": 34,
+          "Apellido": "Acosta",
+          "Nombre": "Lucia"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 202.5
+      }
+    ],
+    "AsientosPremiumOcupados": 4,
+    "AsientosTuristaOcupados": 8,
+    "PesoBodegaOcupada": 0.0
+  }
+]

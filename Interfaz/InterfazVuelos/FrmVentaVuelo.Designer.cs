@@ -260,6 +260,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(197, 15);
             txtBuscar.TabIndex = 4;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // imgBuscar
             // 

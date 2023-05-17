@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInfoVuelo));
             flowLayoutPanel4 = new FlowLayoutPanel();
             flowLayoutPanel3 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
@@ -35,9 +36,11 @@
             panel2 = new Panel();
             txtInfoAvion = new Label();
             dataGridPasajeros = new DataGridView();
+            btnVerEquipaje = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajeros).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnVerEquipaje).BeginInit();
             SuspendLayout();
             // 
             // btnCancelar
@@ -85,6 +88,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(btnVerEquipaje);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
@@ -169,10 +173,22 @@
             dataGridPasajeros.RowHeadersVisible = false;
             dataGridPasajeros.RowTemplate.Height = 25;
             dataGridPasajeros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridPasajeros.Size = new Size(434, 236);
+            dataGridPasajeros.Size = new Size(412, 236);
             dataGridPasajeros.TabIndex = 63;
             dataGridPasajeros.TabStop = false;
             dataGridPasajeros.VirtualMode = true;
+            // 
+            // btnVerEquipaje
+            // 
+            btnVerEquipaje.Cursor = Cursors.Hand;
+            btnVerEquipaje.Image = (Image)resources.GetObject("btnVerEquipaje.Image");
+            btnVerEquipaje.Location = new Point(444, 238);
+            btnVerEquipaje.Name = "btnVerEquipaje";
+            btnVerEquipaje.Size = new Size(45, 39);
+            btnVerEquipaje.SizeMode = PictureBoxSizeMode.Zoom;
+            btnVerEquipaje.TabIndex = 65;
+            btnVerEquipaje.TabStop = false;
+            btnVerEquipaje.Click += btnVerEquipaje_Click;
             // 
             // FrmInfoVuelo
             // 
@@ -199,6 +215,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridPasajeros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnVerEquipaje).EndInit();
             ResumeLayout(false);
         }
 
@@ -214,5 +231,6 @@
         private Panel panel2;
         private DataGridView dataGridPasajeros;
         private Label txtInfoAvion;
+        private PictureBox btnVerEquipaje;
     }
 }

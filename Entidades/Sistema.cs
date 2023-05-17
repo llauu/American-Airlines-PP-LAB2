@@ -252,5 +252,159 @@ namespace Entidades {
 
             return vuelosDisponibles;
         }
+
+        public static Dictionary<string, double> CargarDestinosConSuFacturacion() {
+            Dictionary<string, double> destinosConSuFacturacion = new Dictionary<string, double> ();
+
+            // Cargo el diccionario con todas las ciudades, y todos los valores los inicializo en 0
+            foreach (string ciudad in listaCiudades!) {
+                destinosConSuFacturacion.Add(ciudad, 0);
+
+                foreach (Vuelo vuelo in listaVuelos!) {
+                    if(vuelo.CiudadDestino == ciudad) {
+                        foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                            destinosConSuFacturacion[ciudad] += pasaje.CostoPasaje;
+                        }
+                    }
+                }
+            }
+
+            return destinosConSuFacturacion;
+        }
+
+        public static Dictionary<string, string> ObtenerDestinosOrdenadosPorSuFacturacion() {
+            Dictionary<string, double> destinos = CargarDestinosConSuFacturacion();
+            Dictionary<string, double> destinosOrdenados = new Dictionary<string, double>();
+            
+            // me creo otro diccionario pero que sea <string, string> para poder agregarle el signo $ al precio 
+            Dictionary<string, string> destinosOrdenadosEnString = new Dictionary<string, string>();
+
+            destinosOrdenados = destinos.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value); 
+
+            foreach(KeyValuePair<string, double> item in destinosOrdenados) {
+                destinosOrdenadosEnString[item.Key] = $"${item.Value}";
+            }
+
+            return destinosOrdenadosEnString;
+        }
+
+        public static Dictionary<string, int> CargarPasajerosConCantidadDeVuelos() {
+            Dictionary<string, int> pasajerosConCantidadDeVuelos = new Dictionary<string, int>();
+
+            foreach (Pasajero pasajero in listaPasajeros!) {
+                pasajerosConCantidadDeVuelos.Add($"{pasajero.Nombre} {pasajero.Apellido}", 0);
+
+                foreach(Vuelo vuelo in listaVuelos!) {
+                    if(vuelo.EstadoDelVuelo != EEstadoVuelo.EnTierra) {
+                        foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                            if (pasajero == pasaje.Pasajero!) {
+                                pasajerosConCantidadDeVuelos[$"{pasajero.Nombre} {pasajero.Apellido}"]++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return pasajerosConCantidadDeVuelos;
+        }
+
+        public static Dictionary<string, int> ObtenerPasajerosOrdenadosPorCantidadDeVuelos() {
+            Dictionary<string, int> pasajerosConCantidadDeVuelos = CargarPasajerosConCantidadDeVuelos();
+            Dictionary<string, int> pasajerosOrdenados = new Dictionary<string, int>();
+
+            pasajerosOrdenados = pasajerosConCantidadDeVuelos.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            return pasajerosOrdenados;
+        }
+
+
+        public static double CalcularGananciasTotales() {
+            double gananciasTotales = 0;
+            
+            foreach(Vuelo vuelo in listaVuelos!) {
+                foreach(Pasaje pasaje in vuelo.ListaPasajes) {
+                    gananciasTotales += pasaje.CostoPasaje;
+                }
+            }
+
+            return gananciasTotales;
+        }
+
+        public static double CalcularGananciasVuelosInternacionales() {
+            double gananciasTotales = 0;
+
+            foreach (Vuelo vuelo in listaVuelos!) {
+                if(vuelo.TipoVuelo == ETipoVuelo.Internacional) {
+                    foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                        gananciasTotales += pasaje.CostoPasaje;
+                    }
+                }
+            }
+
+            return gananciasTotales;
+        }
+
+        public static double CalcularGananciasVuelosNacionales() {
+            double gananciasTotales = 0;
+
+            foreach (Vuelo vuelo in listaVuelos!) {
+                if (vuelo.TipoVuelo == ETipoVuelo.Nacional) {
+                    foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                        gananciasTotales += pasaje.CostoPasaje;
+                    }
+                }
+            }
+
+            return gananciasTotales;
+        }
+
+
+        public static Dictionary<string, string> CargarAvionesConSusHorasDeVuelos() {
+            Dictionary<string, int> avionesConHorasDeVuelos = new Dictionary<string, int>();
+            Dictionary<string, string> avionesConHorasDeVuelosEnString = new Dictionary<string, string>();
+
+            foreach (Aeronave avion in listaAeronaves!) {
+                avionesConHorasDeVuelos.Add(avion.Matricula, 0);
+
+                foreach(Vuelo vuelo in listaVuelos!) {
+                    if(vuelo.EstadoDelVuelo != EEstadoVuelo.EnTierra && vuelo.Avion == avion) {
+                        avionesConHorasDeVuelos[avion.Matricula] += vuelo.DuracionVuelo;
+                    }
+                }
+            }
+
+            foreach (KeyValuePair<string, int> item in avionesConHorasDeVuelos) {
+                avionesConHorasDeVuelosEnString[item.Key] = $"{item.Value}hs.";
+            }
+
+            return avionesConHorasDeVuelosEnString;
+        }
+
+
+            //El destino más pedido por los clientes.
+        public static string BuscarDestinoMasPedido() {
+            string destinoMasPedido = "Ninguno";
+             int contadorDestinoMasPedido = 0;
+            int contadorActual = 0;
+            bool banderaPrimero = true;
+
+            foreach (string destino in listaCiudades!) {
+                contadorActual = 0;
+
+                foreach (Vuelo vuelo in listaVuelos!) {
+                    if(vuelo.CiudadDestino == destino) {
+                        contadorActual += vuelo.ListaPasajes.Count();
+                    }
+                }
+
+                if(banderaPrimero || contadorActual > contadorDestinoMasPedido) {
+                    destinoMasPedido = destino;
+                    contadorDestinoMasPedido = contadorActual;
+                    banderaPrimero = false;
+                }
+            }
+
+            return destinoMasPedido;
+        }
     }
 }

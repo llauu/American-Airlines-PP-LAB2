@@ -26,7 +26,7 @@ namespace Interfaz.InterfazViajes {
         }
 
         private void FrmVentaVuelo_Load(object sender, EventArgs e) {
-            ActualizarDataGridPasajeros();
+            ActualizarDataGridPasajeros(Sistema.ListaPasajeros!);
 
             asientosPremiumOcupados = vueloSeleccionado.AsientosPremiumOcupados;
             asientosTuristaOcupados = vueloSeleccionado.AsientosTuristaOcupados;
@@ -36,11 +36,11 @@ namespace Interfaz.InterfazViajes {
             get { return this.pasajesAgregados; }
         }
 
-        private void ActualizarDataGridPasajeros() {
+        private void ActualizarDataGridPasajeros(List<Pasajero> pasajeros) {
             dataGridPasajeros.DataSource = null;
 
-            if (Sistema.ListaPasajeros != null && Sistema.ListaPasajeros.Count > 0) {
-                dataGridPasajeros.DataSource = Sistema.ListaPasajeros;
+            if (pasajeros != null && pasajeros.Count > 0) {
+                dataGridPasajeros.DataSource = pasajeros;
 
                 dataGridPasajeros.Columns["Apellido"].DisplayIndex = 0;
                 dataGridPasajeros.Columns["Nombre"].DisplayIndex = 1;
@@ -98,7 +98,7 @@ namespace Interfaz.InterfazViajes {
 
                 ActualizarDataGridPasajesAgregados();
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
             }
         }
@@ -136,19 +136,36 @@ namespace Interfaz.InterfazViajes {
         }
 
         private void btnAceptar_Click(object sender, EventArgs e) {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            FrmFacturaFinal frmFactura = new FrmFacturaFinal(pasajesAgregados);
+
+            if(frmFactura.ShowDialog() == DialogResult.OK) {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void btnDatosEquipajes_Click(object sender, EventArgs e) {
-
             if (this.pasajesAgregados.Count > 0) {
                 Pasaje pasaje = (Pasaje)dataGridPasajesAgregados.CurrentRow.DataBoundItem;
 
                 MessageBox.Show(pasaje.MostrarEquipajes());
             }
             else {
-                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No se puede agregar equipajes si no hay pasajeros agregados al vuelo.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No se puede ver el equipaje si no hay pasajeros agregados al vuelo.");
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e) {
+            if (Sistema.ListaPasajeros != null) {
+                if (this.txtBuscar.Text.Length > 2 && !(string.IsNullOrEmpty(this.txtBuscar.Text))) {
+                    List<Pasajero> pasajerosEncontrados = new List<Pasajero>();
+
+                    Sistema.BuscarClientes(pasajerosEncontrados, this.txtBuscar.Text.ToUpper());
+                    ActualizarDataGridPasajeros(pasajerosEncontrados);
+                }
+                else {
+                    ActualizarDataGridPasajeros(Sistema.ListaPasajeros);
+                }
             }
         }
     }

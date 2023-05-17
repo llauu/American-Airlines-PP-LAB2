@@ -36,5 +36,13 @@ namespace Interfaz.InterfazViajes {
 
             dataGridPasajeros.AutoResizeColumns();
         }
+
+        private void btnVerEquipaje_Click(object sender, EventArgs e) {
+            if (this.vueloSeleccionado.ListaPasajes.Count > 0) {
+                Pasaje pasaje = (Pasaje)dataGridPasajeros.CurrentRow.DataBoundItem;
+
+                MessageBox.Show(pasaje.MostrarEquipajes());
+            }
+        }
     }
 }
