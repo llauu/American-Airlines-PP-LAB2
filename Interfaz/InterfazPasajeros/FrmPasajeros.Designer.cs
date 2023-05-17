@@ -149,12 +149,11 @@
             // 
             // lblError
             // 
-            lblError.AutoSize = true;
             lblError.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblError.ForeColor = Color.IndianRed;
             lblError.Location = new Point(439, 37);
             lblError.Name = "lblError";
-            lblError.Size = new Size(40, 15);
+            lblError.Size = new Size(252, 42);
             lblError.TabIndex = 7;
             lblError.Text = "(error)";
             lblError.Visible = false;
@@ -197,7 +196,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

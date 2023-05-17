@@ -28,7 +28,7 @@ namespace Interfaz {
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e) {
-            if(Sistema.ListaPasajeros != null) {
+            if (Sistema.ListaPasajeros != null) {
                 if (this.txtBuscar.Text.Length > 2 && !(string.IsNullOrEmpty(this.txtBuscar.Text))) {
                     List<Pasajero> pasajerosEncontrados = new List<Pasajero>();
 
@@ -56,12 +56,19 @@ namespace Interfaz {
 
         private void btnEditar_Click(object sender, EventArgs e) {
             if (this.dataGridPasajeros.Rows.Count > 0) {
-                FrmEditarPasajero frmEditar = new FrmEditarPasajero((Pasajero)dataGridPasajeros.CurrentRow.DataBoundItem);
+                Pasajero pasajeroAEditar = (Pasajero)dataGridPasajeros.CurrentRow.DataBoundItem;
 
-                DialogResult res = frmEditar.ShowDialog();
+                if (Validador.ValidarModificacionDePasajero(pasajeroAEditar)) {
+                    FrmEditarPasajero frmEditar = new FrmEditarPasajero(pasajeroAEditar);
 
-                if (res == DialogResult.OK && Sistema.ListaPasajeros != null) {
-                    ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
+                    DialogResult res = frmEditar.ShowDialog();
+
+                    if (res == DialogResult.OK && Sistema.ListaPasajeros != null) {
+                        ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
+                    }
+                }
+                else {
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No se puede editar el pasajero seleccionado ya que se encuentra en vuelo.");
                 }
             }
             else {
@@ -73,11 +80,16 @@ namespace Interfaz {
             if (this.dataGridPasajeros.Rows.Count > 0) {
                 Pasajero pasajeroAEliminar = (Pasajero)dataGridPasajeros.CurrentRow.DataBoundItem;
 
-                DialogResult res = MessageBox.Show($"Se va a eliminar al cliente: \n{pasajeroAEliminar}\nEsta seguro?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (Validador.ValidarBajaDePasajero(pasajeroAEliminar)) {
+                    DialogResult res = MessageBox.Show($"Se va a eliminar al cliente: \n{pasajeroAEliminar}\nEsta seguro?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
-                if (res == DialogResult.Yes && Sistema.ListaPasajeros != null) {
-                    Sistema.BajaPasajero(pasajeroAEliminar);
-                    ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
+                    if (res == DialogResult.Yes && Sistema.ListaPasajeros != null) {
+                        Sistema.BajaPasajero(pasajeroAEliminar);
+                        ActualizarDataGridView(dataGridPasajeros, Sistema.ListaPasajeros);
+                    }
+                }
+                else {
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "El pasajero seleccionado no puede ser eliminado debido a que ya realizo un vuelo.");
                 }
             }
             else {

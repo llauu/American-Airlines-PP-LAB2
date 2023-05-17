@@ -54,7 +54,7 @@ namespace Entidades {
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($"{base.ToString()} | {this.dni} ");
+            sb.Append($"{base.ToString()}, DNI: {this.dni}");
 
             return sb.ToString();
         }

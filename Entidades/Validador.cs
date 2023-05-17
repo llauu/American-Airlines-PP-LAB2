@@ -115,6 +115,50 @@ namespace Entidades {
             return seRepite;
         }
 
+        public static bool ValidarBajaDePasajero(Pasajero pasajero) {
+            bool sePuedeDarDeBaja = true;
+
+            foreach(Vuelo vuelo in Sistema.ListaVuelos!) {
+                if(vuelo.EstadoDelVuelo != EEstadoVuelo.EnTierra) {
+                    foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                        if (pasaje.Pasajero! == pasajero) {
+                            sePuedeDarDeBaja = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return sePuedeDarDeBaja;
+        }
+
+        public static bool ValidarModificacionDePasajero(Pasajero pasajero) {
+            bool sePuedeModificar = true;
+
+            foreach (Vuelo vuelo in Sistema.ListaVuelos!) {
+                if (vuelo.EstadoDelVuelo == EEstadoVuelo.EnCurso) {
+                    foreach (Pasaje pasaje in vuelo.ListaPasajes) {
+                        if (pasaje.Pasajero! == pasajero) {
+                            sePuedeModificar = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return sePuedeModificar;
+        }
+
+        public static bool ValidarBajaOModificacionDeVuelo(Vuelo vuelo) {
+            bool puedeModificarseOEliminarse = false;
+
+            if(vuelo.EstadoDelVuelo == EEstadoVuelo.EnTierra) {
+                puedeModificarseOEliminarse = true;
+            }
+
+            return puedeModificarseOEliminarse;
+        }
+
         public static void ValidarCiudades(string partida, string destino) {
             if (partida == destino) {
                 throw new Exception("Ciudad de partida y destino no pueden ser las mismas.");

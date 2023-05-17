@@ -51,10 +51,13 @@ namespace Interfaz {
         }
 
         private void btnEliminar_Click(object sender, EventArgs e) {
+            this.imgError.Visible = false;
+            this.lblError.Visible = false;
+
             if (Sistema.ListaVuelos != null && this.dataGridViajes.Rows.Count > 0) {
                 Vuelo vueloAEliminar = (Vuelo)dataGridViajes.CurrentRow.DataBoundItem;
 
-                if (vueloAEliminar.EstadoDelVuelo == EEstadoVuelo.EnTierra) {
+                if (Validador.ValidarBajaOModificacionDeVuelo(vueloAEliminar)) {
                     DialogResult res = MessageBox.Show($"Se va a eliminar el vuelo: \n{vueloAEliminar}\nEsta seguro?", "Eliminar vuelo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
                     if (res == DialogResult.Yes) {
@@ -72,18 +75,23 @@ namespace Interfaz {
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
-            if (Sistema.ListaVuelos != null && this.dataGridViajes.Rows.Count > 0) {
-                this.imgError.Visible = false;
-                this.lblError.Visible = false;
+            this.imgError.Visible = false;
+            this.lblError.Visible = false;
 
+            if (Sistema.ListaVuelos != null && this.dataGridViajes.Rows.Count > 0) {
                 Vuelo vueloAEditar = (Vuelo)dataGridViajes.CurrentRow.DataBoundItem;
 
-                FrmEditarVuelo frmEditar = new FrmEditarVuelo(vueloAEditar);
+                if (Validador.ValidarBajaOModificacionDeVuelo(vueloAEditar)) {
+                    FrmEditarVuelo frmEditar = new FrmEditarVuelo(vueloAEditar);
 
-                DialogResult res = frmEditar.ShowDialog();
+                    DialogResult res = frmEditar.ShowDialog();
 
-                if (res == DialogResult.OK) {
-                    FrmVuelosDisponibles.ActualizarDataGridView(this.imgError, this.lblError, this.dataGridViajes, Sistema.ListaVuelos);
+                    if (res == DialogResult.OK) {
+                        FrmVuelosDisponibles.ActualizarDataGridView(this.imgError, this.lblError, this.dataGridViajes, Sistema.ListaVuelos);
+                    }
+                }
+                else {
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "El vuelo que esta queriendo editar se encuentra en curso o finalizado.");
                 }
             }
             else {
