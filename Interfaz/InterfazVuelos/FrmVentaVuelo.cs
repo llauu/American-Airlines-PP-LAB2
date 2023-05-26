@@ -64,13 +64,13 @@ namespace Interfaz.InterfazViajes {
         }
 
         private void btnAgregarPasajero_Click(object sender, EventArgs e) {
-            this.imgError.Visible = false;
-            this.lblError.Visible = false;
             Pasajero pasajero;
-            bool equipajeDeMano = checkEquipajeMano.Checked;
-            bool clasePremium = checkClasePremium.Checked;
+            bool equipajeDeMano = rdbLlevaEquipaje.Checked;
+            bool clasePremium = rdbPremium.Checked;
             ETipoClase clasePasajero = clasePremium ? ETipoClase.Premium : ETipoClase.Turista;
 
+            this.imgError.Visible = false;
+            this.lblError.Visible = false;
 
             if (Sistema.ListaPasajeros != null && Sistema.ListaPasajeros.Count > 0) {
                 if (dataGridPasajeros.CurrentRow != null) {
@@ -138,7 +138,7 @@ namespace Interfaz.InterfazViajes {
         private void btnAceptar_Click(object sender, EventArgs e) {
             FrmFacturaFinal frmFactura = new FrmFacturaFinal(pasajesAgregados);
 
-            if(frmFactura.ShowDialog() == DialogResult.OK) {
+            if (frmFactura.ShowDialog() == DialogResult.OK) {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

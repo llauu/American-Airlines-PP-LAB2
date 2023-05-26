@@ -48,9 +48,7 @@ namespace Interfaz.InterfazAeronaves {
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = ex.Message;
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
             }
         }
     }

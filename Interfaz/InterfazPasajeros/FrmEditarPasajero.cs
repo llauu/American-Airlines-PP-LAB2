@@ -31,7 +31,8 @@ namespace Interfaz.InterfazPasajeros {
         }
 
         private void btnAceptar_Click(object sender, EventArgs e) {
-            lblError.Visible = false;
+            this.lblError.Visible = false;
+            this.imgError.Visible = false;
 
             try {
                 pasajeroAEditar.Apellido = Validador.ValidarCadena(this.txtApellido.Text);
@@ -42,8 +43,7 @@ namespace Interfaz.InterfazPasajeros {
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) {
-                lblError.Visible = true;
-                lblError.Text = ex.Message;
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
             }
         }
     }

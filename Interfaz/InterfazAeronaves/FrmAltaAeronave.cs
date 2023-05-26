@@ -29,21 +29,19 @@ namespace Interfaz.InterfazAeronaves {
             bool ofreceComida = this.checkComida.Checked;
             float capacidadBodega;
 
-            int.TryParse(this.txtCantAsientos.Text, out cantAsientos);
-            int.TryParse(this.txtCantBanios.Text, out cantBanios);
-            float.TryParse(this.txtCantBodega.Text, out capacidadBodega);
-
             this.imgError.Visible = false;
             this.lblError.Visible = false;
 
             try {
+                int.TryParse(this.txtCantAsientos.Text, out cantAsientos);
+                int.TryParse(this.txtCantBanios.Text, out cantBanios);
+                float.TryParse(this.txtCantBodega.Text, out capacidadBodega);
+
                 this.aeronaveAgregada = new Aeronave(cantAsientos, cantBanios, ofreceInternet, ofreceComida, capacidadBodega);
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = ex.Message;
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
             }
         }
     }

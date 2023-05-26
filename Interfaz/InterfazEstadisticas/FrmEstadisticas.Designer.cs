@@ -23,11 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadisticas));
             dataGridFacturacionDestinos = new DataGridView();
             lblDestinoTexto = new Label();
             panel1 = new Panel();
+            btnDescargar = new PictureBox();
             lblGananciasNacionales = new Label();
             label6 = new Label();
             lblGananciasInternacionales = new Label();
@@ -41,8 +44,10 @@
             label1 = new Label();
             label3 = new Label();
             label5 = new Label();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dataGridFacturacionDestinos).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnDescargar).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajerosFrecuentes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridHorasDeVuelo).BeginInit();
@@ -96,6 +101,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(btnDescargar);
             panel1.Controls.Add(lblGananciasNacionales);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(lblGananciasInternacionales);
@@ -108,6 +114,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 490);
             panel1.TabIndex = 2;
+            // 
+            // btnDescargar
+            // 
+            btnDescargar.Cursor = Cursors.Hand;
+            btnDescargar.Image = (Image)resources.GetObject("btnDescargar.Image");
+            btnDescargar.Location = new Point(127, 443);
+            btnDescargar.Name = "btnDescargar";
+            btnDescargar.Size = new Size(48, 35);
+            btnDescargar.SizeMode = PictureBoxSizeMode.Zoom;
+            btnDescargar.TabIndex = 8;
+            btnDescargar.TabStop = false;
+            btnDescargar.Click += btnDescargar_Click;
             // 
             // lblGananciasNacionales
             // 
@@ -281,6 +299,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridFacturacionDestinos).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnDescargar).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajerosFrecuentes).EndInit();
@@ -306,5 +325,7 @@
         private Label label1;
         private Label label3;
         private Label label5;
+        private PictureBox btnDescargar;
+        private ToolTip toolTip1;
     }
 }

@@ -45,7 +45,6 @@ namespace Entidades {
             return lista;
         }
 
-
         public static bool EscribirArchivoJson(List<Usuario>? lista, string rutaJSON) {
             bool guardado = false;
 
@@ -115,6 +114,19 @@ namespace Entidades {
             }
 
             return guardado;
+        }
+        
+        public static bool EscribirEstadisticasCsv(string texto, string rutaCsv) {
+            bool creado = false;
+
+            using (StreamWriter file = new StreamWriter(rutaCsv, false, Encoding.UTF8)) {
+                file.WriteLine(texto);
+                file.Close();
+
+                creado = true;
+            }
+
+            return creado;
         }
 
         public static void GuardarConexionDeUsuario(Usuario usuarioConectado, string rutaLog) {

@@ -50,12 +50,6 @@ namespace Entidades {
             return cantPremium;
         }
 
-        public void CargarEquipajeABodega(float kilos) {
-            if(kilos > this.capacidadBodega) {
-                throw new Exception("La bodega no posee mas capacidad.");
-            }
-        }
-
         private string ObtenerMatriculaUnica() {
             string matriculaAlfanumerica;
 

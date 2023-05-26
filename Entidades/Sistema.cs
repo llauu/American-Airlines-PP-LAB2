@@ -378,7 +378,7 @@ namespace Entidades {
             destinosOrdenados = destinos.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value); 
 
             foreach(KeyValuePair<string, double> item in destinosOrdenados) {
-                destinosOrdenadosEnString[item.Key] = $"${item.Value}";
+                destinosOrdenadosEnString[item.Key] = $"${item.Value.ToString("0")}";
             }
 
             return destinosOrdenadosEnString;
@@ -528,6 +528,59 @@ namespace Entidades {
             }
 
             return destinoMasPedido;
+        }
+
+        /// <summary>
+        /// Escribe un string con formato .csv con todas las estadisticas historicas de la aerolinea para guardarlo en una archivo .csv
+        /// </summary>
+        /// <param name="destinoMasPedido"></param>
+        /// <param name="gananciasTotales"></param>
+        /// <param name="gananciasInternacionales"></param>
+        /// <param name="gananciasNacionales"></param>
+        /// <param name="DestinosOrdenadosPorFacturacion"></param>
+        /// <param name="PasajerosOrdenadosPorCantVuelos"></param>
+        /// <param name="AvionesConSusHorasDeVuelo"></param>
+        /// <returns>El string escrito con formato .csv con todas las estadisticas historicas cargadas</returns>
+        public static string EscribirEstadisticasAGuardar(string destinoMasPedido, string gananciasTotales, string gananciasInternacionales,
+                                                    string gananciasNacionales, Dictionary<string, string> DestinosOrdenadosPorFacturacion,
+                                                    Dictionary<string, int> PasajerosOrdenadosPorCantVuelos, Dictionary<string, string> AvionesConSusHorasDeVuelo) {
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Destino mas pedido");
+            sb.AppendLine(destinoMasPedido);
+
+            sb.AppendLine("\nGanancias totales");
+            sb.AppendLine(gananciasTotales);
+
+            sb.AppendLine("\nGanancias internacionales");
+            sb.AppendLine(gananciasInternacionales);
+
+            sb.AppendLine("\nGanancias nacionales");
+            sb.AppendLine(gananciasNacionales);
+
+            sb.AppendLine("\nDestinos ordenados por facturacion");
+            sb.AppendLine("Destino; Facturacion");
+
+            foreach (KeyValuePair<string, string> item in DestinosOrdenadosPorFacturacion) {
+                sb.AppendLine($"{item.Key}; {item.Value}");
+            }
+
+            sb.AppendLine("\nPasajeros ordenados por cantidad de vuelos");
+            sb.AppendLine("Pasajero; Cantidad de vuelos");
+
+            foreach (KeyValuePair<string, int> item in PasajerosOrdenadosPorCantVuelos) {
+                sb.AppendLine($"{item.Key}; {item.Value}");
+            }
+
+            sb.AppendLine("\nAviones con sus cantidades de horas de vuelo");
+            sb.AppendLine("Avion; Horas de vuelo");
+
+            foreach (KeyValuePair<string, string> item in AvionesConSusHorasDeVuelo) {
+                sb.AppendLine($"{item.Key}; {item.Value}");
+            }
+
+            return sb.ToString();
         }
     }
 }

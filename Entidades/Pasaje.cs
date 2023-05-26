@@ -169,6 +169,7 @@ namespace Entidades {
             sb.AppendLine($"Pasajero: \n{this.pasajero?.Nombre} {this.pasajero?.Apellido}");
             sb.AppendLine($"Clase: {this.clasePasajero}");
             sb.AppendLine($"Equipaje de mano: {this.equipajeDeMano}");
+            sb.AppendLine($"Costo: {this.costoPasaje}");
 
             return sb.ToString();
         }

@@ -29,6 +29,7 @@ namespace Interfaz.InterfazVuelos {
 
             foreach (Pasaje pasaje in this.pasajesAgregados) {
                 sb.AppendLine($"Pasaje {pasaje.ClasePasajero}        ${pasaje.CostoPasaje.ToString()}");
+
                 precioSubtotal += pasaje.CostoPasaje;
             }
 

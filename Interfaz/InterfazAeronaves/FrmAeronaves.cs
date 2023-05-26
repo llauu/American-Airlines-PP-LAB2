@@ -30,9 +30,7 @@ namespace Interfaz {
             this.imgError.Visible = false;
             this.lblError.Visible = false;
 
-            DialogResult res = frmAlta.ShowDialog();
-
-            if (res == DialogResult.OK) {
+            if (frmAlta.ShowDialog() == DialogResult.OK) {
                 Sistema.AltaAeronave(frmAlta.AeronaveAgregada);
                 ActualizarDataGridView(dataGridAeronaves);
             }
@@ -45,9 +43,7 @@ namespace Interfaz {
                 if (!aeronaveAEditar.VueloProgramado) {
                     FrmEditarAeronave frmEditar = new FrmEditarAeronave(aeronaveAEditar);
 
-                    DialogResult res = frmEditar.ShowDialog();
-
-                    if (res == DialogResult.OK) {
+                    if (frmEditar.ShowDialog() == DialogResult.OK) {
                         ActualizarDataGridView(dataGridAeronaves);
                     }
                 }

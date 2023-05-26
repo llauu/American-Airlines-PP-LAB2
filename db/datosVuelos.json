@@ -1,6 +1,6 @@
 [
   {
-    "IdVuelo": 195602,
+    "IdVuelo": 521093,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Roma (Italia)",
     "FechaDeVuelo": "2023-05-15T00:00:00",
@@ -219,7 +219,7 @@
     "PesoBodegaOcupada": 25.0
   },
   {
-    "IdVuelo": 877694,
+    "IdVuelo": 853274,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Recife (Brasil)",
     "FechaDeVuelo": "2023-05-10T00:00:00",
@@ -411,7 +411,7 @@
     "PesoBodegaOcupada": 24.0
   },
   {
-    "IdVuelo": 402920,
+    "IdVuelo": 270475,
     "CiudadPartida": "Santa Rosa",
     "CiudadDestino": "Iguazú",
     "FechaDeVuelo": "2023-05-17T00:00:00",
@@ -426,7 +426,7 @@
       "CapacidadBodega": 157.0,
       "VueloProgramado": true
     },
-    "EstadoDelVuelo": 1,
+    "EstadoDelVuelo": 2,
     "DuracionVuelo": 3,
     "TipoVuelo": 0,
     "ListaPasajes": [
@@ -628,7 +628,7 @@
     "PesoBodegaOcupada": 0.0
   },
   {
-    "IdVuelo": 990430,
+    "IdVuelo": 984858,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Neuquén",
     "FechaDeVuelo": "2023-05-19T00:00:00",
@@ -643,7 +643,7 @@
       "CapacidadBodega": 564.0,
       "VueloProgramado": true
     },
-    "EstadoDelVuelo": 0,
+    "EstadoDelVuelo": 2,
     "DuracionVuelo": 3,
     "TipoVuelo": 0,
     "ListaPasajes": [
@@ -778,7 +778,7 @@
     "PesoBodegaOcupada": 69.0
   },
   {
-    "IdVuelo": 698914,
+    "IdVuelo": 979947,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Salta",
     "FechaDeVuelo": "2023-05-18T00:00:00",
@@ -793,7 +793,7 @@
       "CapacidadBodega": 190.0,
       "VueloProgramado": true
     },
-    "EstadoDelVuelo": 0,
+    "EstadoDelVuelo": 2,
     "DuracionVuelo": 3,
     "TipoVuelo": 0,
     "ListaPasajes": [
@@ -949,7 +949,7 @@
     "PesoBodegaOcupada": 120.0
   },
   {
-    "IdVuelo": 622518,
+    "IdVuelo": 693103,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Ushuaia",
     "FechaDeVuelo": "2023-06-01T00:00:00",
@@ -1146,10 +1146,28 @@
         },
         "NumeroDeEquipaje": 2,
         "CostoPasaje": 135.0
+      },
+      {
+        "IdPasaje": 299435,
+        "Pasajero": {
+          "FechaDeNacimiento": "2006-06-24T00:00:00",
+          "Dni": 43213125,
+          "Edad": 16,
+          "Apellido": "Perez",
+          "Nombre": "Juan"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {
+          "1": 9.0
+        },
+        "NumeroDeEquipaje": 1,
+        "CostoPasaje": 100.0
       }
     ],
     "AsientosPremiumOcupados": 5,
-    "AsientosTuristaOcupados": 5,
-    "PesoBodegaOcupada": 147.0
+    "AsientosTuristaOcupados": 6,
+    "PesoBodegaOcupada": 156.0
   }
 ]

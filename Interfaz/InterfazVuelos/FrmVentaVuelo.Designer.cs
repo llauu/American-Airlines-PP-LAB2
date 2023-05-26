@@ -36,8 +36,6 @@
             panel1 = new Panel();
             btnDatosEquipajes = new PictureBox();
             panel3 = new Panel();
-            checkEquipajeMano = new CheckBox();
-            checkClasePremium = new CheckBox();
             btnAgregarPasajero = new PictureBox();
             btnAgregarEquipaje = new PictureBox();
             label2 = new Label();
@@ -51,6 +49,12 @@
             btnAceptar = new Button();
             label1 = new Label();
             toolTip1 = new ToolTip(components);
+            rdbPremium = new RadioButton();
+            rdbTurista = new RadioButton();
+            gbClase = new GroupBox();
+            groupBox1 = new GroupBox();
+            rdbLlevaEquipaje = new RadioButton();
+            rdbNoLlevaEquipaje = new RadioButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnDatosEquipajes).BeginInit();
             panel3.SuspendLayout();
@@ -61,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)imgBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajeros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgError).BeginInit();
+            gbClase.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnCancelar
@@ -137,42 +143,19 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(checkEquipajeMano);
-            panel3.Controls.Add(checkClasePremium);
+            panel3.Controls.Add(groupBox1);
+            panel3.Controls.Add(gbClase);
             panel3.Controls.Add(btnAgregarPasajero);
-            panel3.Location = new Point(259, 104);
+            panel3.Location = new Point(259, 50);
             panel3.Name = "panel3";
-            panel3.Size = new Size(82, 113);
+            panel3.Size = new Size(82, 219);
             panel3.TabIndex = 66;
-            // 
-            // checkEquipajeMano
-            // 
-            checkEquipajeMano.BackColor = Color.Transparent;
-            checkEquipajeMano.FlatStyle = FlatStyle.Flat;
-            checkEquipajeMano.Location = new Point(7, 3);
-            checkEquipajeMano.Name = "checkEquipajeMano";
-            checkEquipajeMano.Size = new Size(72, 38);
-            checkEquipajeMano.TabIndex = 72;
-            checkEquipajeMano.Text = "Equipaje de mano";
-            checkEquipajeMano.UseVisualStyleBackColor = false;
-            // 
-            // checkClasePremium
-            // 
-            checkClasePremium.AutoSize = true;
-            checkClasePremium.BackColor = Color.Transparent;
-            checkClasePremium.FlatStyle = FlatStyle.Flat;
-            checkClasePremium.Location = new Point(7, 38);
-            checkClasePremium.Name = "checkClasePremium";
-            checkClasePremium.Size = new Size(72, 19);
-            checkClasePremium.TabIndex = 66;
-            checkClasePremium.Text = "Premium";
-            checkClasePremium.UseVisualStyleBackColor = false;
             // 
             // btnAgregarPasajero
             // 
             btnAgregarPasajero.Cursor = Cursors.Hand;
             btnAgregarPasajero.Image = (Image)resources.GetObject("btnAgregarPasajero.Image");
-            btnAgregarPasajero.Location = new Point(19, 63);
+            btnAgregarPasajero.Location = new Point(18, 167);
             btnAgregarPasajero.Name = "btnAgregarPasajero";
             btnAgregarPasajero.Size = new Size(43, 37);
             btnAgregarPasajero.SizeMode = PictureBoxSizeMode.Zoom;
@@ -362,6 +345,72 @@
             label1.Text = "VENTA DE PASAJES";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // rdbPremium
+            // 
+            rdbPremium.AutoSize = true;
+            rdbPremium.Location = new Point(2, 22);
+            rdbPremium.Name = "rdbPremium";
+            rdbPremium.Size = new Size(74, 19);
+            rdbPremium.TabIndex = 73;
+            rdbPremium.TabStop = true;
+            rdbPremium.Text = "Premium";
+            rdbPremium.UseVisualStyleBackColor = true;
+            // 
+            // rdbTurista
+            // 
+            rdbTurista.AutoSize = true;
+            rdbTurista.Location = new Point(2, 39);
+            rdbTurista.Name = "rdbTurista";
+            rdbTurista.Size = new Size(60, 19);
+            rdbTurista.TabIndex = 74;
+            rdbTurista.TabStop = true;
+            rdbTurista.Text = "Turista";
+            rdbTurista.UseVisualStyleBackColor = true;
+            // 
+            // gbClase
+            // 
+            gbClase.Controls.Add(rdbPremium);
+            gbClase.Controls.Add(rdbTurista);
+            gbClase.Location = new Point(3, 91);
+            gbClase.Name = "gbClase";
+            gbClase.Size = new Size(74, 61);
+            gbClase.TabIndex = 72;
+            gbClase.TabStop = false;
+            gbClase.Text = "Clase";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rdbLlevaEquipaje);
+            groupBox1.Controls.Add(rdbNoLlevaEquipaje);
+            groupBox1.Location = new Point(3, 13);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(74, 72);
+            groupBox1.TabIndex = 73;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Equipaje de mano";
+            // 
+            // rdbLlevaEquipaje
+            // 
+            rdbLlevaEquipaje.AutoSize = true;
+            rdbLlevaEquipaje.Location = new Point(0, 35);
+            rdbLlevaEquipaje.Name = "rdbLlevaEquipaje";
+            rdbLlevaEquipaje.Size = new Size(34, 19);
+            rdbLlevaEquipaje.TabIndex = 73;
+            rdbLlevaEquipaje.TabStop = true;
+            rdbLlevaEquipaje.Text = "Si";
+            rdbLlevaEquipaje.UseVisualStyleBackColor = true;
+            // 
+            // rdbNoLlevaEquipaje
+            // 
+            rdbNoLlevaEquipaje.AutoSize = true;
+            rdbNoLlevaEquipaje.Location = new Point(0, 51);
+            rdbNoLlevaEquipaje.Name = "rdbNoLlevaEquipaje";
+            rdbNoLlevaEquipaje.Size = new Size(41, 19);
+            rdbNoLlevaEquipaje.TabIndex = 74;
+            rdbNoLlevaEquipaje.TabStop = true;
+            rdbNoLlevaEquipaje.Text = "No";
+            rdbNoLlevaEquipaje.UseVisualStyleBackColor = true;
+            // 
             // FrmVentaVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -395,7 +444,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnDatosEquipajes).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnAgregarPasajero).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnAgregarEquipaje).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajesAgregados).EndInit();
@@ -404,6 +452,10 @@
             ((System.ComponentModel.ISupportInitialize)imgBuscar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPasajeros).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgError).EndInit();
+            gbClase.ResumeLayout(false);
+            gbClase.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -421,15 +473,19 @@
         private Label label1;
         private Label label2;
         private DataGridView dataGridPasajesAgregados;
-        private CheckBox checkClasePremium;
         private Panel panel2;
         private TextBox txtBuscar;
         private PictureBox imgBuscar;
         private PictureBox btnAgregarPasajero;
         private PictureBox btnAgregarEquipaje;
-        private CheckBox checkEquipajeMano;
         private ToolTip toolTip1;
         private Panel panel3;
         private PictureBox btnDatosEquipajes;
+        private RadioButton rdbTurista;
+        private RadioButton rdbPremium;
+        private GroupBox groupBox1;
+        private RadioButton rdbLlevaEquipaje;
+        private RadioButton rdbNoLlevaEquipaje;
+        private GroupBox gbClase;
     }
 }

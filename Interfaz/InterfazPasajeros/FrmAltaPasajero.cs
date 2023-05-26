@@ -27,10 +27,10 @@ namespace Interfaz.InterfazPasajeros {
         }
 
         private void btnAceptar_Click(object sender, EventArgs e) {
+            DateTime fechaNacimiento = this.dateFechaNacimiento.Value.Date;
             string apellido = this.txtApellido.Text;
             string nombre = this.txtNombre.Text;
             int dni;
-            DateTime fechaNacimiento = this.dateFechaNacimiento.Value.Date;
 
             int.TryParse(this.txtDni.Text, out dni);
 
@@ -42,9 +42,7 @@ namespace Interfaz.InterfazPasajeros {
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) {
-                this.imgError.Visible = true;
-                this.lblError.Visible = true;
-                this.lblError.Text = ex.Message;
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
             }
         }
     }
