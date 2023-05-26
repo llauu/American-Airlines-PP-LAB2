@@ -38,7 +38,6 @@ namespace Interfaz {
             }
         }
 
-
         public static void ActualizarDataGridView(List<Aeronave> listaAeronavesDisponibles, DataGridView dataGridView) {
             Sistema.CargarListaAeronavesDisponibles(listaAeronavesDisponibles);
             dataGridView.DataSource = null;

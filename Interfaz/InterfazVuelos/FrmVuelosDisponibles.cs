@@ -14,7 +14,7 @@ namespace Interfaz {
     public partial class FrmVuelosDisponibles : Form {
         private List<Vuelo> vuelosDisponibles = new List<Vuelo>();
 
-        public List<Vuelo> VuelosDisponibles { get => vuelosDisponibles; set => vuelosDisponibles = value; }
+        public List<Vuelo> VuelosDisponibles { get => vuelosDisponibles; }
 
         public FrmVuelosDisponibles() {
             InitializeComponent();

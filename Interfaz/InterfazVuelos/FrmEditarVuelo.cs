@@ -16,11 +16,13 @@ namespace Interfaz.InterfazViajes {
 
 
         public FrmEditarVuelo(Vuelo vuelo) {
-            InitializeComponent();
-            this.vueloAEditar = vuelo;
             this.aeronavesDisponibles = new List<Aeronave>();
-            this.aeronavesDisponibles.Add(vuelo.Avion);
+            this.vueloAEditar = vuelo;
+
+            InitializeComponent();
+
             this.dateFechaVuelo.MinDate = DateTime.Now.AddDays(1);
+            this.aeronavesDisponibles.Add(vuelo.Avion);
         }
 
         private void FrmEditarViaje_Load(object sender, EventArgs e) {
@@ -35,9 +37,8 @@ namespace Interfaz.InterfazViajes {
         }
 
         private void btnAceptar_Click(object sender, EventArgs e) {
+            this.imgError.Visible = false;
             this.lblError.Visible = false;
-            string ciudadPartida = this.cbCiudadPartida.Text;
-            string ciudadDestino = this.cbCiudadDestino.Text;
 
             try {
                 if (aeronavesDisponibles.Count > 0 && Sistema.ListaVuelos != null) {
@@ -45,18 +46,16 @@ namespace Interfaz.InterfazViajes {
 
                     Vuelo vueloEditado = new Vuelo(this.cbCiudadPartida.Text, this.cbCiudadDestino.Text, this.dateFechaVuelo.Value.Date, aeronave);
 
-                    int i = Sistema.ListaVuelos.IndexOf(this.vueloAEditar);
-                    Sistema.ListaVuelos[i] = vueloEditado;
+                    Sistema.EditarVuelo(this.vueloAEditar, vueloEditado);
 
                     this.DialogResult = DialogResult.OK;
                 }
                 else {
-                    FrmMenuPrincipal.ActualizarMensajeDeError(imgError, lblError, "La edicion de vuelos no esta disponible ya que no hay aviones disponibles.");
+                    FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "La edicion de vuelos no esta disponible ya que no hay aviones disponibles.");
                 }
             }
             catch (Exception ex) {
-                lblError.Visible = true;
-                lblError.Text = ex.Message;
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, ex.Message);
             }
         }
 

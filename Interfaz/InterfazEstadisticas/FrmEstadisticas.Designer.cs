@@ -117,6 +117,7 @@
             // 
             // btnDescargar
             // 
+            btnDescargar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnDescargar.Cursor = Cursors.Hand;
             btnDescargar.Image = (Image)resources.GetObject("btnDescargar.Image");
             btnDescargar.Location = new Point(127, 443);

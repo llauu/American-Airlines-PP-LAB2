@@ -74,11 +74,11 @@ namespace Interfaz {
             saveFileDialog.FileName = "estadisticas_historicas_american_airlines";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK) {
-                string estadisticas = Sistema.EscribirEstadisticasAGuardar(destinoMasPedido, gananciasTotales, 
-                                      gananciasInternacionales, gananciasNacionales, DestinosOrdenadosPorFacturacion, 
+                string estadisticas = Sistema.EscribirEstadisticasAGuardar(destinoMasPedido, gananciasTotales,
+                                      gananciasInternacionales, gananciasNacionales, DestinosOrdenadosPorFacturacion,
                                       PasajerosOrdenadosPorCantVuelos, AvionesConSusHorasDeVuelo);
 
-                if(Archivos.EscribirEstadisticasCsv(estadisticas, saveFileDialog.FileName)) {
+                if (Archivos.EscribirEstadisticasCsv(estadisticas, saveFileDialog.FileName)) {
                     MessageBox.Show($"Archivo descargado con exito!\nGuardado en: {saveFileDialog.FileName}", "Archivo descargado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

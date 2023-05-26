@@ -15,7 +15,9 @@ namespace Interfaz.InterfazViajes {
 
         public FrmInfoVuelo(Vuelo vuelo) {
             InitializeComponent();
+
             this.vueloSeleccionado = vuelo;
+            toolTip1.SetToolTip(btnVerEquipaje, "Ver equipaje del pasajero");
         }
 
         private void FrmInfoVuelo_Load(object sender, EventArgs e) {
@@ -33,7 +35,6 @@ namespace Interfaz.InterfazViajes {
             this.txtInfoAvion.Text = vueloSeleccionado.Avion.ToString();
 
             dataGridPasajeros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             dataGridPasajeros.AutoResizeColumns();
         }
 

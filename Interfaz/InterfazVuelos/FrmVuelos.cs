@@ -38,24 +38,21 @@ namespace Interfaz {
                 this.imgError.Visible = false;
                 this.lblError.Visible = false;
 
-                DialogResult res = frmAlta.ShowDialog();
-
-                if (res == DialogResult.OK) {
+                if (frmAlta.ShowDialog() == DialogResult.OK) {
                     Sistema.AltaVuelo(frmAlta.VueloAgregado);
                     FrmVuelosDisponibles.ActualizarDataGridView(this.imgError, this.lblError, this.dataGridViajes, Sistema.ListaVuelos);
                 }
             }
             else {
-                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No se puede dar de alta un vuelo si no hay aviones cargadados.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No se puede dar de alta un vuelo si no hay aviones cargados.");
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e) {
-            this.imgError.Visible = false;
-            this.lblError.Visible = false;
-
             if (Sistema.ListaVuelos != null && this.dataGridViajes.Rows.Count > 0) {
                 Vuelo vueloAEliminar = (Vuelo)dataGridViajes.CurrentRow.DataBoundItem;
+                this.imgError.Visible = false;
+                this.lblError.Visible = false;
 
                 if (Validador.ValidarBajaOModificacionDeVuelo(vueloAEliminar)) {
                     DialogResult res = MessageBox.Show($"Se va a eliminar el vuelo: \n{vueloAEliminar}\nEsta seguro?", "Eliminar vuelo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
@@ -75,18 +72,15 @@ namespace Interfaz {
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
-            this.imgError.Visible = false;
-            this.lblError.Visible = false;
-
             if (Sistema.ListaVuelos != null && this.dataGridViajes.Rows.Count > 0) {
                 Vuelo vueloAEditar = (Vuelo)dataGridViajes.CurrentRow.DataBoundItem;
+                this.imgError.Visible = false;
+                this.lblError.Visible = false;
 
                 if (Validador.ValidarBajaOModificacionDeVuelo(vueloAEditar)) {
                     FrmEditarVuelo frmEditar = new FrmEditarVuelo(vueloAEditar);
 
-                    DialogResult res = frmEditar.ShowDialog();
-
-                    if (res == DialogResult.OK) {
+                    if (frmEditar.ShowDialog() == DialogResult.OK) {
                         FrmVuelosDisponibles.ActualizarDataGridView(this.imgError, this.lblError, this.dataGridViajes, Sistema.ListaVuelos);
                     }
                 }

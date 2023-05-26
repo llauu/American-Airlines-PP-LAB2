@@ -12,28 +12,34 @@ using System.Windows.Forms;
 
 namespace Interfaz.InterfazViajes {
     public partial class FrmVentaVuelo : FrmBotonCancelar {
-        private List<Pasaje> pasajesAgregados = new List<Pasaje>();
+        private List<Pasaje> pasajesAgregados;
         private Vuelo vueloSeleccionado;
         private int asientosPremiumOcupados;
         private int asientosTuristaOcupados;
 
+        public List<Pasaje> PasajesAgregados {
+            get { return this.pasajesAgregados; }
+        }
+
         public FrmVentaVuelo(Vuelo vueloSeleccionado) {
             InitializeComponent();
+
+            pasajesAgregados = new List<Pasaje>();
             this.vueloSeleccionado = vueloSeleccionado;
 
             this.toolTip1.SetToolTip(btnAgregarEquipaje, "Agregar equipaje al pasajero");
             this.toolTip1.SetToolTip(btnDatosEquipajes, "Mirar equipajes cargados");
+            this.toolTip1.SetToolTip(btnAgregarPasajero, "Vender pasaje al pasajero");
         }
 
         private void FrmVentaVuelo_Load(object sender, EventArgs e) {
             ActualizarDataGridPasajeros(Sistema.ListaPasajeros!);
 
-            asientosPremiumOcupados = vueloSeleccionado.AsientosPremiumOcupados;
-            asientosTuristaOcupados = vueloSeleccionado.AsientosTuristaOcupados;
-        }
+            this.asientosPremiumOcupados = vueloSeleccionado.AsientosPremiumOcupados;
+            this.asientosTuristaOcupados = vueloSeleccionado.AsientosTuristaOcupados;
 
-        public List<Pasaje> PasajesAgregados {
-            get { return this.pasajesAgregados; }
+            this.rdbNoLlevaEquipaje.Checked = true;
+            this.rdbTurista.Checked = true;
         }
 
         private void ActualizarDataGridPasajeros(List<Pasajero> pasajeros) {
@@ -136,10 +142,15 @@ namespace Interfaz.InterfazViajes {
         }
 
         private void btnAceptar_Click(object sender, EventArgs e) {
-            FrmFacturaFinal frmFactura = new FrmFacturaFinal(pasajesAgregados);
+            if (pasajesAgregados.Count > 0) {
+                FrmFacturaFinal frmFactura = new FrmFacturaFinal(pasajesAgregados);
 
-            if (frmFactura.ShowDialog() == DialogResult.OK) {
-                this.DialogResult = DialogResult.OK;
+                if (frmFactura.ShowDialog() == DialogResult.OK) {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            else {
                 this.Close();
             }
         }

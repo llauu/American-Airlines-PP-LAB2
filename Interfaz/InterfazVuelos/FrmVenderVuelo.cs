@@ -24,16 +24,14 @@ namespace Interfaz {
                 FrmVentaVuelo frmVenta = new FrmVentaVuelo(vueloSeleccionado);
 
                 if (frmVenta.ShowDialog() == DialogResult.OK) {
-                    List<Pasaje> pasajes = frmVenta.PasajesAgregados;
-
-                    vueloSeleccionado.ListaPasajes.AddRange(pasajes);
+                    vueloSeleccionado.ListaPasajes.AddRange(frmVenta.PasajesAgregados);
                     vueloSeleccionado.ContarAsientosOcupados();
 
                     FrmVuelosDisponibles.ActualizarDataGridView(base.imgError, base.lblError, base.dataGridViajes, base.VuelosDisponibles);
                 }
             }
             else {
-                FrmMenuPrincipal.ActualizarMensajeDeError(this.imgError, this.lblError, "No hay vuelos disponibles para vender pasajes.");
+                FrmMenuPrincipal.ActualizarMensajeDeError(base.imgError, base.lblError, "No hay vuelos disponibles para vender pasajes.");
             }
         }
     }

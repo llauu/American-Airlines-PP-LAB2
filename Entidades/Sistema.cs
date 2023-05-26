@@ -212,6 +212,17 @@ namespace Entidades {
             return agregado;
         }
 
+        public static bool EditarVuelo(Vuelo vueloAEditar, Vuelo vueloEditado) {
+            bool editado = false;
+
+            if (listaVuelos != null) {
+                int i = listaVuelos.IndexOf(vueloAEditar);
+                listaVuelos[i] = vueloEditado;
+            }
+
+            return editado;
+        }
+
         /// <summary>
         /// Permite la baja de un vuelo en el sistema, quitandolo de la lista de vuelos
         /// </summary>

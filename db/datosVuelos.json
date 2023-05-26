@@ -1,6 +1,6 @@
 [
   {
-    "IdVuelo": 521093,
+    "IdVuelo": 225874,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Roma (Italia)",
     "FechaDeVuelo": "2023-05-15T00:00:00",
@@ -219,7 +219,7 @@
     "PesoBodegaOcupada": 25.0
   },
   {
-    "IdVuelo": 853274,
+    "IdVuelo": 422157,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Recife (Brasil)",
     "FechaDeVuelo": "2023-05-10T00:00:00",
@@ -411,7 +411,7 @@
     "PesoBodegaOcupada": 24.0
   },
   {
-    "IdVuelo": 270475,
+    "IdVuelo": 965411,
     "CiudadPartida": "Santa Rosa",
     "CiudadDestino": "Iguazú",
     "FechaDeVuelo": "2023-05-17T00:00:00",
@@ -628,7 +628,7 @@
     "PesoBodegaOcupada": 0.0
   },
   {
-    "IdVuelo": 984858,
+    "IdVuelo": 798084,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Neuquén",
     "FechaDeVuelo": "2023-05-19T00:00:00",
@@ -778,7 +778,7 @@
     "PesoBodegaOcupada": 69.0
   },
   {
-    "IdVuelo": 979947,
+    "IdVuelo": 166844,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Salta",
     "FechaDeVuelo": "2023-05-18T00:00:00",
@@ -949,7 +949,7 @@
     "PesoBodegaOcupada": 120.0
   },
   {
-    "IdVuelo": 693103,
+    "IdVuelo": 993732,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Ushuaia",
     "FechaDeVuelo": "2023-06-01T00:00:00",
@@ -1164,10 +1164,167 @@
         },
         "NumeroDeEquipaje": 1,
         "CostoPasaje": 100.0
+      },
+      {
+        "IdPasaje": 762574,
+        "Pasajero": {
+          "FechaDeNacimiento": "2003-12-01T00:00:00",
+          "Dni": 45232142,
+          "Edad": 19,
+          "Apellido": "Monserrat",
+          "Nombre": "Lautaro"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 135.0
+      },
+      {
+        "IdPasaje": 459858,
+        "Pasajero": {
+          "FechaDeNacimiento": "1998-12-02T00:00:00",
+          "Dni": 35647892,
+          "Edad": 24,
+          "Apellido": "Fernandez",
+          "Nombre": "Carlos"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 135.0
+      },
+      {
+        "IdPasaje": 594826,
+        "Pasajero": {
+          "FechaDeNacimiento": "1996-07-13T00:00:00",
+          "Dni": 11244512,
+          "Edad": 26,
+          "Apellido": "Rivero",
+          "Nombre": "Matero"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 135.0
+      },
+      {
+        "IdPasaje": 496964,
+        "Pasajero": {
+          "FechaDeNacimiento": "1995-11-07T00:00:00",
+          "Dni": 38265941,
+          "Edad": 28,
+          "Apellido": "Lopez",
+          "Nombre": "Pablo"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 135.0
+      },
+      {
+        "IdPasaje": 848646,
+        "Pasajero": {
+          "FechaDeNacimiento": "1992-04-13T00:00:00",
+          "Dni": 32789651,
+          "Edad": 31,
+          "Apellido": "Sanchez",
+          "Nombre": "Luis"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 100.0
       }
     ],
-    "AsientosPremiumOcupados": 5,
-    "AsientosTuristaOcupados": 6,
+    "AsientosPremiumOcupados": 9,
+    "AsientosTuristaOcupados": 7,
     "PesoBodegaOcupada": 156.0
+  },
+  {
+    "IdVuelo": 722974,
+    "CiudadPartida": "Bariloche",
+    "CiudadDestino": "Córdoba",
+    "FechaDeVuelo": "2023-08-25T00:00:00",
+    "Avion": {
+      "Matricula": "JEBT6047",
+      "CantAsientos": 210,
+      "CantAsientosPremium": 42,
+      "CantAsientosTurista": 168,
+      "CantBanios": 3,
+      "OfreceInternet": true,
+      "OfreceComida": true,
+      "CapacidadBodega": 312.0,
+      "VueloProgramado": true
+    },
+    "EstadoDelVuelo": 0,
+    "DuracionVuelo": 2,
+    "TipoVuelo": 0,
+    "ListaPasajes": [
+      {
+        "IdPasaje": 303954,
+        "Pasajero": {
+          "FechaDeNacimiento": "2000-02-15T00:00:00",
+          "Dni": 28543679,
+          "Edad": 23,
+          "Apellido": "Gomez",
+          "Nombre": "Maria"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {
+          "1": 4.0
+        },
+        "NumeroDeEquipaje": 1,
+        "CostoPasaje": 100.0
+      },
+      {
+        "IdPasaje": 413482,
+        "Pasajero": {
+          "FechaDeNacimiento": "1982-07-19T00:00:00",
+          "Dni": 19784356,
+          "Edad": 41,
+          "Apellido": "Gonzalez",
+          "Nombre": "Ana"
+        },
+        "ClasePasajero": 1,
+        "Vuelo": null,
+        "EquipajeDeMano": true,
+        "EquipajesDeBodega": {
+          "1": 7.0
+        },
+        "NumeroDeEquipaje": 1,
+        "CostoPasaje": 135.0
+      },
+      {
+        "IdPasaje": 228978,
+        "Pasajero": {
+          "FechaDeNacimiento": "1995-11-07T00:00:00",
+          "Dni": 38265941,
+          "Edad": 28,
+          "Apellido": "Lopez",
+          "Nombre": "Pablo"
+        },
+        "ClasePasajero": 0,
+        "Vuelo": null,
+        "EquipajeDeMano": false,
+        "EquipajesDeBodega": {},
+        "NumeroDeEquipaje": 0,
+        "CostoPasaje": 100.0
+      }
+    ],
+    "AsientosPremiumOcupados": 1,
+    "AsientosTuristaOcupados": 2,
+    "PesoBodegaOcupada": 11.0
   }
 ]
