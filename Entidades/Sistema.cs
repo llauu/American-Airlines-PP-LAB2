@@ -232,8 +232,7 @@ namespace Entidades {
             bool eliminado = false;
 
             if (listaVuelos != null && listaAeronaves != null) {
-                int i = listaAeronaves.IndexOf(vuelo.Avion);
-                listaAeronaves[i].VueloProgramado = false;
+                DesprogramarVueloDeAeronave(vuelo.Avion);
 
                 listaVuelos.Remove(vuelo);
                 eliminado = true;
@@ -308,6 +307,8 @@ namespace Entidades {
                 foreach (Vuelo vuelo in listaVuelos) {
                     if (vuelo.FechaDeVuelo.Date < DateTime.Now.Date) {
                         vuelo.EstadoDelVuelo = EEstadoVuelo.Finalizado;
+
+                        DesprogramarVueloDeAeronave(vuelo.Avion);
                     }
                     else {
                         if(vuelo.FechaDeVuelo.Date ==  DateTime.Now.Date) {
@@ -315,6 +316,17 @@ namespace Entidades {
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Permite desprogramar un vuelo programado de una aeronave
+        /// </summary>
+        /// <param name="aeronave">Aeronave la cual se le va a desprogramar el vuelo</param>
+        private static void DesprogramarVueloDeAeronave(Aeronave aeronave) {
+            if(listaAeronaves != null) {
+                int i = listaAeronaves.IndexOf(aeronave);
+                listaAeronaves[i].VueloProgramado = false;
             }
         }
 
@@ -517,10 +529,10 @@ namespace Entidades {
         /// </summary>
         /// <returns>el destino mas pedido por los pasajeros</returns>
         public static string BuscarDestinoMasPedido() {
-            string destinoMasPedido = "Ninguno";
+            string destinoMasPedido = "Ninguno"; 
             int contadorDestinoMasPedido = 0;
-            int contadorActual = 0;
             bool banderaPrimero = true;
+            int contadorActual;
 
             foreach (string destino in listaCiudades!) {
                 contadorActual = 0;
@@ -536,6 +548,10 @@ namespace Entidades {
                     contadorDestinoMasPedido = contadorActual;
                     banderaPrimero = false;
                 }
+            }
+
+            if(contadorDestinoMasPedido == 0) {
+                destinoMasPedido = "Ninguno";
             }
 
             return destinoMasPedido;

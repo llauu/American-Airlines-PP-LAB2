@@ -48,11 +48,15 @@ namespace Interfaz {
             bsDestinos.DataSource = DestinosOrdenadosPorFacturacion;
             CargarDataGrids(dataGridFacturacionDestinos, bsDestinos);
 
-            bsPasajeros.DataSource = PasajerosOrdenadosPorCantVuelos;
-            CargarDataGrids(dataGridPasajerosFrecuentes, bsPasajeros);
+            if(PasajerosOrdenadosPorCantVuelos.Count > 0) {
+                bsPasajeros.DataSource = PasajerosOrdenadosPorCantVuelos;
+                CargarDataGrids(dataGridPasajerosFrecuentes, bsPasajeros);
+            }
 
-            bsAviones.DataSource = AvionesConSusHorasDeVuelo;
-            CargarDataGrids(dataGridHorasDeVuelo, bsAviones);
+            if(AvionesConSusHorasDeVuelo.Count > 0) {
+                bsAviones.DataSource = AvionesConSusHorasDeVuelo;
+                CargarDataGrids(dataGridHorasDeVuelo, bsAviones);
+            }
 
             lblDestinoMasElegido.Text = destinoMasPedido;
             lblGananciasTotales.Text = gananciasTotales;
@@ -79,7 +83,7 @@ namespace Interfaz {
                                       PasajerosOrdenadosPorCantVuelos, AvionesConSusHorasDeVuelo);
 
                 if (Archivos.EscribirEstadisticasCsv(estadisticas, saveFileDialog.FileName)) {
-                    MessageBox.Show($"Archivo descargado con exito!\nGuardado en: {saveFileDialog.FileName}", "Archivo descargado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Archivo descargado con exito!\n\nGuardado en: \n{saveFileDialog.FileName}", "Archivo descargado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

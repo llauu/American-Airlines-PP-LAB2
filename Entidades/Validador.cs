@@ -160,18 +160,18 @@ namespace Entidades {
         }
 
         public static void ValidarCiudades(string partida, string destino) {
-            if (partida == destino) {
-                throw new Exception("Ciudad de partida y destino no pueden ser las mismas.");
+            if (String.IsNullOrEmpty(partida) || String.IsNullOrEmpty(destino)) {
+                throw new Exception("Debe ingresar una ciudad de partida y una de destino.");
             }
             else {
-                if (String.IsNullOrEmpty(partida) || String.IsNullOrEmpty(destino)) {
+                if (partida == destino) {
                     throw new Exception("Ciudad de partida y destino no pueden ser las mismas.");
                 }
             }
         }
 
         public static void ValidarInternacional(string partida, string destino, ETipoVuelo tipoVuelo) {
-            if(tipoVuelo == ETipoVuelo.Internacional && partida != "Buenos Aires" && partida != "Buenos Aires") {
+            if(tipoVuelo == ETipoVuelo.Internacional && partida != "Buenos Aires" && destino != "Buenos Aires") {
                 throw new Exception("Los vuelos internacionales deben salir o llegar a Buenos Aires.");
             }
         }

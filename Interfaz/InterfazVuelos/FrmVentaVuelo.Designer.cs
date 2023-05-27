@@ -157,7 +157,7 @@
             // 
             groupBox1.Controls.Add(rdbLlevaEquipaje);
             groupBox1.Controls.Add(rdbNoLlevaEquipaje);
-            groupBox1.Location = new Point(3, 3);
+            groupBox1.Location = new Point(3, 11);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(74, 72);
             groupBox1.TabIndex = 73;
@@ -167,7 +167,7 @@
             // rdbLlevaEquipaje
             // 
             rdbLlevaEquipaje.AutoSize = true;
-            rdbLlevaEquipaje.Location = new Point(0, 35);
+            rdbLlevaEquipaje.Location = new Point(0, 31);
             rdbLlevaEquipaje.Name = "rdbLlevaEquipaje";
             rdbLlevaEquipaje.Size = new Size(34, 19);
             rdbLlevaEquipaje.TabIndex = 73;
@@ -178,7 +178,7 @@
             // rdbNoLlevaEquipaje
             // 
             rdbNoLlevaEquipaje.AutoSize = true;
-            rdbNoLlevaEquipaje.Location = new Point(0, 51);
+            rdbNoLlevaEquipaje.Location = new Point(0, 47);
             rdbNoLlevaEquipaje.Name = "rdbNoLlevaEquipaje";
             rdbNoLlevaEquipaje.Size = new Size(41, 19);
             rdbNoLlevaEquipaje.TabIndex = 74;
@@ -190,7 +190,8 @@
             // 
             gbClase.Controls.Add(rdbPremium);
             gbClase.Controls.Add(rdbTurista);
-            gbClase.Location = new Point(3, 91);
+            gbClase.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            gbClase.Location = new Point(3, 93);
             gbClase.Name = "gbClase";
             gbClase.Size = new Size(74, 61);
             gbClase.TabIndex = 72;
@@ -200,7 +201,7 @@
             // rdbPremium
             // 
             rdbPremium.AutoSize = true;
-            rdbPremium.Location = new Point(2, 19);
+            rdbPremium.Location = new Point(2, 15);
             rdbPremium.Name = "rdbPremium";
             rdbPremium.Size = new Size(74, 19);
             rdbPremium.TabIndex = 73;
@@ -211,7 +212,7 @@
             // rdbTurista
             // 
             rdbTurista.AutoSize = true;
-            rdbTurista.Location = new Point(2, 36);
+            rdbTurista.Location = new Point(2, 32);
             rdbTurista.Name = "rdbTurista";
             rdbTurista.Size = new Size(60, 19);
             rdbTurista.TabIndex = 74;
