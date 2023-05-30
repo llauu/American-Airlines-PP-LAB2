@@ -1,6 +1,6 @@
 [
   {
-    "IdVuelo": 266078,
+    "IdVuelo": 671354,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Roma (Italia)",
     "FechaDeVuelo": "2023-05-15T00:00:00",
@@ -219,7 +219,7 @@
     "PesoBodegaOcupada": 25.0
   },
   {
-    "IdVuelo": 762598,
+    "IdVuelo": 773078,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Recife (Brasil)",
     "FechaDeVuelo": "2023-05-10T00:00:00",
@@ -411,7 +411,7 @@
     "PesoBodegaOcupada": 24.0
   },
   {
-    "IdVuelo": 397469,
+    "IdVuelo": 407557,
     "CiudadPartida": "Santa Rosa",
     "CiudadDestino": "Iguazú",
     "FechaDeVuelo": "2023-05-17T00:00:00",
@@ -628,7 +628,7 @@
     "PesoBodegaOcupada": 0.0
   },
   {
-    "IdVuelo": 984753,
+    "IdVuelo": 495340,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Neuquén",
     "FechaDeVuelo": "2023-05-19T00:00:00",
@@ -778,7 +778,7 @@
     "PesoBodegaOcupada": 69.0
   },
   {
-    "IdVuelo": 501225,
+    "IdVuelo": 327984,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Salta",
     "FechaDeVuelo": "2023-05-18T00:00:00",
@@ -949,7 +949,7 @@
     "PesoBodegaOcupada": 120.0
   },
   {
-    "IdVuelo": 100840,
+    "IdVuelo": 757910,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Ushuaia",
     "FechaDeVuelo": "2023-06-01T00:00:00",
@@ -1251,7 +1251,7 @@
     "PesoBodegaOcupada": 156.0
   },
   {
-    "IdVuelo": 678352,
+    "IdVuelo": 655975,
     "CiudadPartida": "Bariloche",
     "CiudadDestino": "Córdoba",
     "FechaDeVuelo": "2023-08-25T00:00:00",
@@ -1328,7 +1328,7 @@
     "PesoBodegaOcupada": 11.0
   },
   {
-    "IdVuelo": 728214,
+    "IdVuelo": 282181,
     "CiudadPartida": "Miami (EE.UU.)",
     "CiudadDestino": "Buenos Aires",
     "FechaDeVuelo": "2023-08-19T00:00:00",
@@ -1352,7 +1352,7 @@
     "PesoBodegaOcupada": 0.0
   },
   {
-    "IdVuelo": 140152,
+    "IdVuelo": 541967,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Recife (Brasil)",
     "FechaDeVuelo": "2023-06-01T00:00:00",
@@ -1370,6 +1370,30 @@
     "EstadoDelVuelo": 0,
     "DuracionVuelo": 8,
     "TipoVuelo": 1,
+    "ListaPasajes": [],
+    "AsientosPremiumOcupados": 0,
+    "AsientosTuristaOcupados": 0,
+    "PesoBodegaOcupada": 0.0
+  },
+  {
+    "IdVuelo": 297213,
+    "CiudadPartida": "Corrientes",
+    "CiudadDestino": "Iguazú",
+    "FechaDeVuelo": "2023-09-16T00:00:00",
+    "Avion": {
+      "Matricula": "VXDDWZJY",
+      "CantAsientos": 190,
+      "CantAsientosPremium": 38,
+      "CantAsientosTurista": 152,
+      "CantBanios": 3,
+      "OfreceInternet": true,
+      "OfreceComida": true,
+      "CapacidadBodega": 430.0,
+      "VueloProgramado": true
+    },
+    "EstadoDelVuelo": 0,
+    "DuracionVuelo": 4,
+    "TipoVuelo": 0,
     "ListaPasajes": [],
     "AsientosPremiumOcupados": 0,
     "AsientosTuristaOcupados": 0,

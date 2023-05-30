@@ -395,12 +395,12 @@ namespace Entidades {
             Dictionary<string, double> destinos = CargarDestinosConSuFacturacion();
             Dictionary<string, double> destinosOrdenados = new Dictionary<string, double>();
             
+            destinosOrdenados = destinos.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
             // me creo otro diccionario pero que sea <string, string> para poder agregarle el signo $ al precio 
             Dictionary<string, string> destinosOrdenadosEnString = new Dictionary<string, string>();
 
-            destinosOrdenados = destinos.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value); 
-
-            foreach(KeyValuePair<string, double> item in destinosOrdenados) {
+            foreach (KeyValuePair<string, double> item in destinosOrdenados) {
                 destinosOrdenadosEnString[item.Key] = $"${item.Value.ToString("0")}";
             }
 
