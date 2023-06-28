@@ -67,10 +67,10 @@ namespace Interfaz {
                     break;
 
                 case "administrador":
-                    //this.btnEstadisticas.Enabled = false;
-                    //this.btnViajesDisponibles.Enabled = false;
-                    //this.btnVenderVuelo.Enabled = false;
-                    //this.btnPasajeros.Enabled = false;
+                    this.btnEstadisticas.Enabled = false;
+                    this.btnViajesDisponibles.Enabled = false;
+                    this.btnVenderVuelo.Enabled = false;
+                    this.btnPasajeros.Enabled = false;
                     break;
 
                 default:

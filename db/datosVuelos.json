@@ -1,6 +1,6 @@
 [
   {
-    "IdVuelo": 521093,
+    "IdVuelo": 679294,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Roma (Italia)",
     "FechaDeVuelo": "2023-05-15T00:00:00",
@@ -219,7 +219,7 @@
     "PesoBodegaOcupada": 25.0
   },
   {
-    "IdVuelo": 853274,
+    "IdVuelo": 893401,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Recife (Brasil)",
     "FechaDeVuelo": "2023-05-10T00:00:00",
@@ -411,7 +411,7 @@
     "PesoBodegaOcupada": 24.0
   },
   {
-    "IdVuelo": 270475,
+    "IdVuelo": 222844,
     "CiudadPartida": "Santa Rosa",
     "CiudadDestino": "Iguazú",
     "FechaDeVuelo": "2023-05-17T00:00:00",
@@ -628,7 +628,7 @@
     "PesoBodegaOcupada": 0.0
   },
   {
-    "IdVuelo": 984858,
+    "IdVuelo": 352713,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Neuquén",
     "FechaDeVuelo": "2023-05-19T00:00:00",
@@ -778,7 +778,7 @@
     "PesoBodegaOcupada": 69.0
   },
   {
-    "IdVuelo": 979947,
+    "IdVuelo": 263330,
     "CiudadPartida": "Buenos Aires",
     "CiudadDestino": "Salta",
     "FechaDeVuelo": "2023-05-18T00:00:00",
@@ -949,7 +949,7 @@
     "PesoBodegaOcupada": 120.0
   },
   {
-    "IdVuelo": 693103,
+    "IdVuelo": 491631,
     "CiudadPartida": "Corrientes",
     "CiudadDestino": "Ushuaia",
     "FechaDeVuelo": "2023-06-01T00:00:00",
@@ -964,7 +964,7 @@
       "CapacidadBodega": 210.0,
       "VueloProgramado": true
     },
-    "EstadoDelVuelo": 0,
+    "EstadoDelVuelo": 2,
     "DuracionVuelo": 2,
     "TipoVuelo": 0,
     "ListaPasajes": [
